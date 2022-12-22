@@ -2,9 +2,11 @@
 
 namespace base
 {
+    using namespace CTRPluginFramework;
+    
     menu::menu()
     :
-        m_plugin_menu(new CTRPluginFramework::PluginMenu(NAME, MAJOR_VERSION, MINOR_VERSION, REVISION_VERSION, ABOUT))
+        m_plugin_menu(new PluginMenu(NAME, MAJOR_VERSION, MINOR_VERSION, REVISION_VERSION, ABOUT))
     {
         m_plugin_menu->SynchronizeWithFrame(true);
         m_plugin_menu->ShowWelcomeMessage(false);
