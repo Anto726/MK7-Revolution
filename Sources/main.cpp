@@ -33,6 +33,6 @@ namespace CTRPluginFramework
     {
         settings.WaitTimeToBoot = Time::Zero;
 
-        g_logger->set_working_directory();
+        logger::set_working_directory();
     }
 }
