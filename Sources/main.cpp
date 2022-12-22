@@ -9,10 +9,10 @@ namespace CTRPluginFramework
 
     int main()
     {
-        OSD::Notify(NAME"!");
+        OSD::Notify(NAME "!");
 
         auto logger_instance = std::make_unique<logger>();
-        g_logger->log_now(Utils::Format("Hello from %s!", NAME));
+        g_logger->log_now("Greetings from " NAME "!");
 
         auto menu_instance = std::make_unique<menu>();
         g_logger->log_now("CTRPluginFramework menu created.");
