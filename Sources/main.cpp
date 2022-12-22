@@ -1,14 +1,17 @@
 #include <3ds.h>
-#include <CTRPluginFramework.hpp>
+
+#include <base/menu.hpp>
 
 namespace CTRPluginFramework
 {
     int main()
     {
-        auto menu = new PluginMenu("CTRPluginFramework", 0, 7, 4);
-        menu->SynchronizeWithFrame(true);
-        menu->Run();
-        delete menu;
+        using namespace base;
+
+        auto menu_instance = std::make_unique<menu>();
+        g_menu->run();
+        menu_instance.reset();
+
         return EXIT_SUCCESS;
     }
 
