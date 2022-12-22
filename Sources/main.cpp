@@ -2,6 +2,7 @@
 
 #include <base/logger.hpp>
 #include <base/menu.hpp>
+#include <base/pointers.hpp>
 
 namespace CTRPluginFramework
 {
@@ -17,8 +18,14 @@ namespace CTRPluginFramework
         auto menu_instance = std::make_unique<menu>();
         g_logger->log_now("CTRPluginFramework menu created.");
 
+        auto pointers_instance = std::make_unique<pointers>();
+        g_logger->log_now("Pointers initialized.");
+
         OSD::Notify("Enjoy. :)");
         g_menu->run();
+
+        pointers_instance.reset();
+        g_logger->log_now("Pointers uninitialized.");
 
         menu_instance.reset();
         g_logger->log_now("CTRPluginFramework menu deleted.");

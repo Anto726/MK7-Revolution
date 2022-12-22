@@ -1,2 +1,2 @@
 # CTRPluginFramework - Revolution Base
-A [CTRPluginFramework](https://github.com/PabloMK7/CTRPluginFramework-BlankTemplate) plugin with some improvements.
+A [CTRPluginFramework](https://github.com/PabloMK7/CTRPluginFramework-BlankTemplate) + [BigBaseV2](https://github.com/Pocakking/BigBaseV2) plugin with some improvements.
