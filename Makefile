@@ -13,7 +13,8 @@ TARGET		:= 	$(notdir $(CURDIR))
 PLGINFO 	:= 	CTRPluginFramework.plgInfo
 
 BUILD		:= 	Build
-INCLUDES	:= 	Includes
+INCLUDES	:= 	Includes \
+				Vendor/MK7-Memory
 SOURCES 	:= 	Sources \
 				Sources/base \
 				Sources/base/memory

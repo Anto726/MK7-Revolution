@@ -1,0 +1,4 @@
+[submodule "Vendor/MK7-Memory"]
+	path = Vendor/MK7-Memory
+	url = https://github.com/Anto726/MK7-Memory
+	ignore = dirty
