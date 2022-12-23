@@ -1,9 +1,11 @@
 #include <base/hooking/vmt_hook.hpp>
 
-#include <logger.hpp>
+#include <base/logger.hpp>
 
 namespace base::hooking
 {
+	using namespace CTRPluginFramework;
+	
     vmt_hook::vmt_hook(std::string name, void *obj, size_t num_funcs)
     :
 		m_name(std::move(name)),

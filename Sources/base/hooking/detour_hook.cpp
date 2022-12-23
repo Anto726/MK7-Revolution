@@ -4,6 +4,8 @@
 
 namespace base::hooking
 {
+    using namespace CTRPluginFramework;
+    
 	detour_hook::detour_hook(std::string name, void *target, void *detour)
     :
 		m_name(std::move(name)),
