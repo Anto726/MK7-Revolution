@@ -6,8 +6,8 @@
 #define MAJOR_VERSION       0
 #define MINOR_VERSION       0
 #define REVISION_VERSION    1
-#define NAME                "Revolution Base"
-#define ABOUT               NAME" is a CTRPluginFramework plugin with some improvements."
+#define NAME                "Revolution"
+#define ABOUT               NAME" is a plugin for Mario Kart 7. Strictly for educational purposes."
 
 namespace base
 {

@@ -1,7 +1,7 @@
 #include <base/logger.hpp>
 
 #define LOGS_PATH "Logs"
-#define BASE_PATH "RevolutionBase"
+#define BASE_PATH "Revolution"
 
 namespace base
 {
