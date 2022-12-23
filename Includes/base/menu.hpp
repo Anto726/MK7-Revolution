@@ -1,6 +1,8 @@
 #pragma once
 #include <CTRPluginFramework.hpp>
 
+#include <fwddec.hpp>
+
 #define MAJOR_VERSION       0
 #define MINOR_VERSION       0
 #define REVISION_VERSION    1
@@ -21,6 +23,17 @@ namespace base
         void create();
         void finalize();
 
+    public:
+        // Item
+        struct item_wheel_data_t
+        {
+            size_t index;
+            std::vector<::Item::eItemSlot> items;
+        };
+
+        CTRPluginFramework::MenuEntry *m_item_wheel_entry{};
+
+    private:
         CTRPluginFramework::PluginMenu *m_plugin_menu;
     };
 

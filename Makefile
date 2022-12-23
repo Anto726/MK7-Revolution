@@ -14,9 +14,12 @@ PLGINFO 	:= 	CTRPluginFramework.plgInfo
 
 BUILD		:= 	Build
 INCLUDES	:= 	Includes \
-				Vendor/MK7-Memory
+				Vendor/MK7-Memory \
+				Vendor/sead/include
 SOURCES 	:= 	Sources \
 				Sources/base \
+				Sources/base/hook_funcs \
+				Sources/base/hooking \
 				Sources/base/memory
 
 #---------------------------------------------------------------------------------
