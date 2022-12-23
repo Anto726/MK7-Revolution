@@ -5,3 +5,4 @@
 [submodule "Vendor/sead"]
 	path = Vendor/sead
 	url = https://github.com/open-ead/sead
+	ignore = dirty
