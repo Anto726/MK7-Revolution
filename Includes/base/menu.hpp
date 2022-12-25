@@ -1,5 +1,8 @@
 #pragma once
+
 #include <CTRPluginFramework.hpp>
+
+#include "hook_funcs.hpp"
 
 #include <fwddec.hpp>
 
@@ -7,12 +10,14 @@
 #define MINOR_VERSION       0
 #define REVISION_VERSION    1
 #define NAME                "Revolution"
-#define ABOUT               NAME" is a plugin for Mario Kart 7. Strictly for educational purposes."
+#define ABOUT               NAME " is a plugin for Mario Kart 7. Strictly for educational purposes."
 
 namespace base
 {
     class menu
     {
+        friend hook_funcs;
+
     public:
 		explicit menu();
 		~menu();
