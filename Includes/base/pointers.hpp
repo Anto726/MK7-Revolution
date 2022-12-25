@@ -12,6 +12,8 @@ namespace base
 		void *m_Item_KartItem;
 
 		void *m_Kart_VehicleReact_calcReact;
+
+		void *m_RaceSys_LapRankChecker_calcLapPosition;
 	};
 
 	inline pointers *g_pointers{};

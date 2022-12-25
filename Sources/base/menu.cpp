@@ -13,7 +13,8 @@ namespace base
     :
         m_plugin_menu(new PluginMenu(NAME, MAJOR_VERSION, MINOR_VERSION, REVISION_VERSION, ABOUT)),
         m_item_wheel_entry(new MenuEntry("Item Wheel", [](MenuEntry *) {})),
-        m_intangibility_entry(new MenuEntry("Intangibility", [](MenuEntry *) {}))
+        m_intangibility_entry(new MenuEntry("Intangibility", [](MenuEntry *) {})),
+        m_no_disconnect_entry(new MenuEntry("No Disconnect", [](MenuEntry *) {}))
     {
         m_plugin_menu->SynchronizeWithFrame(true);
         m_plugin_menu->ShowWelcomeMessage(false);
@@ -50,6 +51,13 @@ namespace base
             *kart += m_intangibility_entry;
 
             *m_plugin_menu += kart;
+        }
+
+        if (auto network = new MenuFolder("Network"))
+        {
+            *network += m_no_disconnect_entry;
+
+            *m_plugin_menu += network;
         }
     }
 

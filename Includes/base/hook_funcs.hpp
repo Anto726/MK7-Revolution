@@ -1,5 +1,6 @@
 #pragma once
 #include <fwddec.hpp>
+#include <RaceSys/LapRankChecker.hpp>
 
 namespace base
 {
@@ -13,5 +14,7 @@ namespace base
         static void Item_KartItem_initBeforeStructure(Item::KartItem *);
 
         static void Kart_VehicleReact_calcReact(Kart::VehicleReact *);
+
+        static void RaceSys_LapRankChecker_calcLapPosition(RaceSys::LapRankChecker *, RaceSys::LapRankChecker::KartInfo *);
     };
 }

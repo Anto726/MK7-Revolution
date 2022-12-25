@@ -33,6 +33,9 @@ namespace base
 
         // Kart
         CTRPluginFramework::MenuEntry *m_intangibility_entry;
+
+        // Network
+        CTRPluginFramework::MenuEntry *m_no_disconnect_entry;
     };
 
     inline menu *g_menu{};
