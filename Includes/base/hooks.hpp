@@ -1,14 +1,12 @@
 #pragma once
 
-#include <base/hooking/detour_hook.hpp>
-#include <base/hooking/vmt_hook.hpp>
+#include "hooking/detour_hook.hpp"
+#include "hooking/vmt_hook.hpp"
+
+#include "hook_funcs.hpp"
 
 namespace base
 {
-    struct hook_funcs
-    {
-    };
-
     class hooks
     {
         friend hook_funcs;

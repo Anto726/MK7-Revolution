@@ -1,16 +1,21 @@
 #pragma once
+
 #include <CTRPluginFramework.hpp>
+
+#include "hook_funcs.hpp"
 
 #define MAJOR_VERSION       0
 #define MINOR_VERSION       0
 #define REVISION_VERSION    1
 #define NAME                "Revolution Base"
-#define ABOUT               NAME" is a CTRPluginFramework plugin with some improvements."
+#define ABOUT               NAME " is a CTRPluginFramework plugin with some improvements."
 
 namespace base
 {
     class menu
     {
+        friend hook_funcs;
+
     public:
 		explicit menu();
 		~menu();
