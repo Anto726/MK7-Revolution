@@ -41,6 +41,13 @@ namespace base
 
             *m_plugin_menu += item;
         }
+
+        if (auto kart = new MenuFolder("Kart"))
+        {
+            *kart += (m_intangibility_entry = new MenuEntry("Intangibility", [](MenuEntry *) {}));
+
+            *m_plugin_menu += kart;
+        }
     }
 
     void menu::finalize()

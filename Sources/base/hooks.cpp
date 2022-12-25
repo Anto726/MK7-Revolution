@@ -6,7 +6,9 @@ namespace base
 {
     hooks::hooks()
 	:
-		m_Item_KartItem("Item::KartItem", g_pointers->m_Item_KartItem, hook_funcs::Item_KartItem_count)
+		m_Item_KartItem("Item::KartItem", g_pointers->m_Item_KartItem, hook_funcs::Item_KartItem_count),
+
+		m_Kart_VehicleReact_calcReact("Kart::VehicleReact::calcReact", g_pointers->m_Kart_VehicleReact_calcReact, reinterpret_cast<void *>(&hook_funcs::Kart_VehicleReact_calcReact))
 	{
 		m_Item_KartItem.hook(hook_funcs::Item_KartItem_initBeforeStructure_index, reinterpret_cast<void *>(&hook_funcs::Item_KartItem_initBeforeStructure));
 		m_Item_KartItem.hook(hook_funcs::Item_KartItem_calcBeforeStructure_index, reinterpret_cast<void *>(&hook_funcs::Item_KartItem_calcBeforeStructure));
@@ -22,10 +24,14 @@ namespace base
     void hooks::enable()
 	{
 		m_Item_KartItem.enable();
+
+		m_Kart_VehicleReact_calcReact.enable();
 	}
 
 	void hooks::disable()
 	{
+		m_Kart_VehicleReact_calcReact.disable();
+
 		m_Item_KartItem.disable();
 	}
 }

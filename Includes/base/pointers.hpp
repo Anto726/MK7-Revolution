@@ -10,6 +10,8 @@ namespace base
 
 	public:
 		void *m_Item_KartItem;
+
+		void *m_Kart_VehicleReact_calcReact;
 	};
 
 	inline pointers *g_pointers{};

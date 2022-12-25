@@ -33,6 +33,9 @@ namespace base
 
         CTRPluginFramework::MenuEntry *m_item_wheel_entry{};
 
+        // Kart
+        CTRPluginFramework::MenuEntry *m_intangibility_entry{};
+
     private:
         CTRPluginFramework::PluginMenu *m_plugin_menu;
     };
