@@ -5,8 +5,6 @@
 
 #include "hook_funcs.hpp"
 
-#include <fwddec.hpp>
-
 namespace base
 {
     class hooks

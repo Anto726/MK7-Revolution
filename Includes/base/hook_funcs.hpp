@@ -1,4 +1,5 @@
 #pragma once
+#include <fwddec.hpp>
 
 namespace base
 {

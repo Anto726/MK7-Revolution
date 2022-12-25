@@ -4,8 +4,6 @@
 
 #include "hook_funcs.hpp"
 
-#include <fwddec.hpp>
-
 #define MAJOR_VERSION       0
 #define MINOR_VERSION       0
 #define REVISION_VERSION    1
@@ -28,21 +26,13 @@ namespace base
         void create();
         void finalize();
 
-    public:
-        // Item
-        struct item_wheel_data_t
-        {
-            size_t index;
-            std::vector<::Item::eItemSlot> items;
-        };
+        CTRPluginFramework::PluginMenu *m_plugin_menu;
 
-        CTRPluginFramework::MenuEntry *m_item_wheel_entry{};
+        // Item
+        CTRPluginFramework::MenuEntry *m_item_wheel_entry;
 
         // Kart
-        CTRPluginFramework::MenuEntry *m_intangibility_entry{};
-
-    private:
-        CTRPluginFramework::PluginMenu *m_plugin_menu;
+        CTRPluginFramework::MenuEntry *m_intangibility_entry;
     };
 
     inline menu *g_menu{};

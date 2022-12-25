@@ -1,6 +1,7 @@
 #include <base/hooks.hpp>
 
 #include <base/menu.hpp>
+#include <base/menu_types.hpp>
 #include <MenuEntryHelpers.hpp>
 
 #include <Item/ItemSlot.hpp>
@@ -16,7 +17,7 @@ namespace base
         {
             if (_this->isMaster() && !_this->isNetRecv())
             {
-                auto item_wheel_data = GetArg<menu::item_wheel_data_t>(g_menu->m_item_wheel_entry);
+                auto item_wheel_data = GetArg<menu_types::item_wheel_data_t>(g_menu->m_item_wheel_entry);
 
                 // Cycle items with the D-Pad
                 if (Controller::IsKeyPressed(Key::DPadLeft))
