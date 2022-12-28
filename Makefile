@@ -10,17 +10,17 @@ include $(DEVKITARM)/3ds_rules
 CTRPFLIB	?=	$(DEVKITPRO)/libctrpf
 
 TARGET		:= 	$(notdir $(CURDIR))
-PLGINFO 	:= 	CTRPluginFramework.plgInfo
+PLGINFO 	:= 	CTRPF.plgInfo
 
-BUILD		:= 	Build
-INCLUDES	:= 	Includes \
+BUILD		:= 	build
+INCLUDES	:= 	include \
 				Vendor/MK7-Memory/include \
 				Vendor/sead/include
-SOURCES 	:= 	Sources \
-				Sources/base \
-				Sources/base/hook_funcs \
-				Sources/base/hooking \
-				Sources/base/memory
+SOURCES 	:= 	src \
+				src/base \
+				src/base/hook_funcs \
+				src/base/hooking \
+				src/base/memory
 
 #---------------------------------------------------------------------------------
 # options for code generation
