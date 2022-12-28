@@ -1,8 +1,3 @@
-[submodule "Vendor/MK7-Memory"]
-	path = Vendor/MK7-Memory
+[submodule "vendor/mk7-memory"]
+	path = vendor/mk7-memory
 	url = https://github.com/Anto726/MK7-Memory
-	ignore = dirty
-[submodule "Vendor/sead"]
-	path = Vendor/sead
-	url = https://github.com/open-ead/sead
-	ignore = dirty
