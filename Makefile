@@ -10,13 +10,13 @@ include $(DEVKITARM)/3ds_rules
 CTRPFLIB	?=	$(DEVKITPRO)/libctrpf
 
 TARGET		:= 	$(notdir $(CURDIR))
-PLGINFO 	:= 	CTRPluginFramework.plgInfo
+PLGINFO 	:= 	CTRPF.plgInfo
 
-BUILD		:= 	Build
-INCLUDES	:= 	Includes
-SOURCES 	:= 	Sources \
-				Sources/base \
-				Sources/base/memory
+BUILD		:= 	build
+INCLUDES	:= 	include
+SOURCES 	:= 	src \
+				src/base \
+				src/base/memory
 
 #---------------------------------------------------------------------------------
 # options for code generation
