@@ -29,31 +29,27 @@ namespace base
                 if (item_wheel_data->index >= 0 && item_wheel_data->index < item_wheel_data->items.size())
                 {
                     auto item = item_wheel_data->items[item_wheel_data->index];
+                    auto item_value = std::underlying_type_t<Item::eItemSlot>(item);
                     auto item_slot = _this->m_item_slot;
 
-                    if (item_slot->m_item != item)
+                    if (item_slot->m_selected_item != item_value)
                     {
                         // Need to be written regardless
-                        item_slot->m_0x12 = 1;
                         item_slot->m_0x24 = 0;
+                        item_slot->m_spinning_frames = -1;
 
-                        if (item != ::Item::eItemSlot::Empty)
+                        if (item != Item::eItemSlot::Empty)
                         {
-                            item_slot->m_0x11 = 0;
-                            item_slot->m_0x10 = 1;
-                            item_slot->m_frames_to_spin = 180;
+                            item_slot->m_current_status = 3;
 
-                            item_slot->m_item = item;
+                            item_slot->m_selected_item = item_value;
+                            item_slot->m_current_item = item_value;
                             item_slot->m_0x3C = 1.0f;
 
-                            _this->_setStockItem(item_slot->m_item);
+                            _this->_setStockItem(item);
                         }
                         else
-                        {
-                            item_slot->m_0x11 = 3;
-                            item_slot->m_0x10 = 0;
-                            item_slot->m_frames_to_spin = -1;
-                        }
+                            item_slot->m_current_status = 0;
                     }
                 }
             }
