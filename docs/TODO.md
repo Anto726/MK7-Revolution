@@ -7,15 +7,19 @@ The following document shows a list of ideas that may get implemented in the fut
 - [ ] Controllable Bullet Bill
 - [ ] Item Guru
 - [ ] Configurable Rapid Fire
+- [ ] No Lightning Flash
 
 ### Kart
 - [x] Invincibility
-- [ ] Blinking Invincibility
+- [x] Blinking Invincibility
 - [ ] Infinite Star Effect
 - [ ] Micro Kart
 - [ ] Moon Jump
 - [ ] Free Fly
 - [ ] Future Fly
+- [ ] Trick Anywhere
+- [ ] Instant Mini-Turbo
+- [ ] No Terrain Effects
 
 ### Mode
 - [ ] Drive During Countdown

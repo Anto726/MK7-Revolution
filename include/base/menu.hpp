@@ -33,6 +33,7 @@ namespace base
 
         // Kart
         CTRPluginFramework::MenuEntry *m_invincibility_entry;
+        CTRPluginFramework::MenuEntry *m_blinking_invincibility_entry;
         CTRPluginFramework::MenuEntry *m_intangibility_entry;
 
         // Network

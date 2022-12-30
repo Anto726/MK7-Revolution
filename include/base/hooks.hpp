@@ -21,6 +21,7 @@ namespace base
     private:
         hooking::vmt_hook m_Item_KartItem;
 
+        hooking::detour_hook m_Kart_VehicleMove_calcMoveControlCommon;
         hooking::detour_hook m_Kart_VehicleReact_calcReact;
         hooking::detour_hook m_Kart_VehicleReact_reactAccidentCommon;
 

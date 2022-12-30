@@ -14,6 +14,7 @@ namespace base
         m_plugin_menu(new PluginMenu(NAME, MAJOR_VERSION, MINOR_VERSION, REVISION_VERSION, ABOUT)),
         m_item_wheel_entry(new MenuEntry("Item Wheel", [](MenuEntry *) {})),
         m_invincibility_entry(new MenuEntry("Invincibility", [](MenuEntry *) {})),
+        m_blinking_invincibility_entry(new MenuEntry("Blinking Invincibility", [](MenuEntry *) {})),
         m_intangibility_entry(new MenuEntry("Intangibility", [](MenuEntry *) {})),
         m_no_disconnect_entry(new MenuEntry("No Disconnect", [](MenuEntry *) {}))
     {
@@ -50,6 +51,7 @@ namespace base
         if (auto kart = new MenuFolder("Kart"))
         {
             *kart += m_invincibility_entry;
+            *kart += m_blinking_invincibility_entry;
             *kart += m_intangibility_entry;
 
             *m_plugin_menu += kart;
