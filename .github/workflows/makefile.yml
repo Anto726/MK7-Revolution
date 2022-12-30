@@ -23,4 +23,4 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: Plugin 3GX File
-        path: *.3gx
+        path: ./*.3gx
