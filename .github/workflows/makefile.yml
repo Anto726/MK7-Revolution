@@ -14,12 +14,15 @@ jobs:
       image: pablomk7/libctrpf:0.7.4
 
     steps:
-    - uses: actions/checkout@v3
+    - name: Clone repository
+      uses: actions/checkout@v3
+      with:
+        submodules: recursive
       
-    - name: Build Plugin
+    - name: Build plugin
       run: make
       
-    - name: Upload Plugin
+    - name: Upload plugin
       uses: actions/upload-artifact@v3
       with:
         name: Plugin 3GX File
