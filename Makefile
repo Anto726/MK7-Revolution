@@ -14,7 +14,8 @@ PLGINFO 	:= 	CTRPF.plgInfo
 
 BUILD		:= 	build
 INCLUDES	:= 	include \
-				vendor/mk7-memory/include
+				vendor/mk7-memory/include \
+				vendor/mk7-memory/vendor/sead/include
 SOURCES 	:= 	src \
 				src/base \
 				src/base/hook_funcs \

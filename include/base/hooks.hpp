@@ -22,6 +22,7 @@ namespace base
         hooking::vmt_hook m_Item_KartItem;
 
         hooking::detour_hook m_Kart_VehicleReact_calcReact;
+        hooking::detour_hook m_Kart_VehicleReact_reactAccidentCommon;
 
         hooking::detour_hook m_RaceSys_LapRankChecker_calcLapPosition;
     };

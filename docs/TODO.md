@@ -5,7 +5,7 @@
 - [ ] Item Guru
 
 ### Kart
-- [ ] Invincibility
+- [x] Invincibility
 - [ ] Blinking Invincibility
 - [ ] Infinite Star Effect
 - [ ] Micro Kart

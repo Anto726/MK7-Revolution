@@ -32,6 +32,7 @@ namespace base
         CTRPluginFramework::MenuEntry *m_item_wheel_entry;
 
         // Kart
+        CTRPluginFramework::MenuEntry *m_invincibility_entry;
         CTRPluginFramework::MenuEntry *m_intangibility_entry;
 
         // Network

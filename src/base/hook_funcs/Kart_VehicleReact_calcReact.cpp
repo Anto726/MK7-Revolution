@@ -2,8 +2,6 @@
 
 #include <base/menu.hpp>
 
-#include <Kart/VehicleReact.hpp>
-
 namespace base
 {
 	void hook_funcs::Kart_VehicleReact_calcReact(Kart::VehicleReact *_this)
