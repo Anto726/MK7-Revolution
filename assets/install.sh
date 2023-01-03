@@ -1,3 +1,4 @@
+# Usage (in MSys2): ./install.sh libctrpf.tar.bz2
 
 DEVKITPRO=/opt/devkitpro
 CTRPFDIR=$DEVKITPRO/libctrpf
