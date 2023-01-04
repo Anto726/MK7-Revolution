@@ -9,6 +9,7 @@ namespace base
 		m_Item_KartItem("Item::KartItem", g_pointers->m_Item_KartItem, hook_funcs::Item_KartItem_count),
 
 		m_Kart_VehicleMove_calcMoveControlCommon("Kart::VehicleMove::calcMoveControlCommon", g_pointers->m_Kart_VehicleMove_calcMoveControlCommon, reinterpret_cast<void *>(&hook_funcs::Kart_VehicleMove_calcMoveControlCommon)),
+		m_Kart_VehicleMove_calcStarInkThunderPress("Kart::VehicleMove::calcStarInkThunderPress", g_pointers->m_Kart_VehicleMove_calcStarInkThunderPress, reinterpret_cast<void *>(&hook_funcs::Kart_VehicleMove_calcStarInkThunderPress)),
 		m_Kart_VehicleReact_calcReact("Kart::VehicleReact::calcReact", g_pointers->m_Kart_VehicleReact_calcReact, reinterpret_cast<void *>(&hook_funcs::Kart_VehicleReact_calcReact)),
 		m_Kart_VehicleReact_reactAccidentCommon("Kart::VehicleReact::reactAccidentCommon", g_pointers->m_Kart_VehicleReact_reactAccidentCommon, reinterpret_cast<void *>(&hook_funcs::Kart_VehicleReact_reactAccidentCommon)),
 
@@ -30,6 +31,7 @@ namespace base
 		m_Item_KartItem.enable();
 
 		m_Kart_VehicleMove_calcMoveControlCommon.enable();
+		m_Kart_VehicleMove_calcStarInkThunderPress.enable();
 		m_Kart_VehicleReact_calcReact.enable();
 		m_Kart_VehicleReact_reactAccidentCommon.enable();
 
@@ -42,6 +44,7 @@ namespace base
 
 		m_Kart_VehicleReact_reactAccidentCommon.disable();
 		m_Kart_VehicleReact_calcReact.disable();
+		m_Kart_VehicleMove_calcStarInkThunderPress.disable();
 		m_Kart_VehicleMove_calcMoveControlCommon.disable();
 
 		m_Item_KartItem.disable();

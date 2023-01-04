@@ -13,6 +13,7 @@ namespace base
 		void *m_Item_KartItem;
 
 		void *m_Kart_VehicleMove_calcMoveControlCommon;
+		void *m_Kart_VehicleMove_calcStarInkThunderPress;
 		void *m_Kart_VehicleReact_calcReact;
 		void *m_Kart_VehicleReact_reactAccidentCommon;
 
@@ -20,6 +21,7 @@ namespace base
 
 		s32 *m_invincibility_frames_invisible_amount;
 		s32 *m_invincibility_frames_visible_amount;
+		float *m_press_frames_kart_size;
 	};
 
 	inline pointers *g_pointers{};

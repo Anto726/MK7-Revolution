@@ -12,7 +12,7 @@ The following document shows a list of ideas that may get implemented in the fut
 ### Kart
 - [x] Invincibility
 - [x] Blinking Invincibility
-- [ ] Infinite Star Effect
+- [x] Infinite Star
 - [ ] Micro Kart
 - [ ] Moon Jump
 - [ ] Free Fly

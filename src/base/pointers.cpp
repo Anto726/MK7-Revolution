@@ -21,6 +21,12 @@ namespace base
 			memory::handle hnd(*handle.add(0x410).as<void **>());
 			m_invincibility_frames_invisible_amount = hnd.add(0x230).as<decltype(m_invincibility_frames_invisible_amount)>();
 			m_invincibility_frames_visible_amount = hnd.add(0x234).as<decltype(m_invincibility_frames_visible_amount)>();
+			m_press_frames_kart_size = hnd.add(0x2CC).as<decltype(m_press_frames_kart_size)>();
+		});
+
+		batch.add("Kart::VehicleMove::calcStarInkThunderPress", "F0 41 2D E9 00 40 A0 E1 03 0B 80 E2 F4 1F 94 E5", [this](memory::handle handle)
+		{
+			m_Kart_VehicleMove_calcStarInkThunderPress = handle.as<decltype(m_Kart_VehicleMove_calcStarInkThunderPress)>();
 		});
 
 		batch.add("Kart::VehicleReact::calcReact", "F0 4F 2D E9 00 40 A0 E1 03 9B 80 E2 B5 0A 9F ED", [this](memory::handle handle)

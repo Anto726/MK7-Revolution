@@ -35,6 +35,10 @@ namespace base
         CTRPluginFramework::MenuEntry *m_invincibility_entry;
         CTRPluginFramework::MenuEntry *m_blinking_invincibility_entry;
         CTRPluginFramework::MenuEntry *m_intangibility_entry;
+        CTRPluginFramework::MenuEntry *m_infinite_star;
+        CTRPluginFramework::MenuEntry *m_infinite_ink;
+        CTRPluginFramework::MenuEntry *m_infinite_thunder;
+        CTRPluginFramework::MenuEntry *m_infinite_press;
 
         // Network
         CTRPluginFramework::MenuEntry *m_no_disconnect_entry;

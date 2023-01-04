@@ -20,6 +20,7 @@ namespace base
         static void Item_KartItem_initBeforeStructure(Item::KartItem *);
 
         static void Kart_VehicleMove_calcMoveControlCommon(Kart::VehicleMove *);
+        static void Kart_VehicleMove_calcStarInkThunderPress(Kart::VehicleMove *);
         static void Kart_VehicleReact_calcReact(Kart::VehicleReact *);
         static void Kart_VehicleReact_reactAccidentCommon(Kart::VehicleReact *, Kart::VehicleReact::ECallType, int, int, Kart::VehicleReact::EAcdType, sead::Vector3f *, sead::Vector3f *);
 

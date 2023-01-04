@@ -12,10 +12,17 @@ namespace base
     menu::menu()
     :
         m_plugin_menu(new PluginMenu(NAME, MAJOR_VERSION, MINOR_VERSION, REVISION_VERSION, ABOUT)),
+
         m_item_wheel_entry(new MenuEntry("Item Wheel", [](MenuEntry *) {})),
+
         m_invincibility_entry(new MenuEntry("Invincibility", [](MenuEntry *) {})),
         m_blinking_invincibility_entry(new MenuEntry("Blinking Invincibility", [](MenuEntry *) {})),
         m_intangibility_entry(new MenuEntry("Intangibility", [](MenuEntry *) {})),
+        m_infinite_star(new MenuEntry("Infinite Star", [](MenuEntry *) {})),
+        m_infinite_ink(new MenuEntry("Infinite Ink", [](MenuEntry *) {})),
+        m_infinite_thunder(new MenuEntry("Infinite Thunder", [](MenuEntry *) {})),
+        m_infinite_press(new MenuEntry("Infinite Press", [](MenuEntry *) {})),
+
         m_no_disconnect_entry(new MenuEntry("No Disconnect", [](MenuEntry *) {}))
     {
         m_plugin_menu->SynchronizeWithFrame(true);
@@ -53,6 +60,10 @@ namespace base
             *kart += m_invincibility_entry;
             *kart += m_blinking_invincibility_entry;
             *kart += m_intangibility_entry;
+            *kart += m_infinite_star;
+            *kart += m_infinite_ink;
+            *kart += m_infinite_thunder;
+            *kart += m_infinite_press;
 
             *m_plugin_menu += kart;
         }
