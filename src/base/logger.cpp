@@ -38,7 +38,8 @@ namespace base
 
         // Create the log file
         main_log_path = LOGS_PATH + std::string("/") + main_log_path;
-        File::Open(m_main_out, main_log_path, File::Mode::WRITE | File::Mode::CREATE | File::Mode::SYNC);
+        if (File::Open(m_main_out, main_log_path, File::Mode::WRITE | File::Mode::CREATE | File::Mode::SYNC) != File::OPResult::SUCCESS)
+            abort();
 
         g_logger = this;
     }
@@ -50,9 +51,16 @@ namespace base
         m_main_out.Close();
     }
 
-    void logger::log_now(std::string line)
+    void logger::log(std::string line)
     {
         m_main_out.WriteLine("[" + get_current_date_time_string(true) + "] " + line);
+    }
+
+    void logger::log_debug(std::string line)
+    {
+#ifdef _DEBUG
+        m_main_out.WriteLine("[" + get_current_date_time_string(true) + "] " + line);
+#endif
     }
 
     void logger::set_working_directory()

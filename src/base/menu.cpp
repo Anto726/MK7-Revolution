@@ -31,6 +31,12 @@ namespace base
 
     void menu::create()
     {
+#ifdef _DEBUG
+        if (auto debug = new MenuFolder("Debug"))
+        {
+            *m_plugin_menu += debug;
+        }
+#endif
     }
 
     void menu::finalize()

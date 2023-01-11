@@ -9,7 +9,8 @@ namespace base
 		explicit logger();
 		~logger();
 		
-		void log_now(std::string line);
+		void log(std::string line);
+		void log_debug(std::string line);
 
 		static void set_working_directory();
 
