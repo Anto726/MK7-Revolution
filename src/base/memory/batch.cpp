@@ -23,14 +23,14 @@ namespace base::memory
 				if (e.m_callback)
 				{
 					std::invoke(std::move(e.m_callback), handle);
-					g_logger->log_debug(Utils::Format("Batch entry '%s' (0x%X) found.", e.m_name.c_str(), &handle.as<u32 &>()));
+					g_logger->log_debug("Batch entry '{}' ({}) found.", e.m_name, handle.as<void *>());
 					
 					continue;
 				}
 			}
 
 			all_found = false;
-			g_logger->log(Utils::Format("Failed to find batch entry '%s'.", e.m_name.c_str()));
+			g_logger->log("Failed to find batch entry '{}'.", e.m_name);
 		}
 
 		m_entries.clear();

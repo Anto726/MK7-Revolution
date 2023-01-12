@@ -13,7 +13,8 @@ TARGET		:= 	$(notdir $(CURDIR))
 PLGINFO 	:= 	CTRPF.plgInfo
 
 BUILD		:= 	build
-INCLUDES	:= 	include
+INCLUDES	:= 	include \
+				vendor/fmt/include
 SOURCES 	:= 	src \
 				src/base \
 				src/base/hooking \
@@ -27,9 +28,9 @@ ARCH		:=	-march=armv6k -mtune=mpcore -mfloat-abi=hard -mtp=soft
 CFLAGS		:=	$(ARCH) -Os -mword-relocations \
 				-fomit-frame-pointer -ffunction-sections -fno-strict-aliasing
 
-CFLAGS		+=	$(INCLUDE) -D__3DS__ # -D_DEBUG
+CFLAGS		+=	$(INCLUDE) -D__3DS__ -DFMT_HEADER_ONLY #-D_DEBUG
 
-CXXFLAGS	:= $(CFLAGS) -fno-rtti -fno-exceptions -std=gnu++17
+CXXFLAGS	:= $(CFLAGS) -fno-rtti -fno-exceptions -std=gnu++20
 
 ASFLAGS		:=	$(ARCH)
 LDFLAGS		:= -T $(TOPDIR)/3gx.ld $(ARCH) -Os -Wl,--gc-sections,--strip-discarded,--strip-debug
