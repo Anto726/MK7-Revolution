@@ -14,6 +14,7 @@ PLGINFO 	:= 	CTRPF.plgInfo
 
 BUILD		:= 	build
 INCLUDES	:= 	include \
+				vendor/fmt/include \
 				vendor/mk7-memory/include \
 				vendor/mk7-memory/vendor/sead/include
 SOURCES 	:= 	src \
@@ -30,9 +31,9 @@ ARCH		:=	-march=armv6k -mtune=mpcore -mfloat-abi=hard -mtp=soft
 CFLAGS		:=	$(ARCH) -Os -mword-relocations \
 				-fomit-frame-pointer -ffunction-sections -fno-strict-aliasing
 
-CFLAGS		+=	$(INCLUDE) -D__3DS__
+CFLAGS		+=	$(INCLUDE) -D__3DS__ -DFMT_HEADER_ONLY #-D_DEBUG
 
-CXXFLAGS	:= $(CFLAGS) -fno-rtti -fno-exceptions -std=gnu++17
+CXXFLAGS	:= $(CFLAGS) -fno-rtti -fno-exceptions -std=gnu++20
 
 ASFLAGS		:=	$(ARCH)
 LDFLAGS		:= -T $(TOPDIR)/3gx.ld $(ARCH) -Os -Wl,--gc-sections,--strip-discarded,--strip-debug

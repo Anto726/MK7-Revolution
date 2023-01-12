@@ -7,7 +7,11 @@
 #define MAJOR_VERSION       0
 #define MINOR_VERSION       0
 #define REVISION_VERSION    1
+#ifdef _DEBUG
+#define NAME                "Revolution (Debug)"
+#else
 #define NAME                "Revolution"
+#endif
 #define ABOUT               NAME " is a plugin for Mario Kart 7. Strictly for educational purposes."
 
 namespace base

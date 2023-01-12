@@ -11,21 +11,21 @@ namespace base::hooking
 		m_name(std::move(name)),
         m_hook(std::move(Hook().InitializeForMitm(reinterpret_cast<u32>(target), reinterpret_cast<u32>(detour))))
 	{
-        g_logger->log_now(Utils::Format("Created Detour hook '%s'.", m_name.c_str()));
+        g_logger->log_debug("Detour hook '{}' created.", m_name);
 	}
 
 	detour_hook::~detour_hook()
 	{
-        g_logger->log_now(Utils::Format("Deleted Detour hook '%s'.", m_name.c_str()));
+        g_logger->log_debug("Detour hook '{}' deleted.", m_name);
 	}
 
 	void detour_hook::enable()
 	{
         if (auto result = m_hook.Enable(); result == HookResult::Success)
-            g_logger->log_now(Utils::Format("Enabled Detour hook '%s'.", m_name.c_str()));
+            g_logger->log_debug("Detour hook '{}' enabled.", m_name);
         else
         {
-            g_logger->log_now(Utils::Format("Failed to enable Detour hook '%s' at 0x%X (result: %u).", m_name.c_str(), m_hook.GetContext().callbackAddress, result));
+            g_logger->log("Failed to enable Detour hook '{}' at {} with result {}.", m_name, reinterpret_cast<void *>(m_hook.GetContext().callbackAddress), fmt::underlying(result));
             abort();
         }
 	}
@@ -33,10 +33,10 @@ namespace base::hooking
 	void detour_hook::disable()
 	{
         if (auto result = m_hook.Disable(); result == HookResult::Success)
-            g_logger->log_now(Utils::Format("Disabled Detour hook '%s'.", m_name.c_str()));
+            g_logger->log_debug("Detour hook '{}' disabled.", m_name);
         else
         {
-            g_logger->log_now(Utils::Format("Failed to disable Detour hook '%s' at 0x%X (result: %u).", m_name.c_str(), m_hook.GetContext().callbackAddress, result));
+            g_logger->log("Failed to disable Detour hook '{}' at {} with result {}.", m_name, reinterpret_cast<void *>(m_hook.GetContext().callbackAddress), fmt::underlying(result));
             abort();
         }
 	}
