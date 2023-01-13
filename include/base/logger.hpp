@@ -1,6 +1,4 @@
 #pragma once
-#include <CTRPluginFramework.hpp>
-
 #include <fmt/format.h>
 
 namespace base
@@ -8,8 +6,8 @@ namespace base
 	class logger
 	{
 	public:
-		explicit logger();
-		~logger();
+		explicit logger() = default;
+		~logger() = default;
 		
 		template <typename ...args_t>
 		void log(fmt::format_string<args_t ...>, args_t &&...);
@@ -17,19 +15,17 @@ namespace base
 		template <typename ...args_t>
 		void log_debug(fmt::format_string<args_t ...>, args_t &&...);
 
-		static void set_working_directory();
+		static std::string get_current_date_time_string(bool human_readable);
 
 	private:
-		std::string get_current_date_time_string(bool = false);
-
-		CTRPluginFramework::File m_main_out;
+		void log_impl(std::string);
 	};
 
 	template <typename ...args_t>
     inline void logger::log(fmt::format_string<args_t ...> fmt, args_t &&...args)
     {
-        auto res = fmt::format(fmt,  std::forward<args_t>(args)...);
-        m_main_out.WriteLine("[" + get_current_date_time_string(true) + "] " + res);
+        auto str = fmt::format(fmt,  std::forward<args_t>(args)...);
+        log_impl(str);
     }
 
     template <typename ...args_t>
@@ -40,5 +36,5 @@ namespace base
 #endif
     }
 
-	inline logger *g_logger{};
+	inline logger g_logger;
 }
