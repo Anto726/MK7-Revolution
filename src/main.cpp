@@ -2,6 +2,7 @@
 
 #include <base/files.hpp>
 #include <base/logger.hpp>
+#include <base/settings.hpp>
 #include <base/menu.hpp>
 #include <base/pointers.hpp>
 #include <base/hooks.hpp>
@@ -16,6 +17,9 @@ namespace CTRPluginFramework
 
         auto files_instance = std::make_unique<files>();
         g_logger.log("Greetings from " NAME "!");
+
+        g_settings.load();
+        g_logger.log("Settings loaded.");
 
         auto menu_instance = std::make_unique<menu>();
         g_logger.log("CTRPluginFramework menu created.");
@@ -43,6 +47,9 @@ namespace CTRPluginFramework
 
         menu_instance.reset();
         g_logger.log("CTRPluginFramework menu deleted.");
+
+        g_settings.store();
+        g_logger.log("Settings stored.");
 
         g_logger.log("Farewell!");
         files_instance.reset();

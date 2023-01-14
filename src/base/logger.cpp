@@ -2,7 +2,7 @@
 
 #include <base/files.hpp>
 
-#include <sys/iosupport.h>
+#include <3ds/os.h>
 
 namespace base
 {
@@ -28,6 +28,6 @@ namespace base
 
     void logger::log_impl(std::string str)
     {
-        g_files->get_main_out().WriteLine("[" + logger::get_current_date_time_string(true) + "] " + str);
+        g_files->m_logger_file.WriteLine("[" + logger::get_current_date_time_string(true) + "] " + str);
     }
 }

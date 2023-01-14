@@ -9,12 +9,10 @@ namespace base
 		explicit files();
 		~files();
 
-		inline CTRPluginFramework::File get_main_out() const { return m_main_out; }
-
 		static void set_working_directory();
 
-	private:
-		CTRPluginFramework::File m_main_out;
+		CTRPluginFramework::File m_logger_file;
+		std::string m_settings_path;
 	};
 
 	inline files *g_files{};

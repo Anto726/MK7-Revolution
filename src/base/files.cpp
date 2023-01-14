@@ -10,16 +10,18 @@ namespace base
 	using namespace CTRPluginFramework;
 
 	files::files()
+    :
+        m_settings_path("settings.json")
 	{
-        auto main_log_path = logger::get_current_date_time_string(false) + ".log";
+        auto logger_path = logger::get_current_date_time_string(false) + ".log";
         
         // Create the logs folder
         if (!Directory::IsExists(LOGS_PATH))
             Directory::Create(LOGS_PATH);
 
-        // Create the log file
-        main_log_path = LOGS_PATH + std::string("/") + main_log_path;
-        if (File::Open(m_main_out, main_log_path, File::Mode::WRITE | File::Mode::CREATE | File::Mode::SYNC) != File::OPResult::SUCCESS)
+        // Create the logger file
+        logger_path = LOGS_PATH + std::string("/") + logger_path;
+        if (File::Open(m_logger_file, logger_path, File::Mode::WRITE | File::Mode::CREATE | File::Mode::SYNC) != File::OPResult::SUCCESS)
             abort();
 
         g_files = this;
@@ -29,7 +31,7 @@ namespace base
 	{
         g_files = nullptr;
 
-		m_main_out.Close();
+		m_logger_file.Close();
 	}
 
 	void files::set_working_directory()
