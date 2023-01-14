@@ -3,6 +3,11 @@
 	url = https://github.com/fmtlib/fmt
 	ignore = dirty
 
+[submodule "vendor/json"]
+	path = vendor/json
+	url = https://github.com/nlohmann/json
+	ignore = dirty
+
 [submodule "vendor/mk7-memory"]
 	path = vendor/mk7-memory
 	url = https://github.com/Anto726/MK7-Memory

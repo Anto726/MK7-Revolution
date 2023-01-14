@@ -15,6 +15,7 @@ PLGINFO 	:= 	CTRPF.plgInfo
 BUILD		:= 	build
 INCLUDES	:= 	include \
 				vendor/fmt/include \
+				vendor/json/single_include \
 				vendor/mk7-memory/include \
 				vendor/mk7-memory/vendor/sead/include
 SOURCES 	:= 	src \
@@ -26,20 +27,19 @@ SOURCES 	:= 	src \
 #---------------------------------------------------------------------------------
 # options for code generation
 #---------------------------------------------------------------------------------
-ARCH		:=	-march=armv6k -mtune=mpcore -mfloat-abi=hard -mtp=soft
+ARCH		:= -march=armv6k -mtune=mpcore -mfloat-abi=hard -mtp=soft
 
-CFLAGS		:=	$(ARCH) -Os -mword-relocations \
-				-fomit-frame-pointer -ffunction-sections -fno-strict-aliasing
+CFLAGS		:= $(ARCH) -Os -mword-relocations -fomit-frame-pointer -ffunction-sections -fno-strict-aliasing -Wno-psabi
 
-CFLAGS		+=	$(INCLUDE) -D__3DS__ -DFMT_HEADER_ONLY #-D_DEBUG
+CFLAGS		+= $(INCLUDE) -D__3DS__ -DFMT_HEADER_ONLY #-D_DEBUG
 
 CXXFLAGS	:= $(CFLAGS) -fno-rtti -fno-exceptions -std=gnu++20
 
-ASFLAGS		:=	$(ARCH)
+ASFLAGS		:= $(ARCH)
 LDFLAGS		:= -T $(TOPDIR)/3gx.ld $(ARCH) -Os -Wl,--gc-sections,--strip-discarded,--strip-debug
 
 LIBS		:= -lctrpf -lctru
-LIBDIRS		:= 	$(CTRPFLIB) $(CTRULIB) $(PORTLIBS)
+LIBDIRS		:= $(CTRPFLIB) $(CTRULIB) $(PORTLIBS)
 
 #---------------------------------------------------------------------------------
 # no real need to edit anything past this point unless you need to add additional

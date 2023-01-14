@@ -12,8 +12,6 @@ namespace base::memory
 
 	void batch::run(range range)
 	{
-		using namespace CTRPluginFramework;
-
 		bool all_found = true;
 
 		for (auto const &e : m_entries)
@@ -23,14 +21,14 @@ namespace base::memory
 				if (e.m_callback)
 				{
 					std::invoke(std::move(e.m_callback), handle);
-					g_logger->log_debug("Batch entry '{}' ({}) found.", e.m_name, handle.as<void *>());
+					g_logger.log_debug("Batch entry '{}' ({}) found.", e.m_name, handle.as<void *>());
 					
 					continue;
 				}
 			}
 
 			all_found = false;
-			g_logger->log("Failed to find batch entry '{}'.", e.m_name);
+			g_logger.log("Failed to find batch entry '{}'.", e.m_name);
 		}
 
 		m_entries.clear();

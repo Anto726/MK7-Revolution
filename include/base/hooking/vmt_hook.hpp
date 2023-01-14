@@ -1,8 +1,8 @@
 #pragma once
-
-#include <string>
 #include <types.h> // size_t
-#include <memory> // unique_ptr
+
+#include <string> // std::string
+#include <memory> // std::unique_ptr
 
 namespace base::hooking
 {
