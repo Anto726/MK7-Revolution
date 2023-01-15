@@ -3,8 +3,7 @@
 #include <base/menu.hpp>
 #include <base/pointers.hpp>
 
-// Could be read from the game
-#define THRESHOLD 1
+#define THRESHOLD 4
 
 namespace base
 {
