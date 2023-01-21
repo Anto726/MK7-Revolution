@@ -5,6 +5,8 @@
 
 #include <Item/eItemSlot.hpp>
 
+#include <base/settings.hpp>
+
 namespace base
 {
     using namespace CTRPluginFramework;
@@ -27,6 +29,7 @@ namespace base
     {
         m_plugin_menu->SynchronizeWithFrame(true);
         m_plugin_menu->ShowWelcomeMessage(false);
+        m_plugin_menu->OnClosing = []() { g_settings.store(); };
 
         create();
         finalize();

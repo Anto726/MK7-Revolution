@@ -8,7 +8,7 @@ Any version, revision, or region of the game is supported.
 ## Build
 - [git](https://git-scm.com/downloads)
 - [devkitPro](https://github.com/devkitPro/installer/releases)
-- [CTRPluginFramework](https://gitlab.com/thepixellizeross/ctrpluginframework/-/releases)
+- [CTRPluginFramework](https://gitlab.com/thepixellizeross/ctrpluginframework/-/pipelines)
 - [3gxtool](https://gitlab.com/thepixellizeross/3gxtool/-/releases)
 
 1. Clone the repository locally by running `git clone <repo url> --recurse-submodules`.
