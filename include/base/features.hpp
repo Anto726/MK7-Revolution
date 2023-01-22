@@ -1,6 +1,9 @@
 #pragma once
 
-namespace base::features
+namespace base
 {
-	
+	struct features
+	{
+
+	};
 }
