@@ -20,6 +20,9 @@ INCLUDES	:= 	include \
 				vendor/mk7-memory/vendor/sead/include
 SOURCES 	:= 	src \
 				src/base \
+				src/base/features/item \
+				src/base/features/kart \
+				src/base/features/network \
 				src/base/hook_funcs \
 				src/base/hooking \
 				src/base/memory

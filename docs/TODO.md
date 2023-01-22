@@ -10,6 +10,8 @@ The following document shows a list of ideas that may get implemented in the fut
 - [ ] No Lightning Flash
 
 ### Kart
+- [x] Intangibility
+	- [ ] Modes (Kart, Item, Object)
 - [x] Invincibility
 - [x] Blinking Invincibility
 - [x] Infinite Star
@@ -23,6 +25,7 @@ The following document shows a list of ideas that may get implemented in the fut
 
 ### Mode
 - [ ] Drive During Countdown
+- [ ] Drive Out Of Bounds
 - [ ] Trigger Respawn
 - [ ] Instant Respawn
 - [ ] Disable Respawn Black Screen

@@ -2,7 +2,7 @@
 
 #include <CTRPluginFramework.hpp>
 
-#include "hook_funcs.hpp"
+#include "features.hpp"
 
 #define MAJOR_VERSION       0
 #define MINOR_VERSION       0
@@ -18,7 +18,7 @@ namespace base
 {
     class menu
     {
-        friend hook_funcs;
+        friend features;
 
     public:
 		explicit menu();
