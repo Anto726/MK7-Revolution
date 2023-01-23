@@ -27,7 +27,7 @@ namespace base::memory
 		template <typename T>
 		handle sub(T offset);
 
-		handle rip();
+		handle jmp();
 
 		explicit operator bool();
 
@@ -78,9 +78,9 @@ namespace base::memory
 		return handle(as<std::uintptr_t>() - offset);
 	}
 
-	inline handle handle::rip()
+	inline handle handle::jmp()
 	{
-		return add(as<std::int32_t &>()).add(4);
+		return add((((as<std::int32_t &>() & 0xFFFFFF) << 2) << 6) >> 6).add(8);
 	}
 
 	inline handle::operator bool()
