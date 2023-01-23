@@ -31,6 +31,12 @@ namespace base
     private:
         void create();
         void finalize();
+        
+        inline static std::map<bool, std::string> m_toggles =
+        {
+            { false, (CTRPluginFramework::Color(255, 0, 0) << "OFF") + (CTRPluginFramework::Color::White << "") },
+            { true, (CTRPluginFramework::Color(0, 255, 0) << "ON") + (CTRPluginFramework::Color::White << "") }
+        };
 
         CTRPluginFramework::PluginMenu *m_plugin_menu;
 
@@ -41,19 +47,13 @@ namespace base
         CTRPluginFramework::MenuEntry *m_invincibility_entry;
         CTRPluginFramework::MenuEntry *m_blinking_invincibility_entry;
         CTRPluginFramework::MenuEntry *m_intangibility_entry;
-        CTRPluginFramework::MenuEntry *m_infinite_star;
-        CTRPluginFramework::MenuEntry *m_infinite_ink;
-        CTRPluginFramework::MenuEntry *m_infinite_thunder;
-        CTRPluginFramework::MenuEntry *m_infinite_press;
+        CTRPluginFramework::MenuEntry *m_infinite_star_entry;
+        CTRPluginFramework::MenuEntry *m_infinite_ink_entry;
+        CTRPluginFramework::MenuEntry *m_infinite_thunder_entry;
+        CTRPluginFramework::MenuEntry *m_infinite_press_entry;
 
         // Network
         CTRPluginFramework::MenuEntry *m_no_disconnect_entry;
-
-        inline static std::map<bool, std::string> m_toggles =
-        {
-            { false, (CTRPluginFramework::Color(255, 0, 0) << "OFF") + (CTRPluginFramework::Color::White << "") },
-            { true, (CTRPluginFramework::Color(0, 255, 0) << "ON") + (CTRPluginFramework::Color::White << "") }
-        };
     };
 
     inline menu *g_menu{};

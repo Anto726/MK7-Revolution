@@ -10,7 +10,7 @@ namespace base
 {
 	void features::kart::infinite_press(Kart::Unit *_this)
 	{
-		if (g_menu->m_infinite_press->IsActivated())
+		if (g_menu->m_infinite_press_entry->IsActivated())
 			if (_this->m_vehicle->m_is_master && !_this->m_vehicle->m_is_net_recv)
 				if (_this->m_vehicle->m_press_frames <= STATUS_THRESHOLD)
 				{
