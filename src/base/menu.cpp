@@ -94,5 +94,33 @@ namespace base
             SIZE_MAX,
             { Item::eItemSlot::Banana, Item::eItemSlot::KouraG, Item::eItemSlot::KouraR, Item::eItemSlot::Kinoko, Item::eItemSlot::Bomhei, Item::eItemSlot::Gesso, Item::eItemSlot::KouraB, Item::eItemSlot::Kinoko3, Item::eItemSlot::Star, Item::eItemSlot::Killer, Item::eItemSlot::Thunder, Item::eItemSlot::KinokoP, Item::eItemSlot::Flower, Item::eItemSlot::Konoha, Item::eItemSlot::Seven, Item::eItemSlot::Banana3, Item::eItemSlot::KouraG3, Item::eItemSlot::KouraR3, Item::eItemSlot::Empty }
         };
+
+        m_intangibility_entry->SetMenuFunc([](MenuEntry *entry)
+        {
+            Keyboard keyboard;
+            bool *invert;
+            int choice;
+
+            keyboard.DisplayTopScreen = true;
+            keyboard.GetMessage() = entry->Name();
+            invert = g_settings.m_options["kart"]["intangibility"]["invert"].get<bool *>();
+
+            do
+            {
+                keyboard.Populate(std::vector<std::string>
+                {
+                    "Invert: " + m_toggles[*invert],
+                });
+
+                choice = keyboard.Open();
+
+                switch (choice)
+                {
+                    case 0: *invert ^= true; break;
+                    default: break;
+                }
+            }
+            while (choice >= 0);
+        });
     }
 }

@@ -4,6 +4,8 @@
 
 #include "features.hpp"
 
+#include <map>
+
 #define MAJOR_VERSION       0
 #define MINOR_VERSION       0
 #define REVISION_VERSION    1
@@ -46,6 +48,12 @@ namespace base
 
         // Network
         CTRPluginFramework::MenuEntry *m_no_disconnect_entry;
+
+        inline static std::map<bool, std::string> m_toggles =
+        {
+            { false, (CTRPluginFramework::Color(255, 0, 0) << "OFF") + (CTRPluginFramework::Color::White << "") },
+            { true, (CTRPluginFramework::Color(0, 255, 0) << "ON") + (CTRPluginFramework::Color::White << "") }
+        };
     };
 
     inline menu *g_menu{};

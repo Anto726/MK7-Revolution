@@ -20,6 +20,13 @@ namespace base
 
 		nlohmann::json const m_default_options =
 		R"({
+			"kart":
+			{
+				"intangibility":
+				{
+					"invert": false
+				}
+			}
 		})"_json;
 	};
 
