@@ -21,9 +21,9 @@ namespace base
     private:
         hooking::vmt_hook m_Item_KartItem;
 
-        hooking::detour_hook m_Kart_VehicleMove_calcMoveControlCommon;
-        hooking::detour_hook m_Kart_VehicleMove_calcStarInkThunderPress;
-        hooking::detour_hook m_Kart_VehicleReact_calcReact;
+        hooking::detour_hook m_Kart_Unit_calcMove;
+        hooking::detour_hook m_Kart_Unit_calcReact;
+        
         hooking::detour_hook m_Kart_VehicleReact_reactAccidentCommon;
 
         hooking::detour_hook m_RaceSys_LapRankChecker_calcLapPosition;

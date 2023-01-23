@@ -12,9 +12,9 @@ namespace base
 	public:
 		void *m_Item_KartItem;
 
-		void *m_Kart_VehicleMove_calcMoveControlCommon;
-		void *m_Kart_VehicleMove_calcStarInkThunderPress;
-		void *m_Kart_VehicleReact_calcReact;
+		void *m_Kart_Unit_calcMove;
+		void *m_Kart_Unit_calcReact;
+
 		void *m_Kart_VehicleReact_reactAccidentCommon;
 
 		void *m_RaceSys_LapRankChecker_calcLapPosition;

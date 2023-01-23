@@ -13,16 +13,16 @@ namespace base
 
 		struct kart
 		{
-			static void blinking_invincibility(Kart::VehicleMove *);
-			static void infinite_ink(Kart::VehicleMove *);
-			static void infinite_press(Kart::VehicleMove *);
-			static void infinite_star(Kart::VehicleMove *);
-			static void infinite_thunder(Kart::VehicleMove *);
-			static void intangibility_after(Kart::VehicleReact *, bool);
-			static bool intangibility_before(Kart::VehicleReact *);
+			static void blinking_invincibility(Kart::Unit *);
+			static void infinite_ink(Kart::Unit *);
+			static void infinite_press(Kart::Unit *);
+			static void infinite_star(Kart::Unit *);
+			static void infinite_thunder(Kart::Unit *);
+			static void intangibility_after(Kart::Unit *, bool);
+			static bool intangibility_before(Kart::Unit *);
 			static bool invincibility(Kart::VehicleReact *);
 
-			static const s32 STATUS_THRESHOLD = 1 << 2;
+			static constexpr s32 STATUS_THRESHOLD = 1 << 2;
 		};
 
 		struct network

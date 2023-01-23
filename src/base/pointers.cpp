@@ -16,24 +16,14 @@ namespace base
 			m_Item_KartItem = handle.add(0x10).as<decltype(m_Item_KartItem)>();
 		});
 
-		batch.add("Kart::VehicleMove::calcMoveControlCommon", "F0 4F 2D E9 01 6A 80 E2 00 40 A0 E1 04 8B 2D ED", [this](memory::handle handle)
+		batch.add("Kart::Director", "04 00 A0 E1 24 50 84 E5 70 80 BD E8", [this](memory::handle handle)
 		{
-			m_Kart_VehicleMove_calcMoveControlCommon = handle.as<decltype(m_Kart_VehicleMove_calcMoveControlCommon)>();
+			auto Kart_Director = *handle.add(0xC).as<void ***>();
+			auto Kart_Director_calcBeforeStructure = Kart_Director[22];
 
-			memory::handle hnd(*handle.add(0x410).as<void **>());
-			m_invincibility_frames_invisible_amount = hnd.add(0x230).as<decltype(m_invincibility_frames_invisible_amount)>();
-			m_invincibility_frames_visible_amount = hnd.add(0x234).as<decltype(m_invincibility_frames_visible_amount)>();
-			m_press_frames_kart_size = hnd.add(0x2CC).as<decltype(m_press_frames_kart_size)>();
-		});
-
-		batch.add("Kart::VehicleMove::calcStarInkThunderPress", "F0 41 2D E9 00 40 A0 E1 03 0B 80 E2 F4 1F 94 E5", [this](memory::handle handle)
-		{
-			m_Kart_VehicleMove_calcStarInkThunderPress = handle.as<decltype(m_Kart_VehicleMove_calcStarInkThunderPress)>();
-		});
-
-		batch.add("Kart::VehicleReact::calcReact", "F0 4F 2D E9 00 40 A0 E1 03 9B 80 E2 B5 0A 9F ED", [this](memory::handle handle)
-		{
-			m_Kart_VehicleReact_calcReact = handle.as<decltype(m_Kart_VehicleReact_calcReact)>();
+			memory::handle hnd(Kart_Director_calcBeforeStructure);
+			m_Kart_Unit_calcMove = hnd.add(0x224).jmp().as<decltype(m_Kart_Unit_calcMove)>();
+			m_Kart_Unit_calcReact = hnd.add(0x1E8).jmp().as<decltype(m_Kart_Unit_calcReact)>();
 		});
 
 		batch.add("Kart::VehicleReact::reactAccidentCommon", "FF 4F 2D E9 0C D0 4D E2 00 40 A0 E1 01 5A 84 E2", [this](memory::handle handle)
@@ -44,6 +34,14 @@ namespace base
 		batch.add("RaceSys::LapRankChecker::calcLapPosition_", "F0 4F 2D E9 01 40 A0 E1 00 50 A0 E1 02 8B 2D ED", [this](memory::handle handle)
 		{
 			m_RaceSys_LapRankChecker_calcLapPosition = handle.as<decltype(m_RaceSys_LapRankChecker_calcLapPosition)>();
+		});
+
+		batch.add("Data", "F0 4F 2D E9 01 6A 80 E2 00 40 A0 E1 04 8B 2D ED", [this](memory::handle handle)
+		{
+			memory::handle hnd(*handle.add(0x410).as<void **>());
+			m_invincibility_frames_invisible_amount = hnd.add(0x230).as<decltype(m_invincibility_frames_invisible_amount)>();
+			m_invincibility_frames_visible_amount = hnd.add(0x234).as<decltype(m_invincibility_frames_visible_amount)>();
+			m_press_frames_kart_size = hnd.add(0x2CC).as<decltype(m_press_frames_kart_size)>();
 		});
 		
 		batch.run(memory::range(memory::handle(TEXT_BASE), CTRPluginFramework::Process::GetTextSize()));

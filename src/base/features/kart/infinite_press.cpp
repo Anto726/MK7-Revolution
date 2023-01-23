@@ -3,18 +3,19 @@
 #include <base/menu.hpp>
 #include <base/pointers.hpp>
 
-#include <Kart/VehicleMove.hpp>
+#include <Kart/Unit.hpp>
+#include <Kart/Vehicle.hpp>
 
 namespace base
 {
-	void features::kart::infinite_press(Kart::VehicleMove *_this)
+	void features::kart::infinite_press(Kart::Unit *_this)
 	{
 		if (g_menu->m_infinite_press->IsActivated())
-			if (_this->m_is_master && !_this->m_is_net_recv)
-				if (_this->m_press_frames <= STATUS_THRESHOLD)
+			if (_this->m_vehicle->m_is_master && !_this->m_vehicle->m_is_net_recv)
+				if (_this->m_vehicle->m_press_frames <= STATUS_THRESHOLD)
 				{
-					_this->m_press_frames = STATUS_THRESHOLD + 1;
-					_this->m_press_size = *g_pointers->m_press_frames_kart_size;
+					_this->m_vehicle->m_press_frames = STATUS_THRESHOLD + 1;
+					_this->m_vehicle->m_press_size = *g_pointers->m_press_frames_kart_size;
 				}
 	}
 }

@@ -2,15 +2,16 @@
 
 #include <base/menu.hpp>
 
-#include <Kart/VehicleMove.hpp>
+#include <Kart/Unit.hpp>
+#include <Kart/Vehicle.hpp>
 
 namespace base
 {
-	void features::kart::infinite_ink(Kart::VehicleMove *_this)
+	void features::kart::infinite_ink(Kart::Unit *_this)
 	{
 		if (g_menu->m_infinite_ink->IsActivated())
-			if (_this->m_is_master && !_this->m_is_net_recv)
-				if (_this->m_ink_frames <= STATUS_THRESHOLD)
-					_this->m_ink_frames = STATUS_THRESHOLD + 1;
+			if (_this->m_vehicle->m_is_master && !_this->m_vehicle->m_is_net_recv)
+				if (_this->m_vehicle->m_ink_frames <= STATUS_THRESHOLD)
+					_this->m_vehicle->m_ink_frames = STATUS_THRESHOLD + 1;
 	}
 }
