@@ -28,6 +28,8 @@ namespace base
 
 			if (additions.size() != 0 || removals.size() != 0)
 				return store();
+
+			return true;
 		}
 
 		return reset();
