@@ -24,6 +24,7 @@ namespace base
         m_infinite_ink_entry(new MenuEntry("Infinite Ink", [](MenuEntry *) {})),
         m_infinite_thunder_entry(new MenuEntry("Infinite Thunder", [](MenuEntry *) {})),
         m_infinite_press_entry(new MenuEntry("Infinite Press", [](MenuEntry *) {})),
+        m_instant_respawn_entry(new MenuEntry("Instant Respawn", [](MenuEntry *) {})),
 
         m_no_disconnect_entry(new MenuEntry("No Disconnect", [](MenuEntry *) {}))
     {
@@ -67,6 +68,7 @@ namespace base
             *kart += m_infinite_ink_entry;
             *kart += m_infinite_thunder_entry;
             *kart += m_infinite_press_entry;
+            *kart += m_instant_respawn_entry;
 
             *m_plugin_menu += kart;
         }

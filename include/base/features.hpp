@@ -21,6 +21,7 @@ namespace base
 			static void intangibility_after(Kart::Unit *, bool);
 			static bool intangibility_before(Kart::Unit *);
 			static bool invincibility(Kart::VehicleReact *);
+			static void instant_respawn(Kart::Unit *);
 
 			static constexpr s32 STATUS_THRESHOLD = 1 << 2;
 		};

@@ -15,6 +15,7 @@ The following document shows a list of ideas that may get implemented in the fut
 - [x] Invincibility
 - [x] Blinking Invincibility
 - [x] Infinite Star
+- [x] Instant Respawn
 - [ ] Micro Kart
 - [ ] Moon Jump
 - [ ] Free Fly
@@ -27,7 +28,6 @@ The following document shows a list of ideas that may get implemented in the fut
 - [ ] Drive During Countdown
 - [ ] Drive Out Of Bounds
 - [ ] Trigger Respawn
-- [ ] Instant Respawn
 - [ ] Disable Respawn Black Screen
 - [ ] Disable Lakitu
 - [ ] Coin Modifier

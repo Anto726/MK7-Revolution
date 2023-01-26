@@ -51,6 +51,7 @@ namespace base
         CTRPluginFramework::MenuEntry *m_infinite_ink_entry;
         CTRPluginFramework::MenuEntry *m_infinite_thunder_entry;
         CTRPluginFramework::MenuEntry *m_infinite_press_entry;
+        CTRPluginFramework::MenuEntry *m_instant_respawn_entry;
 
         // Network
         CTRPluginFramework::MenuEntry *m_no_disconnect_entry;
