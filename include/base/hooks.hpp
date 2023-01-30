@@ -15,8 +15,13 @@ namespace base
 		explicit hooks();
 		~hooks();
 
+        inline bool is_enabled() const { return m_enabled; }
+
         void enable();
 		void disable();
+
+    private:
+        bool m_enabled{};
     };
 
     inline hooks *g_hooks{};

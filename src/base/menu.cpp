@@ -1,5 +1,7 @@
 #include <base/menu.hpp>
 
+#include <base/entries.hpp>
+#include <base/hooks.hpp>
 #include <base/settings.hpp>
 
 namespace base
@@ -37,6 +39,8 @@ namespace base
 #ifdef _DEBUG
         if (auto debug = new MenuFolder("Debug"))
         {
+            *debug += new MenuEntry(g_hooks->is_enabled() ? "Disable hooks" : "Enable hooks", nullptr, entries::debug::toggle_hooks);
+
             *m_plugin_menu += debug;
         }
 #endif
