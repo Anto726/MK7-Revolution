@@ -1,6 +1,5 @@
 #include <base/memory/batch.hpp>
 
-#include <base/memory/range.hpp>
 #include <base/logger.hpp>
 
 namespace base::memory
@@ -12,28 +11,48 @@ namespace base::memory
 
 	void batch::run(range range)
 	{
-		bool all_found = true;
+		bool failed = false;
 
-		for (auto const &e : m_entries)
+		std::vector<task_arg> task_args;
+		std::vector<CTRPluginFramework::Task> tasks;
+
+		task_args.reserve(m_entries.size());
+		tasks.reserve(task_args.size());
+
+		for (auto const &entry : m_entries)
 		{
-			if (auto handle = range.scan(e.m_pattern))
-			{
-				if (e.m_callback)
-				{
-					std::invoke(std::move(e.m_callback), handle);
-					g_logger.log_debug("Batch entry '{}' ({}) found.", e.m_name, handle.as<void *>());
-					
-					continue;
-				}
-			}
-
-			all_found = false;
-			g_logger.log("Failed to find batch entry '{}'.", e.m_name);
+			task_args.emplace_back(range, entry);
+			tasks.emplace_back(task_func, &task_args.back());
 		}
+
+		for (auto const &task : tasks)
+			task.Start();
+
+		for (auto const &task : tasks)
+			failed |= task.Wait();
 
 		m_entries.clear();
 
-		if (!all_found)
+		if (failed)
 			abort();
+	}
+
+	s32 batch::task_func(void *p)
+	{
+		auto arg = static_cast<task_arg *>(p);
+
+		if (auto handle = arg->m_range.scan(arg->m_entry.m_pattern))
+		{
+			if (arg->m_entry.m_callback)
+			{
+				std::invoke(std::move(arg->m_entry.m_callback), handle);
+
+				base::g_logger.log_debug("Batch entry '{}' ({}) found.", arg->m_entry.m_name, handle.as<void *>());
+				return 0;
+			}
+		}
+
+		base::g_logger.log("Failed to find batch entry '{}'.", arg->m_entry.m_name);
+		return 1;
 	}
 }

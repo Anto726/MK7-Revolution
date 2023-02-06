@@ -24,6 +24,9 @@ namespace base
 	hooks::~hooks()
 	{
 		g_hooks = nullptr;
+
+		if (m_enabled)
+			disable();
 	}
 
     void hooks::enable()
@@ -36,10 +39,14 @@ namespace base
 		m_Kart_VehicleReact_reactAccidentCommon.enable();
 
 		m_RaceSys_LapRankChecker_calcLapPosition.enable();
+		
+		m_enabled = true;
 	}
 
 	void hooks::disable()
 	{
+		m_enabled = false;
+		
 		m_RaceSys_LapRankChecker_calcLapPosition.disable();
 
 		m_Kart_VehicleReact_reactAccidentCommon.disable();

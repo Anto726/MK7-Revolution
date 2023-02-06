@@ -1,10 +1,11 @@
 #pragma once
 
 #include "pattern.hpp"
+#include "range.hpp"
 
-#include <string>
 #include <functional>
-#include <vector>
+
+#include <CTRPluginFramework.hpp>
 
 namespace base::memory
 {
@@ -12,26 +13,27 @@ namespace base::memory
 	{
 	public:
 		explicit batch() = default;
-		~batch() noexcept = default;
+		~batch() = default;
 
-		void add(std::string name, pattern pattern, std::function<void(handle)> callback);
+		void add(std::string name, pattern pattern, std::function<void (handle)> callback);
 		void run(range range);
-	
+
+	private:
 		struct entry
 		{
 			std::string m_name;
 			pattern m_pattern;
-			std::function<void(handle)> m_callback;
-
-			explicit entry(std::string name, pattern pattern, std::function<void(handle)> callback)
-			:
-				m_name(std::move(name)),
-				m_pattern(std::move(pattern)),
-				m_callback(std::move(callback))
-			{}
+			std::function<void (handle)> m_callback;
 		};
-	
-	private:
+		
+		struct task_arg
+		{
+			range m_range;
+			entry m_entry;
+		};
+
+		static s32 task_func(void *);
+
 		std::vector<entry> m_entries;
 	};
 }

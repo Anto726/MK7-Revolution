@@ -20,6 +20,7 @@ INCLUDES	:= 	include \
 				vendor/mk7-memory/vendor/sead/include
 SOURCES 	:= 	src \
 				src/base \
+				src/base/entries/debug \
 				src/base/features/item \
 				src/base/features/kart \
 				src/base/features/network \
@@ -33,7 +34,6 @@ SOURCES 	:= 	src \
 ARCH		:= -march=armv6k -mtune=mpcore -mfloat-abi=hard -mtp=soft
 
 CFLAGS		:= $(ARCH) -Os -mword-relocations -fomit-frame-pointer -ffunction-sections -fno-strict-aliasing -Wno-psabi
-
 CFLAGS		+= $(INCLUDE) -D__3DS__ -DFMT_HEADER_ONLY #-D_DEBUG
 
 CXXFLAGS	:= $(CFLAGS) -fno-rtti -fno-exceptions -std=gnu++20

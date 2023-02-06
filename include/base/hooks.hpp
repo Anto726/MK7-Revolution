@@ -15,10 +15,14 @@ namespace base
 		explicit hooks();
 		~hooks();
 
+        inline bool is_enabled() const { return m_enabled; }
+
         void enable();
 		void disable();
 
     private:
+        bool m_enabled{};
+        
         hooking::vmt_hook m_Item_KartItem;
 
         hooking::detour_hook m_Kart_Unit_calcMove;
