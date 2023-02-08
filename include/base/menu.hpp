@@ -2,6 +2,7 @@
 
 #include <CTRPluginFramework.hpp>
 
+#include "entries.hpp"
 #include "features.hpp"
 
 #include <map>
@@ -20,6 +21,7 @@ namespace base
 {
     class menu
     {
+        friend entries;
         friend features;
 
     public:
@@ -32,7 +34,7 @@ namespace base
         void create();
         void finalize();
         
-        inline static std::map<bool, std::string> m_toggles =
+        inline static std::map<bool, std::string> s_toggles =
         {
             { false, (CTRPluginFramework::Color(255, 0, 0) << "OFF") + (CTRPluginFramework::Color::White << "") },
             { true, (CTRPluginFramework::Color(0, 255, 0) << "ON") + (CTRPluginFramework::Color::White << "") }
@@ -52,6 +54,7 @@ namespace base
         CTRPluginFramework::MenuEntry *m_infinite_thunder_entry;
         CTRPluginFramework::MenuEntry *m_infinite_press_entry;
         CTRPluginFramework::MenuEntry *m_instant_respawn_entry;
+        CTRPluginFramework::MenuEntry *m_instant_miniturbo_entry;
 
         // Network
         CTRPluginFramework::MenuEntry *m_no_disconnect_entry;

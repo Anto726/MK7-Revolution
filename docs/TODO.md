@@ -16,12 +16,12 @@ The following document shows a list of ideas that may get implemented in the fut
 - [x] Blinking Invincibility
 - [x] Infinite Star
 - [x] Instant Respawn
+- [x] Instant Mini-Turbo
 - [ ] Micro Kart
 - [ ] Moon Jump
 - [ ] Free Fly
 - [ ] Future Fly
 - [ ] Trick Anywhere
-- [ ] Instant Mini-Turbo
 - [ ] No Terrain Effects
 
 ### Mode

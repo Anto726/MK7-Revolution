@@ -21,6 +21,7 @@ INCLUDES	:= 	include \
 SOURCES 	:= 	src \
 				src/base \
 				src/base/entries/debug \
+				src/base/entries/kart \
 				src/base/features/item \
 				src/base/features/kart \
 				src/base/features/network \

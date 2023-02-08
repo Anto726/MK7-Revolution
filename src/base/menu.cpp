@@ -5,7 +5,6 @@
 
 #include <Item/eItemSlot.hpp>
 
-#include <base/entries.hpp>
 #include <base/hooks.hpp>
 #include <base/settings.hpp>
 
@@ -21,12 +20,13 @@ namespace base
 
         m_invincibility_entry(new MenuEntry("Invincibility", [](MenuEntry *) {})),
         m_blinking_invincibility_entry(new MenuEntry("Blinking Invincibility", [](MenuEntry *) {})),
-        m_intangibility_entry(new MenuEntry("Intangibility", [](MenuEntry *) {})),
+        m_intangibility_entry(new MenuEntry("Intangibility", [](MenuEntry *) {}, entries::kart::intangibility)),
         m_infinite_star_entry(new MenuEntry("Infinite Star", [](MenuEntry *) {})),
         m_infinite_ink_entry(new MenuEntry("Infinite Ink", [](MenuEntry *) {})),
         m_infinite_thunder_entry(new MenuEntry("Infinite Thunder", [](MenuEntry *) {})),
         m_infinite_press_entry(new MenuEntry("Infinite Press", [](MenuEntry *) {})),
         m_instant_respawn_entry(new MenuEntry("Instant Respawn", [](MenuEntry *) {})),
+        m_instant_miniturbo_entry(new MenuEntry("Instant Mini-Turbo", [](MenuEntry *) {}, entries::kart::instant_miniturbo)),
 
         m_no_disconnect_entry(new MenuEntry("No Disconnect", [](MenuEntry *) {}))
     {
@@ -71,6 +71,7 @@ namespace base
             *kart += m_infinite_thunder_entry;
             *kart += m_infinite_press_entry;
             *kart += m_instant_respawn_entry;
+            *kart += m_instant_miniturbo_entry;
 
             *m_plugin_menu += kart;
         }
@@ -100,33 +101,5 @@ namespace base
             SIZE_MAX,
             { Item::eItemSlot::Banana, Item::eItemSlot::KouraG, Item::eItemSlot::KouraR, Item::eItemSlot::Kinoko, Item::eItemSlot::Bomhei, Item::eItemSlot::Gesso, Item::eItemSlot::KouraB, Item::eItemSlot::Kinoko3, Item::eItemSlot::Star, Item::eItemSlot::Killer, Item::eItemSlot::Thunder, Item::eItemSlot::KinokoP, Item::eItemSlot::Flower, Item::eItemSlot::Konoha, Item::eItemSlot::Seven, Item::eItemSlot::Banana3, Item::eItemSlot::KouraG3, Item::eItemSlot::KouraR3, Item::eItemSlot::Empty }
         };
-
-        m_intangibility_entry->SetMenuFunc([](MenuEntry *entry)
-        {
-            Keyboard keyboard;
-            bool *invert;
-            int choice;
-
-            keyboard.DisplayTopScreen = true;
-            keyboard.GetMessage() = entry->Name();
-            invert = g_settings.m_options["kart"]["intangibility"]["invert"].get<bool *>();
-
-            do
-            {
-                keyboard.Populate(std::vector<std::string>
-                {
-                    "Invert: " + m_toggles[*invert],
-                });
-
-                choice = keyboard.Open();
-
-                switch (choice)
-                {
-                    case 0: *invert ^= true; break;
-                    default: break;
-                }
-            }
-            while (choice >= 0);
-        });
     }
 }

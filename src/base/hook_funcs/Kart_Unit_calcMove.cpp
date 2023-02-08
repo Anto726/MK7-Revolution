@@ -12,6 +12,7 @@ namespace base
 		features::kart::infinite_press(_this);
 		auto intangibility = features::kart::intangibility_before(_this);
 		features::kart::instant_respawn(_this);
+		features::kart::instant_miniturbo(_this);
 
 		g_hooks->m_Kart_Unit_calcMove.call_original<void>(_this, a2, a3);
 

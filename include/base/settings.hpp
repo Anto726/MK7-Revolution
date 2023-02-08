@@ -25,6 +25,10 @@ namespace base
 				"intangibility":
 				{
 					"invert": false
+				},
+				"instant_miniturbo":
+				{
+					"type": 0
 				}
 			}
 		})"_json;
