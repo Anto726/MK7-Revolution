@@ -2,6 +2,7 @@
 
 #include "fwddec.hpp"
 
+#include <cstdint>
 #include <string_view>
 #include <vector>
 #include <optional>
