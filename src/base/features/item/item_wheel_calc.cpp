@@ -26,7 +26,7 @@ namespace base
                     item_wheel_data->index = (item_wheel_data->index == item_wheel_data->items.size() - 1 ? SIZE_MAX : item_wheel_data->index + 1);
                 
                 // Check that the index is in range
-                if (item_wheel_data->index >= 0 && item_wheel_data->index < item_wheel_data->items.size())
+                if (item_wheel_data->index < item_wheel_data->items.size())
                 {
                     auto item = item_wheel_data->items[item_wheel_data->index];
                     auto item_value = std::underlying_type_t<Item::eItemSlot>(item);
