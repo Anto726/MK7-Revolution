@@ -24,6 +24,7 @@ SOURCES 	:= 	src \
 				src/base/entries/kart \
 				src/base/features/item \
 				src/base/features/kart \
+				src/base/features/mode \
 				src/base/features/network \
 				src/base/hook_funcs \
 				src/base/hooking \

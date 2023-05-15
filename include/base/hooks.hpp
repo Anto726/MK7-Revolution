@@ -23,7 +23,11 @@ namespace base
     private:
         bool m_enabled{};
         
+        hooking::vmt_hook m_Item_ItemDirector;
+
         hooking::vmt_hook m_Item_KartItem;
+
+        hooking::vmt_hook m_Kart_Director;
 
         hooking::detour_hook m_Kart_Unit_calcMove;
         hooking::detour_hook m_Kart_Unit_calcReact;

@@ -1,5 +1,5 @@
 ## Features
-The following document shows a [Tree](https://tree.nathanfriend.io/?s=(%27options!(%27fancy!true~fullPath3~trail7gSlash3~rootDot3)~5(%275%27Revolution0Item*Item%20Wheel0Kart*2Bl7k7g%2029tang6.Star.9k.Thunder.Press4Respawn4M7i-Turbo0Network*No%20Disconnect%27)~version!%271%27)*08.*9f7ite%200%5Cn829v7c6*3!false4*9stant%205source!6ibility7in8%20%209In%01987654320.*) view of the current features.
+The following document shows a [Tree](https://tree.nathanfriend.io/?s=(%27options!(%27fancy!true~fullPath3~trail5gSlash3~rootDot3)~6(%276%27Revolution.Item*Item%20Wheel.Kart*2Bl5k5g%2029tang70Star09k0Thunder0Press4Respawn4M5i-Turbo.Mode*DrivADur5g%20Countdown.Network*No%20Disconnect%27)~version!%271%27)*.8.%5Cn80*9f5itA29v5c7*3!false4*9stant%205in6source!7ibility8%20%209InAe%20%01A987654320.*) view of the current features.
 ```
 Revolution
 ├── Item
@@ -14,6 +14,8 @@ Revolution
 │   ├── Infinite Press
 │   ├── Instant Respawn
 │   └── Instant Mini-Turbo
+├── Mode
+│   └── Drive During Countdown
 └── Network
     └── No Disconnect
 ```

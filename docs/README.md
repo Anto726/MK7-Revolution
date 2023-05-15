@@ -2,6 +2,9 @@
 A [CTRPluginFramework-RevolutionBase](https://github.com/Anto726/CTRPluginFramework-RevolutionBase) plugin for Mario Kart 7.  
 Strictly for educational purposes.
 
+## Features
+See [FEATURES.md](docs/FEATURES.md).
+
 ## Compatibility
 Any version, revision, or region of the game is supported.
 

@@ -56,6 +56,9 @@ namespace base
         CTRPluginFramework::MenuEntry *m_instant_respawn_entry;
         CTRPluginFramework::MenuEntry *m_instant_miniturbo_entry;
 
+        // Mode
+        CTRPluginFramework::MenuEntry *m_drive_during_countdown_entry;
+
         // Network
         CTRPluginFramework::MenuEntry *m_no_disconnect_entry;
     };

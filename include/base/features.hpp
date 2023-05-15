@@ -1,5 +1,6 @@
 #pragma once
 #include <fwddec.hpp>
+#include <RaceSys/ModeManagerBase.hpp> // RaceSys::ModeManagerBase::ERaceState
 
 namespace base
 {
@@ -25,6 +26,12 @@ namespace base
 			static void instant_miniturbo(Kart::Unit *);
 
 			static constexpr s32 STATUS_THRESHOLD = 1 << 2;
+		};
+
+		struct mode
+		{
+			static RaceSys::ModeManagerBase::ERaceState drive_during_countdown_before(RaceSys::ModeManagerBase *);
+			static void drive_during_countdown_after(RaceSys::ModeManagerBase *, RaceSys::ModeManagerBase::ERaceState);
 		};
 
 		struct network

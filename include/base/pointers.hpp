@@ -1,4 +1,5 @@
 #pragma once
+#include <fwddec.hpp>
 #include <types.hpp>
 
 namespace base
@@ -10,7 +11,13 @@ namespace base
 		~pointers();
 
 	public:
+		System::RootSystem *m_root_system;
+
+		void *m_Item_ItemDirector;
+
 		void *m_Item_KartItem;
+
+		void *m_Kart_Director;
 
 		void *m_Kart_Unit_calcMove;
 		void *m_Kart_Unit_calcReact;

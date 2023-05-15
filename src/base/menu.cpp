@@ -28,6 +28,8 @@ namespace base
         m_instant_respawn_entry(new MenuEntry("Instant Respawn", [](MenuEntry *) {})),
         m_instant_miniturbo_entry(new MenuEntry("Instant Mini-Turbo", [](MenuEntry *) {}, entries::kart::instant_miniturbo)),
 
+        m_drive_during_countdown_entry(new MenuEntry("Drive During Countdown", [](MenuEntry *) {})),
+
         m_no_disconnect_entry(new MenuEntry("No Disconnect", [](MenuEntry *) {}))
     {
         m_plugin_menu->SynchronizeWithFrame(true);
@@ -74,6 +76,13 @@ namespace base
             *kart += m_instant_miniturbo_entry;
 
             *m_plugin_menu += kart;
+        }
+
+        if (auto mode = new MenuFolder("Mode"))
+        {
+            *mode += m_drive_during_countdown_entry;
+
+            *m_plugin_menu += mode;
         }
 
         if (auto network = new MenuFolder("Network"))

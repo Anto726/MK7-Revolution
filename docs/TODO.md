@@ -25,7 +25,7 @@ The following document shows a list of ideas that may get implemented in the fut
 - [ ] No Terrain Effects
 
 ### Mode
-- [ ] Drive During Countdown
+- [x] Drive During Countdown
 - [ ] Drive Out Of Bounds
 - [ ] Trigger Respawn
 - [ ] Disable Respawn Black Screen
