@@ -3,7 +3,7 @@ A [CTRPluginFramework-RevolutionBase](https://github.com/Anto726/CTRPluginFramew
 Strictly for educational purposes.
 
 ## Features
-See [FEATURES.md](docs/FEATURES.md).
+See [FEATURES.md](FEATURES.md).
 
 ## Compatibility
 Any version, revision, or region of the game is supported.
