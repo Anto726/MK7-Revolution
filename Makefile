@@ -38,7 +38,7 @@ ARCH		:= -march=armv6k -mtune=mpcore -mfloat-abi=hard -mtp=soft
 CFLAGS		:= $(ARCH) -Os -mword-relocations -fomit-frame-pointer -ffunction-sections -fno-strict-aliasing -Wno-psabi
 CFLAGS		+= $(INCLUDE) -D__3DS__ -DFMT_HEADER_ONLY #-D_DEBUG
 
-CXXFLAGS	:= $(CFLAGS) -fno-rtti -fno-exceptions -std=gnu++20
+CXXFLAGS	:= $(CFLAGS) -fno-rtti -fno-exceptions -std=gnu++23
 
 ASFLAGS		:= $(ARCH)
 LDFLAGS		:= -T $(TOPDIR)/3gx.ld $(ARCH) -Os -Wl,--gc-sections,--strip-discarded,--strip-debug

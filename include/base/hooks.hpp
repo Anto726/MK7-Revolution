@@ -29,6 +29,8 @@ namespace base
 
         hooking::vmt_hook m_Kart_Director;
 
+        hooking::detour_hook m_Effect_KartEffect_calcTireEffectWheelSpin;
+
         hooking::detour_hook m_Kart_Unit_calcMove;
         hooking::detour_hook m_Kart_Unit_calcReact;
         

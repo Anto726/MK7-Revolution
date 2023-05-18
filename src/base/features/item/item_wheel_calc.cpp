@@ -7,6 +7,8 @@
 #include <Item/ItemSlot.hpp>
 #include <Item/KartItem.hpp>
 
+#include <utility>
+
 namespace base
 {
 	void features::item::item_wheel_calc(Item::KartItem *_this)
@@ -29,7 +31,7 @@ namespace base
                 if (item_wheel_data->index < item_wheel_data->items.size())
                 {
                     auto item = item_wheel_data->items[item_wheel_data->index];
-                    auto item_value = std::underlying_type_t<Item::eItemSlot>(item);
+                    auto item_value = std::to_underlying(item);
                     auto item_slot = _this->m_item_slot;
 
                     if (item_slot->m_selected_item != item_value)

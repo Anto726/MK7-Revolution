@@ -12,6 +12,8 @@ namespace base
 
 		m_Kart_Director("Kart::Director", g_pointers->m_Kart_Director, hook_funcs::Kart_Director_count),
 
+		m_Effect_KartEffect_calcTireEffectWheelSpin("Effect::KartEffect::_calcTireEffect_WheelSpin", g_pointers->m_Effect_KartEffect_calcTireEffectWheelSpin, reinterpret_cast<void *>(&hook_funcs::Effect_KartEffect_calcTireEffectWheelSpin)),
+
 		m_Kart_Unit_calcMove("Kart::Unit::calcMove", g_pointers->m_Kart_Unit_calcMove, reinterpret_cast<void *>(hook_funcs::Kart_Unit_calcMove)),
 		m_Kart_Unit_calcReact("Kart::Unit::calcReact", g_pointers->m_Kart_Unit_calcReact, reinterpret_cast<void *>(hook_funcs::Kart_Unit_calcReact)),
 
@@ -45,6 +47,8 @@ namespace base
 
 		m_Kart_Director.enable();
 
+		m_Effect_KartEffect_calcTireEffectWheelSpin.enable();
+
 		m_Kart_Unit_calcMove.enable();
 		m_Kart_Unit_calcReact.enable();
 
@@ -65,6 +69,8 @@ namespace base
 
 		m_Kart_Unit_calcReact.disable();
 		m_Kart_Unit_calcMove.disable();
+
+		m_Effect_KartEffect_calcTireEffectWheelSpin.disable();
 
 		m_Kart_Director.disable();
 

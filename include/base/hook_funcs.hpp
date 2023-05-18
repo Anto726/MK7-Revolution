@@ -28,6 +28,8 @@ namespace base
         static void Kart_Director_calcBeforeStructure(Kart::Director *);
 
         // Detour hooks
+        static void Effect_KartEffect_calcTireEffectWheelSpin(Effect::KartEffect *);
+
         static void Kart_Unit_calcMove(Kart::Unit *, bool, bool);
         static void Kart_Unit_calcReact(Kart::Unit *);
 

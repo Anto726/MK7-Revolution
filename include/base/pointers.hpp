@@ -19,6 +19,8 @@ namespace base
 
 		void *m_Kart_Director;
 
+		void *m_Effect_KartEffect_calcTireEffectWheelSpin;
+
 		void *m_Kart_Unit_calcMove;
 		void *m_Kart_Unit_calcReact;
 
