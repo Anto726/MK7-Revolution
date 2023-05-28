@@ -2,6 +2,8 @@
 
 #include <base/logger.hpp>
 
+#include <utility>
+
 namespace base::hooking
 {
     using namespace CTRPluginFramework;
@@ -25,7 +27,7 @@ namespace base::hooking
             g_logger.log_debug("Detour hook '{}' enabled.", m_name);
         else
         {
-            g_logger.log("Failed to enable Detour hook '{}' at {} with result {}.", m_name, reinterpret_cast<void *>(m_hook.GetContext().callbackAddress), fmt::underlying(result));
+            g_logger.log("Failed to enable Detour hook '{}' at {} with result {}.", m_name, reinterpret_cast<void *>(m_hook.GetContext().callbackAddress), std::to_underlying(result));
             abort();
         }
 	}
@@ -36,7 +38,7 @@ namespace base::hooking
             g_logger.log_debug("Detour hook '{}' disabled.", m_name);
         else
         {
-            g_logger.log("Failed to disable Detour hook '{}' at {} with result {}.", m_name, reinterpret_cast<void *>(m_hook.GetContext().callbackAddress), fmt::underlying(result));
+            g_logger.log("Failed to disable Detour hook '{}' at {} with result {}.", m_name, reinterpret_cast<void *>(m_hook.GetContext().callbackAddress), std::to_underlying(result));
             abort();
         }
 	}
