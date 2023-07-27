@@ -2,3 +2,6 @@
 build
 *.3gx
 *.elf
+
+# Visual Studio Code
+.vscode
