@@ -39,6 +39,8 @@ namespace base::memory
 
 	s32 batch::task_func(void *p)
 	{
+		CTRPluginFramework::Lock lock(s_mutex);
+		
 		auto arg = static_cast<task_arg *>(p);
 
 		if (auto handle = arg->m_range.scan(arg->m_entry.m_pattern))

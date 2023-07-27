@@ -32,6 +32,7 @@ namespace base::memory
 			entry m_entry;
 		};
 
+		static inline CTRPluginFramework::Mutex s_mutex;
 		static s32 task_func(void *);
 
 		std::vector<entry> m_entries;
