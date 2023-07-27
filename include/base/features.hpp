@@ -1,5 +1,5 @@
 #pragma once
-#include <fwddec.hpp>
+#include <forward.hpp>
 #include <RaceSys/ModeManagerBase.hpp> // RaceSys::ModeManagerBase::ERaceState
 
 namespace base

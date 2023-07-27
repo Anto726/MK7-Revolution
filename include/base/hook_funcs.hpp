@@ -1,5 +1,5 @@
 #pragma once
-#include <fwddec.hpp>
+#include <forward.hpp>
 
 // mk7
 #include <Kart/VehicleReact.hpp> // Kart::VehicleReact::EAcdType, Kart::VehicleReact::ECallType
