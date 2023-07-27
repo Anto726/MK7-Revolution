@@ -21,6 +21,9 @@ namespace CTRPluginFramework
         g_settings.load();
         g_logger.log("Settings loaded.");
 
+        auto menu_instance = std::make_unique<menu>();
+        g_logger.log("Menu created.");
+
         auto pointers_instance = std::make_unique<pointers>();
         g_logger.log("Pointers initialized.");
 
@@ -30,14 +33,8 @@ namespace CTRPluginFramework
         g_hooks->enable();
         g_logger.log("Hooks enabled.");
 
-        auto menu_instance = std::make_unique<menu>();
-        g_logger.log("Menu created.");
-
         OSD::Notify("Enjoy. :)");
         g_menu->run();
-
-        menu_instance.reset();
-        g_logger.log("Menu deleted.");
 
         g_hooks->disable();
         g_logger.log("Hooks disabled.");
@@ -47,6 +44,9 @@ namespace CTRPluginFramework
 
         pointers_instance.reset();
         g_logger.log("Pointers uninitialized.");
+
+        menu_instance.reset();
+        g_logger.log("Menu deleted.");
 
         g_settings.store();
         g_logger.log("Settings stored.");
