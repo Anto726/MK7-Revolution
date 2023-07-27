@@ -2,8 +2,6 @@
 
 #include <base/logger.hpp>
 
-#include <algorithm>
-
 namespace base::hooking
 {	
     vmt_hook::vmt_hook(std::string name, void *obj, size_t num_funcs)
