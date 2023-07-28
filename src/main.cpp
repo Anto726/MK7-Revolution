@@ -16,42 +16,42 @@ namespace CTRPluginFramework
         OSD::Notify(NAME "!");
 
         auto files_instance = std::make_unique<files>();
-        g_logger.log("Greetings from " NAME "!");
+        g_logger.info("Greetings from " NAME "!");
 
         g_settings.load();
-        g_logger.log("Settings loaded.");
+        g_logger.info("Settings loaded.");
 
         auto menu_instance = std::make_unique<menu>();
-        g_logger.log("Menu created.");
+        g_logger.info("Menu created.");
 
         auto pointers_instance = std::make_unique<pointers>();
-        g_logger.log("Pointers initialized.");
+        g_logger.info("Pointers initialized.");
 
         auto hooks_instance = std::make_unique<hooks>();
-        g_logger.log("Hooks initialized.");
+        g_logger.info("Hooks initialized.");
 
         g_hooks->enable();
-        g_logger.log("Hooks enabled.");
+        g_logger.info("Hooks enabled.");
 
         OSD::Notify("Enjoy. :)");
         g_menu->run();
 
         g_hooks->disable();
-        g_logger.log("Hooks disabled.");
+        g_logger.info("Hooks disabled.");
 
         hooks_instance.reset();
-        g_logger.log("Hooks uninitialized.");
+        g_logger.info("Hooks uninitialized.");
 
         pointers_instance.reset();
-        g_logger.log("Pointers uninitialized.");
+        g_logger.info("Pointers uninitialized.");
 
         menu_instance.reset();
-        g_logger.log("Menu deleted.");
+        g_logger.info("Menu deleted.");
 
         g_settings.store();
-        g_logger.log("Settings stored.");
+        g_logger.info("Settings stored.");
 
-        g_logger.log("Farewell!");
+        g_logger.info("Farewell!");
         files_instance.reset();
 
         return EXIT_SUCCESS;
@@ -59,7 +59,11 @@ namespace CTRPluginFramework
 
     void PatchProcess(FwkSettings &settings)
     {
+        settings.ThreadPriority = 0x3E;
         settings.WaitTimeToBoot = Time::Zero;
+#ifdef _DEBUG
+        settings.CachedDrawMode = true;
+#endif
 
         files::set_working_directory();
     }

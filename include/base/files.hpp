@@ -11,8 +11,8 @@ namespace base
 
 		static void set_working_directory();
 
-		CTRPluginFramework::File m_logger_file;
-		std::string m_settings_path;
+		CTRPluginFramework::File m_logger;
+		CTRPluginFramework::File m_settings;
 	};
 
 	inline files *g_files{};

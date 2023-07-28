@@ -1,5 +1,6 @@
 #pragma once
 #include <fmt/format.h>
+#include <CTRPluginFramework.hpp>
 
 namespace base
 {
@@ -10,29 +11,31 @@ namespace base
 		~logger() = default;
 		
 		template <typename ...args_t>
-		void log(fmt::format_string<args_t ...>, args_t &&...);
+		void info(fmt::format_string<args_t ...>, args_t &&...);
 
 		template <typename ...args_t>
-		void log_debug(fmt::format_string<args_t ...>, args_t &&...);
+		void debug(fmt::format_string<args_t ...>, args_t &&...);
 
 		static std::string get_current_date_time_string(bool human_readable);
 
 	private:
-		void log_impl(std::string);
+		void log(std::string);
+		
+		CTRPluginFramework::Mutex m_mutex;
 	};
 
 	template <typename ...args_t>
-    inline void logger::log(fmt::format_string<args_t ...> fmt, args_t &&...args)
+    inline void logger::info(fmt::format_string<args_t ...> fmt, args_t &&...args)
     {
-        auto str = fmt::format(fmt,  std::forward<args_t>(args)...);
-        log_impl(str);
+        auto str = fmt::format(fmt, std::forward<args_t>(args)...);
+        log(str);
     }
 
     template <typename ...args_t>
-    inline void logger::log_debug(fmt::format_string<args_t ...> fmt, args_t &&...args)
+    inline void logger::debug(fmt::format_string<args_t ...> fmt, args_t &&...args)
     {
 #ifdef _DEBUG
-		log(fmt, std::forward<args_t>(args)...);
+		info(fmt, std::forward<args_t>(args)...);
 #endif
     }
 
