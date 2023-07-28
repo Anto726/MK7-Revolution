@@ -49,12 +49,12 @@ namespace base::memory
 			{
 				std::invoke(std::move(arg->m_entry.m_callback), handle);
 
-				base::g_logger.log_debug("Batch entry '{}' ({}) found.", arg->m_entry.m_name, handle.as<void *>());
-				return 0;
+				g_logger.debug("Batch entry '{}' ({}) found.", arg->m_entry.m_name, handle.as<void *>());
+				return EXIT_SUCCESS;
 			}
 		}
 
-		base::g_logger.log("Failed to find batch entry '{}'.", arg->m_entry.m_name);
-		return 1;
+		g_logger.info("Failed to find batch entry '{}'.", arg->m_entry.m_name);
+		return EXIT_FAILURE;
 	}
 }

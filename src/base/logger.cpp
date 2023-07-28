@@ -2,8 +2,6 @@
 
 #include <base/files.hpp>
 
-#include <3ds/os.h>
-
 namespace base
 {
     std::string logger::get_current_date_time_string(bool human_readable)
@@ -26,8 +24,10 @@ namespace base
         return std::string(buf);
     }
 
-    void logger::log_impl(std::string str)
+    void logger::log(std::string str)
     {
-        g_files->m_logger_file.WriteLine("[" + logger::get_current_date_time_string(true) + "] " + str);
+        CTRPluginFramework::Lock _(m_mutex);
+
+        g_files->m_logger.WriteLine("[" + logger::get_current_date_time_string(true) + "] " + str);
     }
 }

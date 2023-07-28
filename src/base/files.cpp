@@ -2,26 +2,23 @@
 
 #include <base/logger.hpp>
 
-#define LOGS_PATH "Logs"
-#define BASE_PATH "RevolutionBase"
-
 namespace base
 {
 	using namespace CTRPluginFramework;
 
 	files::files()
-    :
-        m_settings_path("settings.json")
 	{
-        auto logger_path = logger::get_current_date_time_string(false) + ".log";
-        
-        // Create the logs folder
-        if (!Directory::IsExists(LOGS_PATH))
-            Directory::Create(LOGS_PATH);
+        auto const logs_path = std::string("Logs");
 
-        // Create the logger file
-        logger_path = LOGS_PATH + std::string("/") + logger_path;
-        if (File::Open(m_logger_file, logger_path, File::Mode::WRITE | File::Mode::CREATE | File::Mode::SYNC) != File::OPResult::SUCCESS)
+        if (!Directory::IsExists(logs_path))
+            Directory::Create(logs_path);
+
+        auto logger_path = logs_path + "/" + logger::get_current_date_time_string(false) + ".log";
+        if (File::Open(m_logger, logger_path, File::Mode::WRITE | File::Mode::CREATE | File::Mode::SYNC) != File::OPResult::SUCCESS)
+            abort();
+
+        auto settings_path = "settings.json";
+        if (File::Open(m_settings, settings_path, File::Mode::READ | File::Mode::WRITE | File::Mode::CREATE | File::Mode::SYNC) != File::OPResult::SUCCESS)
             abort();
 
         g_files = this;
@@ -31,12 +28,15 @@ namespace base
 	{
         g_files = nullptr;
 
-		m_logger_file.Close();
+        m_settings.Close();
+		m_logger.Close();
 	}
 
-	void files::set_working_directory()
+    void files::set_working_directory()
     {
-        std::string path = "/luma/plugins";
+        auto const base_path = std::string("RevolutionBase");
+        
+        auto path = std::string("/luma/plugins");
 
         // Start from the root
         Directory::ChangeWorkingDirectory("");
@@ -58,7 +58,7 @@ namespace base
             path += Utils::Format("/%016llX", Process::GetTitleID());
         }
 
-        path += std::string("/") + BASE_PATH;
+        path += "/" + base_path;
         if (!Directory::IsExists(path))
             Directory::Create(path);
 
