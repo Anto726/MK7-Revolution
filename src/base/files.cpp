@@ -34,7 +34,7 @@ namespace base
 
     void files::set_working_directory()
     {
-        auto const base_path = std::string("RevolutionBase");
+        auto const base_path = std::string("Revolution");
         
         auto path = std::string("/luma/plugins");
 
