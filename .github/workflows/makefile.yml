@@ -15,6 +15,7 @@ jobs:
       with:
         submodules: recursive
 
+    # should be done in the image instead
     - name: update
       run: dkp-pacman -Syu --noconfirm
       
