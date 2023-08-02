@@ -17,7 +17,7 @@ jobs:
 
     # should be done in the image instead
     - name: update
-      run: dkp-pacman -Syu --noconfirm
+      run: dkp-pacman -S libctrpf --needed --noconfirm
       
     - name: build
       run: make
