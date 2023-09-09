@@ -14,10 +14,6 @@ jobs:
       uses: actions/checkout@v3
       with:
         submodules: recursive
-
-    # should be done in the image instead
-    - name: update
-      run: dkp-pacman -S libctrpf --noconfirm
       
     - name: build
       run: make
