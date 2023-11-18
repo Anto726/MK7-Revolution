@@ -10,22 +10,17 @@ namespace base
 		explicit pointers();
 		~pointers();
 
-	public:
 		System::RootSystem *m_root_system;
 
 		void *m_Item_ItemDirector;
-
 		void *m_Item_KartItem;
-
 		void *m_Kart_Director;
 
+		void *m_Item_ItemObjBase_setStateSelfMove;
 		void *m_Effect_KartEffect_calcTireEffectWheelSpin;
-
 		void *m_Kart_Unit_calcMove;
 		void *m_Kart_Unit_calcReact;
-
 		void *m_Kart_VehicleReact_reactAccidentCommon;
-
 		void *m_RaceSys_LapRankChecker_calcLapPosition;
 
 		float *m_miniturbo_blue_threshold;

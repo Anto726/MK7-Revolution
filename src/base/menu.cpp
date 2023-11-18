@@ -17,6 +17,7 @@ namespace base
         m_plugin_menu(new PluginMenu(NAME, MAJOR_VERSION, MINOR_VERSION, REVISION_VERSION, ABOUT)),
 
         m_item_wheel_entry(new MenuEntry("Item Wheel", [](MenuEntry *) {})),
+        m_drop_items_entry(new MenuEntry("Drop Items", [](MenuEntry *) {})),
 
         m_invincibility_entry(new MenuEntry("Invincibility", [](MenuEntry *) {})),
         m_blinking_invincibility_entry(new MenuEntry("Blinking Invincibility", [](MenuEntry *) {})),
@@ -59,6 +60,7 @@ namespace base
         if (auto item = new MenuFolder("Item"))
         {
             *item += m_item_wheel_entry;
+            *item += m_drop_items_entry;
 
             *m_plugin_menu += item;
         }

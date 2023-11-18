@@ -2,7 +2,8 @@
 The following document shows a list of ideas that may get implemented in the future.
 
 ### Item
-- [ ] Drop Items (<sub><sup>TBD</sup></sub>)
+- [x] Drop Items
+	- [ ] Other items (Star, Mushroom, Blooper, ...)
 - [ ] Unrestrict Item Usage (Bullet Bill, respawn, ...)
 - [ ] Controllable Bullet Bill
 - [ ] Item Guru
@@ -12,11 +13,11 @@ The following document shows a list of ideas that may get implemented in the fut
 ### Kart
 - [x] Intangibility
 	- [ ] Modes (Kart, Item, Object)
-- [x] Invincibility
-- [x] Blinking Invincibility
-- [x] Infinite Star
-- [x] Instant Respawn
-- [x] Instant Mini-Turbo
+- [x] ~~Invincibility~~
+- [x] ~~Blinking Invincibility~~
+- [x] ~~Infinite Star~~
+- [x] ~~Instant Respawn~~
+- [x] ~~Instant Mini-Turbo~~
 - [ ] Micro Kart
 - [ ] Moon Jump
 - [ ] Free Fly
@@ -25,7 +26,7 @@ The following document shows a list of ideas that may get implemented in the fut
 - [ ] No Terrain Effects
 
 ### Mode
-- [x] Drive During Countdown
+- [x] ~~Drive During Countdown~~
 - [ ] Drive Out Of Bounds
 - [ ] Trigger Respawn
 - [ ] Disable Respawn Black Screen

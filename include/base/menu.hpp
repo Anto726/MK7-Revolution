@@ -44,6 +44,7 @@ namespace base
 
         // Item
         CTRPluginFramework::MenuEntry *m_item_wheel_entry;
+        CTRPluginFramework::MenuEntry *m_drop_items_entry;
 
         // Kart
         CTRPluginFramework::MenuEntry *m_invincibility_entry;

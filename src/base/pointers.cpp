@@ -38,6 +38,11 @@ namespace base
 			m_Kart_Unit_calcReact = hnd.add(0x1E8).jmp().as<decltype(m_Kart_Unit_calcReact)>();
 		});
 
+		batch.add("Item::ItemObjBase::setState_SelfMove", "70 40 2D E9 00 50 A0 E1 9C 00 9F E5 01 40 A0 E1", [this](memory::handle handle)
+		{
+			m_Item_ItemObjBase_setStateSelfMove = handle.as<decltype(m_Item_ItemObjBase_setStateSelfMove)>();
+		});
+
 		batch.add("Effect::KartEffect::_calcTireEffect_WheelSpin", "70 40 2D E9 00 40 A0 E1 02 8B 2D ED 60 D0 4D E2", [this](memory::handle handle)
 		{
 			m_Effect_KartEffect_calcTireEffectWheelSpin = handle.as<decltype(m_Effect_KartEffect_calcTireEffectWheelSpin)>();
