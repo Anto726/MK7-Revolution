@@ -5,7 +5,7 @@
 
 [submodule "vendor/json"]
 	path = vendor/json
-	url = https://github.com/nlohmann/json
+	url = https://github.com/ArthurSonzogni/nlohmann_json_cmake_fetchcontent
 	ignore = dirty
 
 [submodule "vendor/mk7-memory"]
