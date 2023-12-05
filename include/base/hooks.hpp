@@ -32,6 +32,7 @@ namespace base
         hooking::detour_hook m_Kart_Unit_calcMove;
         hooking::detour_hook m_Kart_Unit_calcReact;
         hooking::detour_hook m_Kart_VehicleReact_reactAccidentCommon;
+        hooking::detour_hook m_Net_NetworkEngine_sendUnreliableCore;
         hooking::detour_hook m_RaceSys_LapRankChecker_calcLapPosition;
     };
 

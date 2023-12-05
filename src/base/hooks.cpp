@@ -14,8 +14,8 @@ namespace base
 		m_Effect_KartEffect_calcTireEffectWheelSpin("Effect::KartEffect::_calcTireEffect_WheelSpin", g_pointers->m_Effect_KartEffect_calcTireEffectWheelSpin, reinterpret_cast<void *>(&hook_funcs::Effect_KartEffect_calcTireEffectWheelSpin)),
 		m_Kart_Unit_calcMove("Kart::Unit::calcMove", g_pointers->m_Kart_Unit_calcMove, reinterpret_cast<void *>(hook_funcs::Kart_Unit_calcMove)),
 		m_Kart_Unit_calcReact("Kart::Unit::calcReact", g_pointers->m_Kart_Unit_calcReact, reinterpret_cast<void *>(hook_funcs::Kart_Unit_calcReact)),
-
 		m_Kart_VehicleReact_reactAccidentCommon("Kart::VehicleReact::reactAccidentCommon", g_pointers->m_Kart_VehicleReact_reactAccidentCommon, reinterpret_cast<void *>(&hook_funcs::Kart_VehicleReact_reactAccidentCommon)),
+		m_Net_NetworkEngine_sendUnreliableCore("Net::NetworkEngine::sendUnreliableCore", g_pointers->m_Net_NetworkEngine_sendUnreliableCore, reinterpret_cast<void *>(&hook_funcs::Net_NetworkEngine_sendUnreliableCore)),
 		m_RaceSys_LapRankChecker_calcLapPosition("RaceSys::LapRankChecker::calcLapPosition_", g_pointers->m_RaceSys_LapRankChecker_calcLapPosition, reinterpret_cast<void *>(&hook_funcs::RaceSys_LapRankChecker_calcLapPosition))
 	{
 		m_Item_ItemDirector.hook(hook_funcs::Item_ItemDirector_calcBeforeStructure_index, reinterpret_cast<void *>(&hook_funcs::Item_ItemDirector_calcBeforeStructure));
@@ -45,6 +45,7 @@ namespace base
 		m_Kart_Unit_calcMove.enable();
 		m_Kart_Unit_calcReact.enable();
 		m_Kart_VehicleReact_reactAccidentCommon.enable();
+		m_Net_NetworkEngine_sendUnreliableCore.enable();
 		m_RaceSys_LapRankChecker_calcLapPosition.enable();
 		
 		m_enabled = true;
@@ -55,6 +56,7 @@ namespace base
 		m_enabled = false;
 		
 		m_RaceSys_LapRankChecker_calcLapPosition.disable();
+		m_Net_NetworkEngine_sendUnreliableCore.disable();
 		m_Kart_VehicleReact_reactAccidentCommon.disable();
 		m_Kart_Unit_calcReact.disable();
 		m_Kart_Unit_calcMove.disable();

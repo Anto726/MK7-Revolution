@@ -31,7 +31,8 @@ namespace base
 
         m_drive_during_countdown_entry(new MenuEntry("Drive During Countdown", [](MenuEntry *) {})),
 
-        m_no_disconnect_entry(new MenuEntry("No Disconnect", [](MenuEntry *) {}))
+        m_no_disconnect_entry(new MenuEntry("No Disconnect", [](MenuEntry *) {})),
+        m_high_data_rate_entry(new MenuEntry("High Data Rate", [](MenuEntry *) {}))
     {
         m_plugin_menu->SynchronizeWithFrame(true);
         m_plugin_menu->ShowWelcomeMessage(false);
@@ -90,6 +91,7 @@ namespace base
         if (auto network = new MenuFolder("Network"))
         {
             *network += m_no_disconnect_entry;
+            *network += m_high_data_rate_entry;
 
             *m_plugin_menu += network;
         }

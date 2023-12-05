@@ -21,6 +21,7 @@ namespace base
 		void *m_Kart_Unit_calcMove;
 		void *m_Kart_Unit_calcReact;
 		void *m_Kart_VehicleReact_reactAccidentCommon;
+		void *m_Net_NetworkEngine_sendUnreliableCore;
 		void *m_RaceSys_LapRankChecker_calcLapPosition;
 
 		float *m_miniturbo_blue_threshold;

@@ -31,6 +31,7 @@ namespace base
         static void Kart_Unit_calcMove(Kart::Unit *, bool, bool);
         static void Kart_Unit_calcReact(Kart::Unit *);
         static void Kart_VehicleReact_reactAccidentCommon(Kart::VehicleReact *, Kart::VehicleReact::ECallType, int, int, Kart::VehicleReact::EAcdType, sead::Vector3f *, sead::Vector3f *);
+        static void Net_NetworkEngine_sendUnreliableCore(Net::NetworkEngine *, u32, Net::NetworkBuffer *);
         static void RaceSys_LapRankChecker_calcLapPosition(RaceSys::LapRankChecker *, RaceSys::LapRankChecker::KartInfo *);
     };
 }
