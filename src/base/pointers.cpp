@@ -3,7 +3,7 @@
 #include <base/memory/all.hpp>
 #include <CTRPluginFramework.hpp>
 
-#include <base/hook_funcs.hpp>
+#include <base/hooks.hpp>
 
 #define TEXT_BASE 0x100000
 
@@ -32,7 +32,7 @@ namespace base
 		{
 			m_Kart_Director = handle.add(0xC).as<decltype(m_Kart_Director)>();
 
-			auto Kart_Director_calcBeforeStructure = (*static_cast<decltype(m_Kart_Director) **>(m_Kart_Director))[hook_funcs::Kart_Director_calcBeforeStructure_index];
+			auto Kart_Director_calcBeforeStructure = (*static_cast<decltype(m_Kart_Director) **>(m_Kart_Director))[hooks::Kart_Director_calcBeforeStructure_index];
 			auto hnd = memory::handle(Kart_Director_calcBeforeStructure);
 			m_Kart_Unit_calcMove = hnd.add(0x224).jmp().as<decltype(m_Kart_Unit_calcMove)>();
 			m_Kart_Unit_calcReact = hnd.add(0x1E8).jmp().as<decltype(m_Kart_Unit_calcReact)>();

@@ -26,16 +26,16 @@ SOURCES 	:= 	src \
 				src/base/features/kart \
 				src/base/features/mode \
 				src/base/features/network \
-				src/base/hook_funcs/Effect/KartEffect \
-				src/base/hook_funcs/Item/ItemDirector \
-				src/base/hook_funcs/Item/ItemObjBase \
-				src/base/hook_funcs/Item/KartItem \
-				src/base/hook_funcs/Kart/Director \
-				src/base/hook_funcs/Kart/Unit \
-				src/base/hook_funcs/Kart/VehicleReact \
-				src/base/hook_funcs/Net/NetworkEngine \
-				src/base/hook_funcs/RaceSys/LapRankChecker \
-				src/base/hooking \
+				src/base/hook_types \
+				src/base/hooks/Effect/KartEffect \
+				src/base/hooks/Item/ItemDirector \
+				src/base/hooks/Item/ItemObjBase \
+				src/base/hooks/Item/KartItem \
+				src/base/hooks/Kart/Director \
+				src/base/hooks/Kart/Unit \
+				src/base/hooks/Kart/VehicleReact \
+				src/base/hooks/Net/NetworkEngine \
+				src/base/hooks/RaceSys/LapRankChecker \
 				src/base/memory
 
 #---------------------------------------------------------------------------------

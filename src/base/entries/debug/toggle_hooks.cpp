@@ -6,14 +6,14 @@ namespace base
 {
 	void entries::debug::toggle_hooks(CTRPluginFramework::MenuEntry *entry)
 	{
-		if (g_hooks->is_enabled())
+		if (g_hooking->is_enabled())
 		{
-			g_hooks->disable();
+			g_hooking->disable();
 			entry->Name() = "Enable hooks";
 		}
 		else
 		{
-			g_hooks->enable();
+			g_hooking->enable();
 			entry->Name() = "Disable hooks";
 		}
 	}
