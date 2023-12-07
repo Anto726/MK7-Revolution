@@ -1,8 +1,8 @@
-#include <base/hooking/vmt_hook.hpp>
+#include <base/hook_types/vmt_hook.hpp>
 
 #include <base/logger.hpp>
 
-namespace base::hooking
+namespace base::hook_types
 {	
     vmt_hook::vmt_hook(std::string name, void *obj, size_t num_funcs)
     :

@@ -5,7 +5,7 @@
 #include <base/settings.hpp>
 #include <base/menu.hpp>
 #include <base/pointers.hpp>
-#include <base/hooks.hpp>
+#include <base/hooking.hpp>
 
 namespace CTRPluginFramework
 {
@@ -27,20 +27,20 @@ namespace CTRPluginFramework
         auto pointers_instance = std::make_unique<pointers>();
         g_logger.info("Pointers initialized.");
 
-        auto hooks_instance = std::make_unique<hooks>();
-        g_logger.info("Hooks initialized.");
+        auto hooking_instance = std::make_unique<hooking>();
+        g_logger.info("Hooking initialized.");
 
-        g_hooks->enable();
-        g_logger.info("Hooks enabled.");
+        g_hooking->enable();
+        g_logger.info("Hooking enabled.");
 
         OSD::Notify("Enjoy. :)");
         g_menu->run();
 
-        g_hooks->disable();
-        g_logger.info("Hooks disabled.");
+        g_hooking->disable();
+        g_logger.info("Hooking disabled.");
 
-        hooks_instance.reset();
-        g_logger.info("Hooks uninitialized.");
+        hooking_instance.reset();
+        g_logger.info("Hooking uninitialized.");
 
         pointers_instance.reset();
         g_logger.info("Pointers uninitialized.");

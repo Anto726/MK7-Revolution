@@ -1,7 +1,7 @@
 #include <base/menu.hpp>
 
 #include <base/entries.hpp>
-#include <base/hooks.hpp>
+#include <base/hooking.hpp>
 #include <base/settings.hpp>
 
 namespace base
@@ -41,7 +41,7 @@ namespace base
         (
             "Debug", 
             {
-                new MenuEntry(g_hooks->is_enabled() ? "Disable hooks" : "Enable hooks", nullptr, entries::debug::toggle_hooks)
+                new MenuEntry(g_hooking->is_enabled() ? "Disable hooks" : "Enable hooks", nullptr, entries::debug::toggle_hooks)
             }
         );
 #endif

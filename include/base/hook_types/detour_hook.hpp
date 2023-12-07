@@ -2,7 +2,7 @@
 
 #include <CTRPluginFramework.hpp>
 
-namespace base::hooking
+namespace base::hook_types
 {
 	class detour_hook
 	{
@@ -27,7 +27,7 @@ namespace base::hooking
 	};
 
 	template <typename t, typename ...args_t>
-	inline t detour_hook::call_original(args_t... args)
+	inline t detour_hook::call_original(args_t ...args)
 	{
 		return CTRPluginFramework::HookContext::GetCurrent().OriginalFunction<t>(args...);
 	}

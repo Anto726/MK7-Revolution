@@ -20,8 +20,8 @@ SOURCES 	:= 	src \
 				src/base \
 				src/base/entries/debug \
 				src/base/features \
-				src/base/hook_funcs \
-				src/base/hooking \
+				src/base/hook_types \
+				src/base/hooks \
 				src/base/memory
 
 #---------------------------------------------------------------------------------

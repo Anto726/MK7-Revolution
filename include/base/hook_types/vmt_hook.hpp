@@ -1,10 +1,9 @@
 #pragma once
-#include <types.h> // size_t
 
 #include <string> // std::string
 #include <memory> // std::unique_ptr
 
-namespace base::hooking
+namespace base::hook_types
 {
     class vmt_hook
 	{
@@ -30,7 +29,7 @@ namespace base::hooking
 		std::string m_name;
 
 		void ***m_object;
-		size_t m_num_funcs;
+		std::size_t m_num_funcs;
 
 		void **m_original_table;
 		std::unique_ptr<void *[]> m_new_table;

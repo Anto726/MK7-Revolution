@@ -1,8 +1,8 @@
-#include <base/hooking/detour_hook.hpp>
+#include <base/hook_types/detour_hook.hpp>
 
 #include <base/logger.hpp>
 
-namespace base::hooking
+namespace base::hook_types
 {
     using namespace CTRPluginFramework;
     
