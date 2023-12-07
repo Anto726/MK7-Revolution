@@ -19,6 +19,7 @@ namespace base
 
         m_item_wheel_entry(new MenuEntry("Item Wheel", [](MenuEntry *) {})),
         m_drop_items_entry(new MenuEntry("Drop Items", [](MenuEntry *) {})),
+        m_blue_shell_battle_crash_fix_entry(new MenuEntry("Blue Shell Battle Crash Fix", [](MenuEntry *) {})),
 
         m_invincibility_entry(new MenuEntry("Invincibility", [](MenuEntry *) {})),
         m_blinking_invincibility_entry(new MenuEntry("Blinking Invincibility", [](MenuEntry *) {})),
@@ -63,6 +64,7 @@ namespace base
         {
             *item += m_item_wheel_entry;
             *item += m_drop_items_entry;
+            *item += m_blue_shell_battle_crash_fix_entry;
 
             *m_plugin_menu += item;
         }

@@ -11,6 +11,7 @@ namespace base
 		m_Kart_Director_hook("Kart::Director", g_pointers->m_Kart_Director, hooks::Kart_Director_count),
 
 		m_Item_ItemObjBase_setStateSelfMove_hook("Item::ItemObjBase::setState_SelfMove", g_pointers->m_Item_ItemObjBase_setStateSelfMove, reinterpret_cast<void *>(&hooks::Item_ItemObjBase_setStateSelfMove)),
+		m_Item_ItemObjKouraR_stateInitComeBackDown_hook("Item::ItemObjKouraR::stateInitComeBackDown", g_pointers->m_Item_ItemObjKouraR_stateInitComeBackDown, reinterpret_cast<void *>(&hooks::Item_ItemObjKouraR_stateInitComeBackDown)),
 		m_Effect_KartEffect_calcTireEffectWheelSpin_hook("Effect::KartEffect::_calcTireEffect_WheelSpin", g_pointers->m_Effect_KartEffect_calcTireEffectWheelSpin, reinterpret_cast<void *>(&hooks::Effect_KartEffect_calcTireEffectWheelSpin)),
 		m_Kart_Unit_calcMove_hook("Kart::Unit::calcMove", g_pointers->m_Kart_Unit_calcMove, reinterpret_cast<void *>(hooks::Kart_Unit_calcMove)),
 		m_Kart_Unit_calcReact_hook("Kart::Unit::calcReact", g_pointers->m_Kart_Unit_calcReact, reinterpret_cast<void *>(hooks::Kart_Unit_calcReact)),
@@ -41,6 +42,7 @@ namespace base
 		m_Kart_Director_hook.enable();
 
 		m_Item_ItemObjBase_setStateSelfMove_hook.enable();
+		m_Item_ItemObjKouraR_stateInitComeBackDown_hook.enable();
 		m_Effect_KartEffect_calcTireEffectWheelSpin_hook.enable();
 		m_Kart_Unit_calcMove_hook.enable();
 		m_Kart_Unit_calcReact_hook.enable();
@@ -61,6 +63,7 @@ namespace base
 		m_Kart_Unit_calcReact_hook.disable();
 		m_Kart_Unit_calcMove_hook.disable();
 		m_Effect_KartEffect_calcTireEffectWheelSpin_hook.disable();
+		m_Item_ItemObjKouraR_stateInitComeBackDown_hook.disable();
 		m_Item_ItemObjBase_setStateSelfMove_hook.disable();
 
 		m_Kart_Director_hook.disable();

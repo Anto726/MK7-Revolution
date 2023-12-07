@@ -28,6 +28,7 @@ namespace base
         hook_types::vmt_hook m_Kart_Director_hook;
 
         hook_types::detour_hook m_Item_ItemObjBase_setStateSelfMove_hook;
+        hook_types::detour_hook m_Item_ItemObjKouraR_stateInitComeBackDown_hook;
         hook_types::detour_hook m_Effect_KartEffect_calcTireEffectWheelSpin_hook;
         hook_types::detour_hook m_Kart_Unit_calcMove_hook;
         hook_types::detour_hook m_Kart_Unit_calcReact_hook;

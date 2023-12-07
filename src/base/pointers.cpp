@@ -43,6 +43,11 @@ namespace base
 			m_Item_ItemObjBase_setStateSelfMove = handle.as<decltype(m_Item_ItemObjBase_setStateSelfMove)>();
 		});
 
+		batch.add("Item::ItemObjKouraR::stateInitComeBackDown", "F0 41 2D E9 00 40 A0 E1 28 D0 4D E2 10 01 90 E5", [this](memory::handle handle)
+		{
+			m_Item_ItemObjKouraR_stateInitComeBackDown = handle.as<decltype(m_Item_ItemObjKouraR_stateInitComeBackDown)>();
+		});
+
 		batch.add("Effect::KartEffect::_calcTireEffect_WheelSpin", "70 40 2D E9 00 40 A0 E1 02 8B 2D ED 60 D0 4D E2", [this](memory::handle handle)
 		{
 			m_Effect_KartEffect_calcTireEffectWheelSpin = handle.as<decltype(m_Effect_KartEffect_calcTireEffectWheelSpin)>();
