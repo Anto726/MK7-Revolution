@@ -8,7 +8,7 @@ namespace base
 	{
 		struct item
 		{
-			static void item_drop(Item::ItemObjBase *);
+			static void drop_items(Item::ItemObjBase *);
 			static void item_wheel_calc(Item::KartItem *);
 			static void item_wheel_init(Item::KartItem *);
 		};

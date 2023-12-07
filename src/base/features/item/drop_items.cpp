@@ -8,7 +8,7 @@
 
 namespace base
 {
-    void features::item::item_drop(Item::ItemObjBase *_this)
+    void features::item::drop_items(Item::ItemObjBase *_this)
     {
         if (g_menu->m_drop_items_entry->IsActivated() && _this->m_info_proxy->m_vehicle->m_is_master && !_this->m_info_proxy->m_vehicle->m_is_net_recv)
             _this->m_is_dropped = true;
