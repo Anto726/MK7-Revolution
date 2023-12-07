@@ -1,6 +1,6 @@
 #ifdef _DEBUG
 #include <base/entries.hpp>
-#include <base/hooks.hpp>
+#include <base/hooking.hpp>
 
 namespace base
 {
