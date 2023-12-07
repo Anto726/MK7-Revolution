@@ -7,6 +7,6 @@ namespace base
     {
         features::item::drop_items(_this);
 
-        g_hooks->m_Item_ItemObjBase_setStateSelfMove.call_original<void>(_this, a2);
+        g_hooks->m_Item_ItemObjBase_setStateSelfMove_hook.call_original<void>(_this, a2);
     }
 }

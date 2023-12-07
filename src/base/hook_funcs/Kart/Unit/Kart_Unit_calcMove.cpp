@@ -13,6 +13,6 @@ namespace base
 		features::kart::instant_respawn(_this);
 		features::kart::instant_miniturbo(_this);
 
-		g_hooks->m_Kart_Unit_calcMove.call_original<void>(_this, a2, a3);
+		g_hooks->m_Kart_Unit_calcMove_hook.call_original<void>(_this, a2, a3);
 	}
 }

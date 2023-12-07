@@ -7,6 +7,6 @@ namespace base
 	{
 		features::network::no_disconnect(_this);
 
-		g_hooks->m_RaceSys_LapRankChecker_calcLapPosition.call_original<void>(_this, kart_info);
+		g_hooks->m_RaceSys_LapRankChecker_calcLapPosition_hook.call_original<void>(_this, kart_info);
 	}
 }

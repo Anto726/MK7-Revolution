@@ -7,6 +7,6 @@ namespace base
     {
         features::network::high_data_rate(&player_id);
 
-        g_hooks->m_Net_NetworkEngine_sendUnreliableCore.call_original<void>(_this, player_id, buf);
+        g_hooks->m_Net_NetworkEngine_sendUnreliableCore_hook.call_original<void>(_this, player_id, buf);
     }
 }

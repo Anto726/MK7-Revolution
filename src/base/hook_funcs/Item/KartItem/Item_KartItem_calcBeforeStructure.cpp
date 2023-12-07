@@ -7,6 +7,6 @@ namespace base
     {
         features::item::item_wheel_calc(_this);
 
-        g_hooks->m_Item_KartItem.get_original<decltype(&Item_KartItem_calcBeforeStructure)>(hook_funcs::Item_KartItem_calcBeforeStructure_index)(_this);
+        g_hooks->m_Item_KartItem_hook.get_original<decltype(&Item_KartItem_calcBeforeStructure)>(hook_funcs::Item_KartItem_calcBeforeStructure_index)(_this);
     }
 }

@@ -8,6 +8,6 @@ namespace base
 		if (features::kart::invincibility(_this))
 			return;
 
-		g_hooks->m_Kart_VehicleReact_reactAccidentCommon.call_original<void>(_this, call_type, unk1, unk2, acd_type, unk3, unk4);
+		g_hooks->m_Kart_VehicleReact_reactAccidentCommon_hook.call_original<void>(_this, call_type, unk1, unk2, acd_type, unk3, unk4);
 	}
 }
