@@ -2,6 +2,10 @@
 #include <forward.hpp>
 #include <types.hpp>
 
+#include "game_types.hpp"
+
+#include <random/seadRandom.h>
+
 namespace base
 {
 	class pointers
@@ -10,11 +14,14 @@ namespace base
 		explicit pointers();
 		~pointers();
 
+		sead::Random *m_random;
 		System::RootSystem *m_root_system;
 
 		void *m_Item_ItemDirector;
 		void *m_Item_KartItem;
 		void *m_Kart_Director;
+
+		game_types::Item_ItemObjDirectorBase_emitItemImpl_t m_Item_ItemObjDirectorBase_emitItemImpl;
 
 		void *m_Item_ItemObjBase_setStateSelfMove;
 		void *m_Item_ItemObjKouraR_stateInitComeBackDown;

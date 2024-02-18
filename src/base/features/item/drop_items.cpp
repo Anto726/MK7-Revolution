@@ -2,7 +2,7 @@
 
 #include <base/menu.hpp>
 
-#include <Item/ItemObjBase.hpp>
+#include <Item/ItemObj/ItemObjBase.hpp>
 #include <Kart/InfoProxy.hpp>
 #include <Kart/Vehicle.hpp>
 

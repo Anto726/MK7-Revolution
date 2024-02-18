@@ -2,7 +2,7 @@
 
 #include <base/menu.hpp>
 
-#include <Item/ItemObjKouraR.hpp>
+#include <Item/ItemObj/ItemObjKouraR.hpp>
 
 namespace base
 {

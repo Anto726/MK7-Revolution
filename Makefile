@@ -20,6 +20,7 @@ INCLUDES	:= 	include \
 				vendor/mk7-memory/vendor/sead/include
 SOURCES 	:= 	src \
 				src/base \
+				src/base/entries/item \
 				src/base/entries/debug \
 				src/base/entries/kart \
 				src/base/features/item \
@@ -37,14 +38,16 @@ SOURCES 	:= 	src \
 				src/base/hooks/Kart/VehicleReact \
 				src/base/hooks/Net/NetworkEngine \
 				src/base/hooks/RaceSys/LapRankChecker \
-				src/base/memory
+				src/base/memory \
+				vendor/mk7-memory/vendor/sead/modules/src/math \
+				vendor/mk7-memory/vendor/sead/modules/src/random
 
 #---------------------------------------------------------------------------------
 # options for code generation
 #---------------------------------------------------------------------------------
 ARCH		:= -march=armv6k -mtune=mpcore -mfloat-abi=hard -mtp=soft
 
-CFLAGS		:= $(ARCH) -Os -mword-relocations -fomit-frame-pointer -ffunction-sections -fno-strict-aliasing -Wno-psabi
+CFLAGS		:= $(ARCH) -Os -mword-relocations -fomit-frame-pointer -ffunction-sections -fno-strict-aliasing -Wno-psabi -Wno-invalid-offsetof
 CFLAGS		+= $(INCLUDE) -D__3DS__ -DFMT_HEADER_ONLY #-D_DEBUG
 
 CXXFLAGS	:= $(CFLAGS) -fno-rtti -fno-exceptions -std=gnu++23

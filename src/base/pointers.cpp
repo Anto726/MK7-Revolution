@@ -13,6 +13,11 @@ namespace base
 	{
 		memory::batch batch;
 
+		batch.add("sead::Random", "00 00 54 E3 04 00 85 E5 04 00 A0 11 00 40 A0 03", [this](memory::handle handle)
+		{
+			m_random = **handle.add(0x20).as<decltype(m_random) **>();
+		});
+
 		batch.add("System::RootSystem", "00 20 95 E5 70 40 BD E8", [this](memory::handle handle)
 		{
 			m_root_system = *handle.add(0x20).as<decltype(m_root_system) *>();
@@ -36,6 +41,11 @@ namespace base
 			auto hnd = memory::handle(Kart_Director_calcBeforeStructure);
 			m_Kart_Unit_calcMove = hnd.add(0x224).jmp().as<decltype(m_Kart_Unit_calcMove)>();
 			m_Kart_Unit_calcReact = hnd.add(0x1E8).jmp().as<decltype(m_Kart_Unit_calcReact)>();
+		});
+
+		batch.add("Item::ItemObjDirectorBase::_emitItemImpl", "F0 43 2D E9 1C D0 4D E2 01 40 A0 E1 02 60 A0 E1", [this](memory::handle handle)
+		{
+			m_Item_ItemObjDirectorBase_emitItemImpl = reinterpret_cast<decltype(m_Item_ItemObjDirectorBase_emitItemImpl)>(handle.as<void *>());
 		});
 
 		batch.add("Item::ItemObjBase::setState_SelfMove", "70 40 2D E9 00 50 A0 E1 9C 00 9F E5 01 40 A0 E1", [this](memory::handle handle)

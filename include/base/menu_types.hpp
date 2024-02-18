@@ -1,8 +1,16 @@
 #pragma once
 #include <forward.hpp>
 
+#include <vector>
+
 namespace base::menu_types
 {
+	struct item_rain_data_t
+	{
+		std::vector<Item::eItemType> items;
+		u32 count;
+	};
+
 	struct item_wheel_data_t
 	{
 		size_t index;

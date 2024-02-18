@@ -10,6 +10,7 @@ namespace base
 		{
 			static bool blue_shell_battle_crash_fix(Item::ItemObjKouraR *);
 			static void drop_items(Item::ItemObjBase *);
+			static void item_rain(Item::KartItem *);
 			static void item_wheel_calc(Item::KartItem *);
 			static void item_wheel_init(Item::KartItem *);
 		};

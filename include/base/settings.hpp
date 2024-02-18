@@ -23,6 +23,16 @@ namespace base
 
 		nlohmann::json const m_default_options =
 		R"({
+			"item":
+			{
+				"item_rain":
+				{
+					"multi": false,
+					"delay": 15,
+					"height": 128.0,
+					"width": 256.0
+				}
+			},
 			"kart":
 			{
 				"intangibility":

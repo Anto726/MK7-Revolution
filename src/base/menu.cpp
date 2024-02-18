@@ -4,6 +4,7 @@
 #include <base/menu_types.hpp>
 
 #include <Item/eItemSlot.hpp>
+#include <Item/eItemType.hpp>
 
 #include <base/entries.hpp>
 #include <base/hooking.hpp>
@@ -19,6 +20,7 @@ namespace base
 
         m_item_wheel_entry(new MenuEntry("Item Wheel", [](MenuEntry *) {})),
         m_drop_items_entry(new MenuEntry("Drop Items", [](MenuEntry *) {})),
+        m_item_rain_entry(new MenuEntry("Item Rain", [](MenuEntry *) {}, entries::item::item_rain)),
         m_blue_shell_battle_crash_fix_entry(new MenuEntry("Blue Shell Battle Crash Fix", [](MenuEntry *) {})),
 
         m_invincibility_entry(new MenuEntry("Invincibility", [](MenuEntry *) {})),
@@ -64,6 +66,7 @@ namespace base
         {
             *item += m_item_wheel_entry;
             *item += m_drop_items_entry;
+            *item += m_item_rain_entry;
             *item += m_blue_shell_battle_crash_fix_entry;
 
             *m_plugin_menu += item;
@@ -113,10 +116,15 @@ namespace base
     void menu::finalize()
     {
         // Item
+        *GetArg<menu_types::item_rain_data_t>(m_item_rain_entry) =
+        {
+            { Item::eItemType::KouraG, Item::eItemType::KouraR, Item::eItemType::Banana, Item::eItemType::Kinoko, Item::eItemType::Star, Item::eItemType::KouraB, Item::eItemType::Bomhei, Item::eItemType::Gesso, Item::eItemType::Flower }
+        };
+
         *GetArg<menu_types::item_wheel_data_t>(m_item_wheel_entry) =
         {
             SIZE_MAX,
-            { Item::eItemSlot::Banana, Item::eItemSlot::KouraG, Item::eItemSlot::KouraR, Item::eItemSlot::Kinoko, Item::eItemSlot::Bomhei, Item::eItemSlot::Gesso, Item::eItemSlot::KouraB, Item::eItemSlot::Kinoko3, Item::eItemSlot::Star, Item::eItemSlot::Killer, Item::eItemSlot::Thunder, Item::eItemSlot::KinokoP, Item::eItemSlot::Flower, Item::eItemSlot::Konoha, Item::eItemSlot::Seven, Item::eItemSlot::Banana3, Item::eItemSlot::KouraG3, Item::eItemSlot::KouraR3, Item::eItemSlot::Empty }
+            { Item::eItemSlot::Banana, Item::eItemSlot::KouraG, Item::eItemSlot::KouraR, Item::eItemSlot::Kinoko, Item::eItemSlot::Bomhei, Item::eItemSlot::Gesso, Item::eItemSlot::KouraB, Item::eItemSlot::Kinoko3, Item::eItemSlot::Star, Item::eItemSlot::Killer, Item::eItemSlot::Thunder, Item::eItemSlot::KinokoP, Item::eItemSlot::Flower, Item::eItemSlot::Tail, Item::eItemSlot::Seven, Item::eItemSlot::Banana3, Item::eItemSlot::KouraG3, Item::eItemSlot::KouraR3, Item::eItemSlot::Empty }
         };
     }
 }

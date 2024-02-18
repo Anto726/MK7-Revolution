@@ -5,6 +5,11 @@ namespace base
 {
 	struct entries
 	{
+		struct item
+		{
+			static void item_rain(CTRPluginFramework::MenuEntry *);
+		};
+
 		struct kart
 		{
 			static void intangibility(CTRPluginFramework::MenuEntry *);
