@@ -15,7 +15,7 @@ namespace base
 
 		batch.add("sead::Random", "00 00 54 E3 04 00 85 E5 04 00 A0 11 00 40 A0 03", [this](memory::handle handle)
 		{
-			m_random = **handle.add(0x20).as<decltype(m_random) **>();
+			m_random = *handle.add(0x20).as<decltype(m_random) *>();
 		});
 
 		batch.add("System::RootSystem", "00 20 95 E5 70 40 BD E8", [this](memory::handle handle)

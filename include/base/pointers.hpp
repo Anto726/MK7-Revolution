@@ -14,7 +14,8 @@ namespace base
 		explicit pointers();
 		~pointers();
 
-		sead::Random *m_random;
+		// FIXME: for some reason, sead::GlobalRandom corrupts the instance when used
+		sead::Random **m_random;
 		System::RootSystem *m_root_system;
 
 		void *m_Item_ItemDirector;

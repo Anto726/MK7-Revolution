@@ -5,5 +5,5 @@
 
 namespace base::utils
 {
-    void emit_item(Kart::Unit *unit, Item::eItemType item, sead::Vector3f const &position, sead::Vector3f const &velocity);
+    void emit_item(Kart::Unit const *unit, Item::eItemType const item, sead::Vector3f const &position, sead::Vector3f const &velocity);
 }

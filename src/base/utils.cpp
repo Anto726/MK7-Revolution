@@ -15,7 +15,7 @@
 
 namespace base::utils
 {
-    void emit_item(Kart::Unit *unit, Item::eItemType item, sead::Vector3f const &position, sead::Vector3f const &velocity)
+    void emit_item(Kart::Unit const *unit, Item::eItemType const item, sead::Vector3f const &position, sead::Vector3f const &velocity)
     {
         auto const item_director = reinterpret_cast<Object::CharacterEngine *>(g_pointers->m_root_system->m_scene_manager->m_root_scene->get_engine(Object::EEngineType::Character))->m_collection->m_item_director;
         auto const item_obj_director = item_director->getDirector_FromItemType(item);
