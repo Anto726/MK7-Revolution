@@ -29,6 +29,7 @@ namespace base
 			static void instant_miniturbo(Kart::Unit *);
 
 			static constexpr s32 c_status_threshold = 1 << 2;
+			static constexpr s32 c_respawn_threshold = 1;
 		};
 
 		struct mode

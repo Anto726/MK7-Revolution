@@ -37,8 +37,10 @@ namespace base
 		{
 			m_Kart_Director = handle.add(0xC).as<decltype(m_Kart_Director)>();
 
-			auto Kart_Director_calcBeforeStructure = (*static_cast<decltype(m_Kart_Director) **>(m_Kart_Director))[hooks::Kart_Director_calcBeforeStructure_index];
+			auto vtbl = *static_cast<decltype(m_Kart_Director) **>(m_Kart_Director);
+			auto Kart_Director_calcBeforeStructure = vtbl[hooks::Director_calcBeforeStructure_index];
 			auto hnd = memory::handle(Kart_Director_calcBeforeStructure);
+
 			m_Kart_Unit_calcMove = hnd.add(0x224).jmp().as<decltype(m_Kart_Unit_calcMove)>();
 			m_Kart_Unit_calcReact = hnd.add(0x1E8).jmp().as<decltype(m_Kart_Unit_calcReact)>();
 		});

@@ -14,13 +14,9 @@ namespace base
     struct hooks
     {
         // VMT hooks
-        static constexpr size_t Item_ItemDirector_count = 34;
-        static constexpr size_t Item_ItemDirector_calcBeforeStructure_index = 22;
-        static constexpr size_t Item_KartItem_count = 34;
-        static constexpr size_t Item_KartItem_initBeforeStructure_index = 20;
-        static constexpr size_t Item_KartItem_calcBeforeStructure_index = 22;
-        static constexpr size_t Kart_Director_count = 34;
-        static constexpr size_t Kart_Director_calcBeforeStructure_index = 22;
+        static constexpr size_t Director_count = 34;
+        static constexpr size_t Director_initBeforeStructure_index = 20;
+        static constexpr size_t Director_calcBeforeStructure_index = 22;
         static void Item_ItemDirector_calcBeforeStructure(Item::ItemDirector *);
         static void Item_KartItem_calcBeforeStructure(Item::KartItem *);
         static void Item_KartItem_initBeforeStructure(Item::KartItem *);
@@ -32,7 +28,7 @@ namespace base
         static void Effect_KartEffect_calcTireEffectWheelSpin(Effect::KartEffect *);
         static void Kart_Unit_calcMove(Kart::Unit *, bool, bool);
         static void Kart_Unit_calcReact(Kart::Unit *);
-        static void Kart_VehicleReact_reactAccidentCommon(Kart::VehicleReact *, Kart::VehicleReact::ECallType, int, int, Kart::VehicleReact::EAcdType, sead::Vector3f *, sead::Vector3f *);
+        static bool Kart_VehicleReact_reactAccidentCommon(Kart::VehicleReact *, Kart::VehicleReact::ECallType, int, int, Kart::VehicleReact::EAcdType, sead::Vector3f *, sead::Vector3f *);
         static void Net_NetworkEngine_sendUnreliableCore(Net::NetworkEngine *, u32, Net::NetworkBuffer *);
         static void RaceSys_LapRankChecker_calcLapPosition(RaceSys::LapRankChecker *, RaceSys::LapRankChecker::KartInfo *);
     };

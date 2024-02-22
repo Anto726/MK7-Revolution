@@ -7,7 +7,7 @@ namespace base
     {
         auto drive_during_countdown = features::mode::drive_during_countdown_before(nullptr);
 
-        g_hooking->m_Kart_Director_hook.get_original<decltype(&Kart_Director_calcBeforeStructure)>(hooks::Kart_Director_calcBeforeStructure_index)(_this);
+        g_hooking->m_Kart_Director_hook.get_original<decltype(&Kart_Director_calcBeforeStructure)>(hooks::Director_calcBeforeStructure_index)(_this);
 
         features::mode::drive_during_countdown_after(nullptr, drive_during_countdown);
     }
