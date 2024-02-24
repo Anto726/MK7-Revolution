@@ -7,3 +7,6 @@
 [submodule "vendor/mk7-memory"]
 	path = vendor/mk7-memory
 	url = https://github.com/Anto726/MK7-Memory
+[submodule "vendor/magic_enum"]
+	path = vendor/magic_enum
+	url = https://github.com/Neargye/magic_enum
