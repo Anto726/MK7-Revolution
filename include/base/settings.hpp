@@ -27,6 +27,7 @@ namespace base
 			{
 				"item_rain":
 				{
+					"items": [0, 1, 2, 3, 4],
 					"multi": false,
 					"delay": 15,
 					"height": 128.0,

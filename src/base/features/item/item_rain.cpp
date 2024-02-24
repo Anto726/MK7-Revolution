@@ -28,7 +28,7 @@ namespace base
             auto const &settings = g_settings.m_options["item"]["item_rain"];
 
             // Check that <delay> frames have passed
-            if (!data->items.empty() && ++data->count > settings["delay"].get<u64>())
+            if (++data->count > settings["delay"].get<u64>())
             {
                 data->count = 0;
 
@@ -38,15 +38,18 @@ namespace base
                 auto const spawn_item = [data, settings](auto const unit)
                 {
                     // Choose one of the items
-                    auto const item = data->items[(*g_pointers->m_random)->getU32(data->items.size())];
+                    if (auto const &items = settings["items"].get<std::vector<Item::eItemType>>(); !items.empty())
+                    {
+                        auto const item = items[(*g_pointers->m_random)->getU32(items.size())];
 
-                    // Generate a horizontal offset
-                    auto const height = settings["height"].get<double>();
-                    auto const width = settings["width"].get<double>();
-                    auto const position = *unit->m_vehicle->m_position + sead::Vector3f((*g_pointers->m_random)->getF32Range(-width, width), height, (*g_pointers->m_random)->getF32Range(-width, width));
+                        // Generate a horizontal offset
+                        auto const height = settings["height"].get<double>();
+                        auto const width = settings["width"].get<double>();
+                        auto const position = *unit->m_vehicle->m_position + sead::Vector3f((*g_pointers->m_random)->getF32Range(-width, width), height, (*g_pointers->m_random)->getF32Range(-width, width));
 
-                    // Set velocity to (0, -1, 0) so that items won't pop up before falling down
-                    utils::emit_item(unit, item, position, -sead::Vector3f::ey);
+                        // Set velocity to (0, -1, 0) so that items won't pop up before falling down
+                        utils::emit_item(unit, item, position, -sead::Vector3f::ey);
+                    }
                 };
 
                 if (settings["multi"])

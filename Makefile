@@ -16,6 +16,7 @@ BUILD		:= 	build
 INCLUDES	:= 	include \
 				vendor/fmt/include \
 				vendor/json/single_include \
+				vendor/magic_enum/include \
 				vendor/mk7-memory/include \
 				vendor/mk7-memory/vendor/sead/include
 SOURCES 	:= 	src \

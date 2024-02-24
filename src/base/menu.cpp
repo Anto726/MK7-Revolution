@@ -116,10 +116,7 @@ namespace base
     void menu::finalize()
     {
         // Item
-        *GetArg<menu_types::item_rain_data_t>(m_item_rain_entry) =
-        {
-            { Item::eItemType::KouraG, Item::eItemType::KouraR, Item::eItemType::Banana, Item::eItemType::Kinoko, Item::eItemType::Star, Item::eItemType::KouraB, Item::eItemType::Bomhei, Item::eItemType::Gesso, Item::eItemType::Flower }
-        };
+        *GetArg<menu_types::item_rain_data_t>(m_item_rain_entry) = {};
 
         *GetArg<menu_types::item_wheel_data_t>(m_item_wheel_entry) =
         {
