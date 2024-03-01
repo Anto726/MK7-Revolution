@@ -18,7 +18,7 @@ namespace base
     :
         m_plugin_menu(new PluginMenu(NAME, MAJOR_VERSION, MINOR_VERSION, REVISION_VERSION, ABOUT)),
 
-        m_item_wheel_entry(new MenuEntry("Item Wheel", [](MenuEntry *) {})),
+        m_item_wheel_entry(new MenuEntry("Item Wheel", [](MenuEntry *) {}, entries::item::item_wheel)),
         m_drop_items_entry(new MenuEntry("Drop Items", [](MenuEntry *) {})),
         m_item_rain_entry(new MenuEntry("Item Rain", [](MenuEntry *) {}, entries::item::item_rain)),
         m_blue_shell_battle_crash_fix_entry(new MenuEntry("Blue Shell Battle Crash Fix", [](MenuEntry *) {})),
@@ -117,11 +117,6 @@ namespace base
     {
         // Item
         *GetArg<menu_types::item_rain_data_t>(m_item_rain_entry) = {};
-
-        *GetArg<menu_types::item_wheel_data_t>(m_item_wheel_entry) =
-        {
-            SIZE_MAX,
-            { Item::eItemSlot::Banana, Item::eItemSlot::KouraG, Item::eItemSlot::KouraR, Item::eItemSlot::Kinoko, Item::eItemSlot::Bomhei, Item::eItemSlot::Gesso, Item::eItemSlot::KouraB, Item::eItemSlot::Kinoko3, Item::eItemSlot::Star, Item::eItemSlot::Killer, Item::eItemSlot::Thunder, Item::eItemSlot::KinokoP, Item::eItemSlot::Flower, Item::eItemSlot::Tail, Item::eItemSlot::Seven, Item::eItemSlot::Banana3, Item::eItemSlot::KouraG3, Item::eItemSlot::KouraR3, Item::eItemSlot::Empty }
-        };
+        *GetArg<menu_types::item_wheel_data_t>(m_item_wheel_entry) = {SIZE_MAX};
     }
 }

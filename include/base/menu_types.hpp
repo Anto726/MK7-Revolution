@@ -1,7 +1,6 @@
 #pragma once
-#include <forward.hpp>
 
-#include <vector>
+#include <types.hpp>
 
 namespace base::menu_types
 {
@@ -13,6 +12,5 @@ namespace base::menu_types
 	struct item_wheel_data_t
 	{
 		size_t index;
-		std::vector<Item::eItemSlot> items;
 	};
 }

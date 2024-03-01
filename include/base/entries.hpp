@@ -8,6 +8,7 @@ namespace base
 		struct item
 		{
 			static void item_rain(CTRPluginFramework::MenuEntry *);
+			static void item_wheel(CTRPluginFramework::MenuEntry *);
 		};
 
 		struct kart

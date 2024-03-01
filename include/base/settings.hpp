@@ -32,6 +32,10 @@ namespace base
 					"delay": 15,
 					"height": 128.0,
 					"width": 256.0
+				},
+				"item_wheel":
+				{
+					"items": [0, 1, 2, 3, 4, 5, 6, 8, 9, 10, 12, 13, 14]
 				}
 			},
 			"kart":
