@@ -2,14 +2,12 @@
 
 #include <base/menu.hpp>
 #include <base/menu_types.hpp>
+#include <base/pointers.hpp>
 #include <base/settings.hpp>
 #include <MenuEntryHelpers.hpp>
 
 #include <Item/eItemSlot.hpp>
-#include <Item/ItemSlot.hpp>
 #include <Item/KartItem.hpp>
-
-#include <utility>
 
 namespace base
 {
@@ -31,30 +29,10 @@ namespace base
             // Check that the index is in range
             if (data->index < items.size())
             {
-                // TODO: networking part; could probably use Item::KartItem::setItemForce instead
                 auto const item = items[data->index];
-                auto const item_value = std::to_underlying(item);
-                auto const item_slot = _this->m_item_slot;
 
-                if (item_slot->m_selected_item != item_value)
-                {
-                    // Write to these regardless
-                    item_slot->m_0x24 = 0;
-                    item_slot->m_spinning_frames = -1;
-
-                    if (item != Item::eItemSlot::Empty)
-                    {
-                        item_slot->m_current_status = 3;
-
-                        item_slot->m_selected_item = item_value;
-                        item_slot->m_current_item = item_value;
-                        item_slot->m_0x3C = 1.0f;
-
-                        _this->_setStockItem(item);
-                    }
-                    else
-                        item_slot->m_current_status = 0;
-                }
+                if (_this->m_item != item || _this->m_item_amount == 0)
+                    g_pointers->m_Item_KartItem_setItemForce(_this, item);
             }
         }
 	}

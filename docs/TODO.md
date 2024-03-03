@@ -2,6 +2,8 @@
 The following document shows a list of ideas that may get implemented in the future.
 
 ### Item
+- [x] Item Wheel
+	- [ ] Networking part
 - [x] Drop Items
 	- [ ] Other items (Star, Mushroom, Blooper, ...)
 - [ ] Unrestrict Item Usage (Bullet Bill, respawn, ...)

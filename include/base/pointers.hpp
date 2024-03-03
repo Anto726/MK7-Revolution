@@ -1,4 +1,5 @@
 #pragma once
+
 #include <forward.hpp>
 #include <types.hpp>
 
@@ -23,6 +24,7 @@ namespace base
 		void *m_Kart_Director;
 
 		game_types::Item_ItemObjDirectorBase_emitItemImpl_t m_Item_ItemObjDirectorBase_emitItemImpl;
+		game_types::Item_KartItem_setItemForce_t m_Item_KartItem_setItemForce;
 
 		void *m_Item_ItemObjBase_setStateSelfMove;
 		void *m_Item_ItemObjKouraR_stateInitComeBackDown;
