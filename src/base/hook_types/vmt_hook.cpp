@@ -4,7 +4,7 @@
 
 namespace base::hook_types
 {	
-    vmt_hook::vmt_hook(std::string name, void *obj, size_t num_funcs)
+    vmt_hook::vmt_hook(std::string_view name, void *obj, size_t num_funcs)
     :
 		m_name(std::move(name)),
 		m_object(static_cast<void ***>(obj)),

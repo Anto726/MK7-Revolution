@@ -6,7 +6,7 @@ namespace base::hook_types
 {
     using namespace CTRPluginFramework;
     
-	detour_hook::detour_hook(std::string name, void *target, void *detour)
+	detour_hook::detour_hook(std::string_view name, void *target, void *detour)
     :
 		m_name(std::move(name)),
         m_hook(std::move(Hook().InitializeForMitm(reinterpret_cast<u32>(target), reinterpret_cast<u32>(detour))))
