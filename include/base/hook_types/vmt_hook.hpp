@@ -1,14 +1,14 @@
 #pragma once
 
-#include <string> // std::string
-#include <memory> // std::unique_ptr
+#include <memory>
+#include <string_view>
 
 namespace base::hook_types
 {
     class vmt_hook
 	{
 	public:
-		explicit vmt_hook(std::string name, void *obj, size_t num_funcs);
+		explicit vmt_hook(std::string_view name, void *obj, size_t num_funcs);
 		~vmt_hook();
 
 		vmt_hook(vmt_hook &&) = delete;
@@ -26,16 +26,14 @@ namespace base::hook_types
 		t get_original(size_t index);
 
 	private:
-		std::string m_name;
-
+		std::string_view m_name;
 		void ***m_object;
 		std::size_t m_num_funcs;
-
 		void **m_original_table;
 		std::unique_ptr<void *[]> m_new_table;
 	};
 
-	template<typename t>
+	template <typename t>
 	inline t vmt_hook::get_original(size_t index)
 	{
 		return reinterpret_cast<t>(m_original_table[index]);

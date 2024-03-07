@@ -1,6 +1,7 @@
 #pragma once
 
 #include "hook_types/detour_hook.hpp"
+#include "hook_types/naked_hook.hpp"
 #include "hook_types/vmt_hook.hpp"
 
 #include "hooks.hpp"

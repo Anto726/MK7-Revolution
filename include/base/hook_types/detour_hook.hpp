@@ -7,7 +7,7 @@ namespace base::hook_types
 	class detour_hook
 	{
 	public:
-		explicit detour_hook(std::string name, void *target, void *detour);
+		explicit detour_hook(std::string_view name, void *target, void *detour);
 		~detour_hook();
 
 		detour_hook(detour_hook &&) = delete;
@@ -22,7 +22,7 @@ namespace base::hook_types
 		t call_original(args_t...);
         
 	private:
-		std::string m_name;
+		std::string_view m_name;
 		CTRPluginFramework::Hook m_hook;
 	};
 
