@@ -30,7 +30,7 @@ namespace base
 		void *m_Item_ItemObjKouraR_stateInitComeBackDown;
 		void *m_Effect_KartEffect_calcTireEffectWheelSpin;
 		void *m_Kart_Unit_calcMove;
-		void *m_Kart_Unit_calcReact;
+		void *m_Kart_VehicleReact_calcReact_0x20;
 		void *m_Kart_VehicleReact_reactAccidentCommon;
 		void *m_Net_NetworkEngine_sendUnreliableCore;
 		void *m_RaceSys_LapRankChecker_calcLapPosition;

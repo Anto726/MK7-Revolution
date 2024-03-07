@@ -1,4 +1,5 @@
 #pragma once
+
 #include <CTRPluginFramework.hpp>
 
 namespace base
@@ -13,7 +14,7 @@ namespace base
 
 		struct kart
 		{
-			static void intangibility(CTRPluginFramework::MenuEntry *);
+			static void intangibility_entry(CTRPluginFramework::MenuEntry *);
 			static void instant_miniturbo(CTRPluginFramework::MenuEntry *);
 		};
 

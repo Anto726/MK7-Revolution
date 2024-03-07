@@ -22,8 +22,7 @@ namespace base
 			static void infinite_press(Kart::Unit *);
 			static void infinite_star(Kart::Unit *);
 			static void infinite_thunder(Kart::Unit *);
-			static void intangibility_after(Kart::Unit *, bool);
-			static bool intangibility_before(Kart::Unit *);
+			static bool intangibility(Kart::VehicleReact *);
 			static bool invincibility(Kart::VehicleReact *);
 			static void instant_respawn(Kart::Unit *);
 			static void instant_miniturbo(Kart::Unit *);

@@ -5,7 +5,7 @@
 
 namespace base
 {
-	void entries::kart::intangibility(CTRPluginFramework::MenuEntry *entry)
+	void entries::kart::intangibility_entry(CTRPluginFramework::MenuEntry *entry)
 	{
 		CTRPluginFramework::Keyboard keyboard;
 		keyboard.DisplayTopScreen = true;

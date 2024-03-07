@@ -25,7 +25,7 @@ namespace base
 
         m_invincibility_entry(new MenuEntry("Invincibility", [](MenuEntry *) {})),
         m_blinking_invincibility_entry(new MenuEntry("Blinking Invincibility", [](MenuEntry *) {})),
-        m_intangibility_entry(new MenuEntry("Intangibility", [](MenuEntry *) {}, entries::kart::intangibility)),
+        m_intangibility_entry(new MenuEntry("Intangibility", [](MenuEntry *) {}, entries::kart::intangibility_entry)),
         m_infinite_star_entry(new MenuEntry("Infinite Star", [](MenuEntry *) {})),
         m_infinite_ink_entry(new MenuEntry("Infinite Ink", [](MenuEntry *) {})),
         m_infinite_thunder_entry(new MenuEntry("Infinite Thunder", [](MenuEntry *) {})),

@@ -42,7 +42,7 @@ namespace base
 			auto hnd = memory::handle(Kart_Director_calcBeforeStructure);
 
 			m_Kart_Unit_calcMove = hnd.add(0x224).jmp().as<decltype(m_Kart_Unit_calcMove)>();
-			m_Kart_Unit_calcReact = hnd.add(0x1E8).jmp().as<decltype(m_Kart_Unit_calcReact)>();
+			m_Kart_VehicleReact_calcReact_0x20 = hnd.add(0x1E8).jmp().add(0x18).jmp().add(0x20).as<decltype(m_Kart_VehicleReact_calcReact_0x20)>();
 		});
 
 		batch.add("Item::ItemObjDirectorBase::_emitItemImpl", "F0 43 2D E9 1C D0 4D E2 01 40 A0 E1 02 60 A0 E1", [this](memory::handle handle)
