@@ -42,13 +42,16 @@ namespace base
                     {
                         auto const item = items[(*g_pointers->m_random)->getU32(items.size())];
 
-                        // Generate a horizontal offset
+                        // Generate a random position
                         auto const height = settings["height"].get<double>();
                         auto const width = settings["width"].get<double>();
-                        auto const position = *unit->m_vehicle->m_position + sead::Vector3f((*g_pointers->m_random)->getF32Range(-width, width), height, (*g_pointers->m_random)->getF32Range(-width, width));
+                        auto const offset = settings["speed"]["status"] ? (unit->m_vehicle->m_up * unit->m_vehicle->m_forward_speed * settings["speed"]["value"].get<double>()) : sead::Vector3f::zero;
+                        auto const position = *unit->m_vehicle->m_position + offset + sead::Vector3f((*g_pointers->m_random)->getF32Range(-width, width), height, (*g_pointers->m_random)->getF32Range(-width, width));
 
                         // Set velocity to (0, -1, 0) so that items won't pop up before falling down
-                        utils::emit_item(unit, item, position, -sead::Vector3f::ey);
+                        auto const velocity = -sead::Vector3f::ey;
+
+                        utils::emit_item(unit, item, position, velocity);
                     }
                 };
 

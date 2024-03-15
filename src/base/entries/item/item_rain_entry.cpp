@@ -21,6 +21,8 @@ namespace base
 		auto &settings = g_settings.m_options["item"]["item_rain"];
 		auto items = settings["items"].get<std::set<Item::eItemType>>(); // FIXME: doesn't allow getting a pointer to std::set
 		auto multi = settings["multi"].get<bool *>();
+		auto speed_status = settings["speed"]["status"].get<bool *>();
+		auto speed_value = settings["speed"]["value"].get<double *>();
         auto delay = settings["delay"].get<u64 *>();
         auto height = settings["height"].get<double *>();
 		auto width = settings["width"].get<double *>();
@@ -33,6 +35,7 @@ namespace base
 			{
 				fmt::format("Items ({})", items.size()),
 				fmt::format("Multi ({})", menu::s_toggles[*multi]),
+				fmt::format("Speed ({}, {})", menu::s_toggles[*speed_status], *speed_value),
                 fmt::format("Delay ({})", *delay),
 				fmt::format("Height ({})", *height),
 				fmt::format("Width ({})", *width)
@@ -74,9 +77,34 @@ namespace base
 					break;
 				}
 				case 1: *multi ^= true; break;
-                case 2: keyboard.Open(*delay, *delay); break;
-			    case 3: keyboard.Open(*height, *height); break;
-				case 4: keyboard.Open(*width, *width); break;
+				case 2:
+				{
+					while (true)
+					{
+						keyboard.Populate(std::vector<std::string>
+						{
+							fmt::format("Status ({})", menu::s_toggles[*speed_status]),
+							fmt::format("Value ({})", *speed_value)
+						});
+
+						choice = keyboard.Open();
+
+						if (choice < 0)
+							break;
+
+						switch (choice)
+						{
+							case 0: *speed_status ^= true; break;
+							case 1: keyboard.Open(*speed_value, *speed_value); break;
+						}
+					}
+
+					choice = 0;
+					break;
+				}
+                case 3: keyboard.Open(*delay, *delay); break;
+			    case 4: keyboard.Open(*height, *height); break;
+				case 5: keyboard.Open(*width, *width); break;
 			}
 		}
 		while (choice >= 0);
