@@ -33,6 +33,7 @@ namespace base
 		void *m_Kart_VehicleReact_calcReact_0x20;
 		void *m_Kart_VehicleReact_reactAccidentCommon;
 		void *m_Net_NetworkEngine_sendUnreliableCore;
+		void *m_Net_NetworkSystemInfo_onReceivedCore;
 		void *m_RaceSys_LapRankChecker_calcLapPosition;
 
 		float *m_miniturbo_blue_threshold;

@@ -41,6 +41,7 @@ namespace base
 		{
 			static void high_data_rate(u32 *);
 			static void no_disconnect(RaceSys::LapRankChecker *);
+			static bool protections_system_info(Net::NetworkReceivedInfo *);
 		};
 	};
 }

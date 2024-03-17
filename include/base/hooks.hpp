@@ -2,11 +2,9 @@
 
 #include <forward.hpp>
 
-// mk7
 #include <Kart/VehicleReact.hpp> // Kart::VehicleReact::EAcdType, Kart::VehicleReact::ECallType
 #include <RaceSys/LapRankChecker.hpp> // RaceSys::LapRankChecker::KartInfo
 
-// sead
 #include <math/seadVectorFwd.h>
 
 namespace base
@@ -32,6 +30,7 @@ namespace base
         static void Kart_Unit_calcMove(Kart::Unit *, bool, bool);
         static bool Kart_VehicleReact_reactAccidentCommon(Kart::VehicleReact *, Kart::VehicleReact::ECallType, int, int, Kart::VehicleReact::EAcdType, sead::Vector3f *, sead::Vector3f *);
         static void Net_NetworkEngine_sendUnreliableCore(Net::NetworkEngine *, u32, Net::NetworkBuffer *);
+        static bool Net_NetworkSystemInfo_onReceivedCore(Net::NetworkSystemInfo *, Net::NetworkReceivedInfo *);
         static void RaceSys_LapRankChecker_calcLapPosition(RaceSys::LapRankChecker *, RaceSys::LapRankChecker::KartInfo *);
     };
 }

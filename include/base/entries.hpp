@@ -18,6 +18,11 @@ namespace base
 			static void instant_miniturbo(CTRPluginFramework::MenuEntry *);
 		};
 
+		struct network
+		{
+			static void protections(CTRPluginFramework::MenuEntry *);
+		};
+
 #ifdef _DEBUG
 		struct debug
 		{

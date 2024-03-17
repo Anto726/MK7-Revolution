@@ -49,6 +49,13 @@ namespace base
 				{
 					"type": 0
 				}
+			},
+			"network":
+			{
+				"protections":
+				{
+					"network": true
+				}
 			}
 		})"_json;
 	};

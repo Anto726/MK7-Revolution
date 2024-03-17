@@ -24,6 +24,7 @@ SOURCES 	:= 	src \
 				src/base/entries/item \
 				src/base/entries/debug \
 				src/base/entries/kart \
+				src/base/entries/network \
 				src/base/features/item \
 				src/base/features/kart \
 				src/base/features/mode \
@@ -38,6 +39,7 @@ SOURCES 	:= 	src \
 				src/base/hooks/Kart/Unit \
 				src/base/hooks/Kart/VehicleReact \
 				src/base/hooks/Net/NetworkEngine \
+				src/base/hooks/Net/NetworkSystemInfo \
 				src/base/hooks/RaceSys/LapRankChecker \
 				src/base/memory \
 				vendor/mk7-memory/vendor/sead/modules/src/math \

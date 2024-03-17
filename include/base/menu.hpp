@@ -65,6 +65,7 @@ namespace base
         // Network
         CTRPluginFramework::MenuEntry *m_no_disconnect_entry;
         CTRPluginFramework::MenuEntry *m_high_data_rate_entry;
+        CTRPluginFramework::MenuEntry *m_protections_entry;
     };
 
     inline menu *g_menu{};
