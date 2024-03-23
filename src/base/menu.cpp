@@ -26,10 +26,7 @@ namespace base
         m_invincibility_entry(new MenuEntry("Invincibility", [](MenuEntry *) {})),
         m_blinking_invincibility_entry(new MenuEntry("Blinking Invincibility", [](MenuEntry *) {})),
         m_intangibility_entry(new MenuEntry("Intangibility", [](MenuEntry *) {}, entries::kart::intangibility_entry)),
-        m_infinite_star_entry(new MenuEntry("Infinite Star", [](MenuEntry *) {})),
-        m_infinite_ink_entry(new MenuEntry("Infinite Ink", [](MenuEntry *) {})),
-        m_infinite_thunder_entry(new MenuEntry("Infinite Thunder", [](MenuEntry *) {})),
-        m_infinite_press_entry(new MenuEntry("Infinite Press", [](MenuEntry *) {})),
+        m_kart_statuses_entry(new MenuEntry("Kart Statuses", [](MenuEntry *) {}, entries::kart::kart_statuses_entry)),
         m_instant_respawn_entry(new MenuEntry("Instant Respawn", [](MenuEntry *) {})),
         m_instant_miniturbo_entry(new MenuEntry("Instant Mini-Turbo", [](MenuEntry *) {}, entries::kart::instant_miniturbo)),
 
@@ -78,10 +75,7 @@ namespace base
             *kart += m_invincibility_entry;
             *kart += m_blinking_invincibility_entry;
             *kart += m_intangibility_entry;
-            *kart += m_infinite_star_entry;
-            *kart += m_infinite_ink_entry;
-            *kart += m_infinite_thunder_entry;
-            *kart += m_infinite_press_entry;
+            *kart += m_kart_statuses_entry;
             *kart += m_instant_respawn_entry;
             *kart += m_instant_miniturbo_entry;
 

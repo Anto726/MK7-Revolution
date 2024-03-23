@@ -1,4 +1,5 @@
 #pragma once
+
 #include <forward.hpp>
 #include <RaceSys/ModeManagerBase.hpp> // RaceSys::ModeManagerBase::ERaceState
 
@@ -18,14 +19,11 @@ namespace base
 		struct kart
 		{
 			static void blinking_invincibility(Kart::Unit *);
-			static void infinite_ink(Kart::Unit *);
-			static void infinite_press(Kart::Unit *);
-			static void infinite_star(Kart::Unit *);
-			static void infinite_thunder(Kart::Unit *);
 			static bool intangibility(Kart::VehicleReact *);
 			static bool invincibility(Kart::VehicleReact *);
 			static void instant_respawn(Kart::Unit *);
 			static void instant_miniturbo(Kart::Unit *);
+			static void kart_statuses(Kart::Unit *);
 
 			static constexpr s32 c_status_threshold = 1 << 2;
 			static constexpr s32 c_respawn_threshold = 1;

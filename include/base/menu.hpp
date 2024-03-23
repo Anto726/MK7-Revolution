@@ -52,10 +52,7 @@ namespace base
         CTRPluginFramework::MenuEntry *m_invincibility_entry;
         CTRPluginFramework::MenuEntry *m_blinking_invincibility_entry;
         CTRPluginFramework::MenuEntry *m_intangibility_entry;
-        CTRPluginFramework::MenuEntry *m_infinite_star_entry;
-        CTRPluginFramework::MenuEntry *m_infinite_ink_entry;
-        CTRPluginFramework::MenuEntry *m_infinite_thunder_entry;
-        CTRPluginFramework::MenuEntry *m_infinite_press_entry;
+        CTRPluginFramework::MenuEntry *m_kart_statuses_entry;
         CTRPluginFramework::MenuEntry *m_instant_respawn_entry;
         CTRPluginFramework::MenuEntry *m_instant_miniturbo_entry;
 

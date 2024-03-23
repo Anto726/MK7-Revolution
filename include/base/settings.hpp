@@ -45,6 +45,13 @@ namespace base
 				{
 					"invert": false
 				},
+				"kart_statuses":
+				{
+					"ink": true,
+					"press": false,
+					"star": false,
+					"thunder": false
+				},
 				"instant_miniturbo":
 				{
 					"type": 0

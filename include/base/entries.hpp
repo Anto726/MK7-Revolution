@@ -16,6 +16,7 @@ namespace base
 		{
 			static void intangibility_entry(CTRPluginFramework::MenuEntry *);
 			static void instant_miniturbo(CTRPluginFramework::MenuEntry *);
+			static void kart_statuses_entry(CTRPluginFramework::MenuEntry *);
 		};
 
 		struct network
