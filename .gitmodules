@@ -3,10 +3,10 @@
 	url = https://github.com/fmtlib/fmt
 [submodule "vendor/json"]
 	path = vendor/json
-	url = https://github.com/ArthurSonzogni/nlohmann_json_cmake_fetchcontent
-[submodule "vendor/mk7-memory"]
-	path = vendor/mk7-memory
-	url = https://github.com/Anto726/MK7-Memory
+	url = https://github.com/nlohmann/json
 [submodule "vendor/magic_enum"]
 	path = vendor/magic_enum
 	url = https://github.com/Neargye/magic_enum
+[submodule "vendor/mk7-memory"]
+	path = vendor/mk7-memory
+	url = https://github.com/Anto726/MK7-Memory
