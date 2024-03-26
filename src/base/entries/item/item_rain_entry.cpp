@@ -3,11 +3,11 @@
 #include <base/menu.hpp>
 #include <base/settings.hpp>
 
-#include <fmt/format.h>
 #include <magic_enum/magic_enum.hpp>
 
 #include <Item/eItemType.hpp>
 
+#include <format>
 #include <set>
 
 namespace base
@@ -33,12 +33,12 @@ namespace base
 		{
 			keyboard.Populate(std::vector<std::string>
 			{
-				fmt::format("Items ({})", items.size()),
-				fmt::format("Multi ({})", menu::s_toggles[*multi]),
-				fmt::format("Speed ({}, {})", menu::s_toggles[*speed_status], *speed_value),
-                fmt::format("Delay ({})", *delay),
-				fmt::format("Height ({})", *height),
-				fmt::format("Width ({})", *width)
+				std::format("Items ({})", items.size()),
+				std::format("Multi ({})", menu::s_toggles[*multi]),
+				std::format("Speed ({}, {})", menu::s_toggles[*speed_status], *speed_value),
+                std::format("Delay ({})", *delay),
+				std::format("Height ({})", *height),
+				std::format("Width ({})", *width)
 			});
 
 			choice = keyboard.Open();
@@ -54,7 +54,7 @@ namespace base
 						auto options = std::vector<std::string>();
 
 						for (auto const i : allowed)
-							options.push_back(fmt::format("{} ({})", magic_enum::enum_name(i), menu::s_toggles[items.contains(i)]));
+							options.push_back(std::format("{} ({})", magic_enum::enum_name(i), menu::s_toggles[items.contains(i)]));
 
 						keyboard.Populate(options);
 
@@ -83,8 +83,8 @@ namespace base
 					{
 						keyboard.Populate(std::vector<std::string>
 						{
-							fmt::format("Status ({})", menu::s_toggles[*speed_status]),
-							fmt::format("Value ({})", *speed_value)
+							std::format("Status ({})", menu::s_toggles[*speed_status]),
+							std::format("Value ({})", *speed_value)
 						});
 
 						choice = keyboard.Open();

@@ -2,6 +2,8 @@
 
 #include <base/logger.hpp>
 
+#include <utility>
+
 namespace base::hook_types
 {
     using namespace CTRPluginFramework;
@@ -25,7 +27,7 @@ namespace base::hook_types
             g_logger.debug("Naked hook '{}' enabled.", m_name);
         else
         {
-            g_logger.info("Failed to enable Naked hook '{}' at {} with result {}.", m_name, reinterpret_cast<void *>(m_hook.GetContext().callbackAddress), fmt::underlying(result));
+            g_logger.info("Failed to enable Naked hook '{}' at {} with result {}.", m_name, reinterpret_cast<void *>(m_hook.GetContext().callbackAddress), std::to_underlying(result));
             abort();
         }
 	}
@@ -36,7 +38,7 @@ namespace base::hook_types
             g_logger.debug("Naked hook '{}' disabled.", m_name);
         else
         {
-            g_logger.info("Failed to disable Naked hook '{}' at {} with result {}.", m_name, reinterpret_cast<void *>(m_hook.GetContext().callbackAddress), fmt::underlying(result));
+            g_logger.info("Failed to disable Naked hook '{}' at {} with result {}.", m_name, reinterpret_cast<void *>(m_hook.GetContext().callbackAddress), std::to_underlying(result));
             abort();
         }
 	}

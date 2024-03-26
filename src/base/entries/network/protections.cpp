@@ -3,7 +3,7 @@
 #include <base/menu.hpp>
 #include <base/settings.hpp>
 
-#include <fmt/format.h>
+#include <format>
 
 namespace base
 {
@@ -21,14 +21,14 @@ namespace base
 		{
             keyboard.Populate(std::vector<std::string>
 			{
-				fmt::format("Network ({})", menu::s_toggles[*network])
+				std::format("Network ({})", menu::s_toggles[*network])
 			});
 
             choice = keyboard.Open();
 
             switch (choice)
 			{
-                case 0: *network ^= true;
+                case 0: *network ^= true; break;
             }
         }
         while (choice >= 0);

@@ -3,7 +3,7 @@
 #include <base/menu.hpp>
 #include <base/settings.hpp>
 
-#include <fmt/format.h>
+#include <format>
 
 namespace base
 {
@@ -25,10 +25,10 @@ namespace base
 		{
 			keyboard.Populate(std::vector<std::string>
 			{
-				fmt::format("Ink ({})", menu::s_toggles[*ink]),
-				fmt::format("Press ({})", menu::s_toggles[*press]),
-				fmt::format("Star ({})", menu::s_toggles[*star]),
-				fmt::format("Thunder ({})", menu::s_toggles[*thunder])
+				std::format("Ink ({})", menu::s_toggles[*ink]),
+				std::format("Press ({})", menu::s_toggles[*press]),
+				std::format("Star ({})", menu::s_toggles[*star]),
+				std::format("Thunder ({})", menu::s_toggles[*thunder])
 			});
 
 			choice = keyboard.Open();

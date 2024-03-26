@@ -3,11 +3,11 @@
 #include <base/menu.hpp>
 #include <base/settings.hpp>
 
-#include <fmt/format.h>
 #include <magic_enum/magic_enum.hpp>
 
 #include <Item/eItemSlot.hpp>
 
+#include <format>
 #include <set>
 
 namespace base
@@ -30,7 +30,7 @@ namespace base
                 auto options = std::vector<std::string>();
 
                 for (auto const i : allowed)
-					options.push_back(fmt::format("{} ({})", magic_enum::enum_name(i), menu::s_toggles[items.contains(i)]));
+					options.push_back(std::format("{} ({})", magic_enum::enum_name(i), menu::s_toggles[items.contains(i)]));
 
                 keyboard.Populate(options);
 
