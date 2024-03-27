@@ -1,7 +1,8 @@
 #pragma once
 
-#include <format>
 #include <CTRPluginFramework.hpp>
+
+#include <format>
 
 namespace base
 {

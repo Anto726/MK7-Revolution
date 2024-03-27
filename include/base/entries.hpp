@@ -27,7 +27,7 @@ namespace base
 #ifdef _DEBUG
 		struct debug
 		{
-			static void toggle_hooks(CTRPluginFramework::MenuEntry *);
+			static void toggle_hooks_menu(CTRPluginFramework::MenuEntry *);
 		};
 #endif
 	};

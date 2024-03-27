@@ -10,6 +10,8 @@
 #include <base/hooking.hpp>
 #include <base/settings.hpp>
 
+#define DEFAULT_ENTRY [](MenuEntry *) {}
+
 namespace base
 {
     using namespace CTRPluginFramework;
@@ -18,22 +20,22 @@ namespace base
     :
         m_plugin_menu(new PluginMenu(NAME, MAJOR_VERSION, MINOR_VERSION, REVISION_VERSION, ABOUT)),
 
-        m_item_wheel_entry(new MenuEntry("Item Wheel", [](MenuEntry *) {}, entries::item::item_wheel_menu)),
-        m_drop_items_entry(new MenuEntry("Drop Items", [](MenuEntry *) {})),
-        m_item_rain_entry(new MenuEntry("Item Rain", [](MenuEntry *) {}, entries::item::item_rain_menu)),
-        m_blue_shell_battle_crash_fix_entry(new MenuEntry("Blue Shell Battle Crash Fix", [](MenuEntry *) {})),
+        m_item_wheel_entry(new MenuEntry("Item Wheel", DEFAULT_ENTRY, entries::item::item_wheel_menu)),
+        m_drop_items_entry(new MenuEntry("Drop Items", DEFAULT_ENTRY)),
+        m_item_rain_entry(new MenuEntry("Item Rain", DEFAULT_ENTRY, entries::item::item_rain_menu)),
+        m_blue_shell_battle_crash_fix_entry(new MenuEntry("Blue Shell Battle Crash Fix", DEFAULT_ENTRY)),
 
-        m_invincibility_entry(new MenuEntry("Invincibility", [](MenuEntry *) {})),
-        m_intangibility_entry(new MenuEntry("Intangibility", [](MenuEntry *) {}, entries::kart::intangibility_menu)),
-        m_kart_statuses_entry(new MenuEntry("Kart Statuses", [](MenuEntry *) {}, entries::kart::kart_statuses_menu)),
-        m_instant_respawn_entry(new MenuEntry("Instant Respawn", [](MenuEntry *) {})),
-        m_instant_miniturbo_entry(new MenuEntry("Instant Mini-Turbo", [](MenuEntry *) {}, entries::kart::instant_miniturbo_menu)),
+        m_invincibility_entry(new MenuEntry("Invincibility", DEFAULT_ENTRY)),
+        m_intangibility_entry(new MenuEntry("Intangibility", DEFAULT_ENTRY, entries::kart::intangibility_menu)),
+        m_kart_statuses_entry(new MenuEntry("Kart Statuses", DEFAULT_ENTRY, entries::kart::kart_statuses_menu)),
+        m_instant_respawn_entry(new MenuEntry("Instant Respawn", DEFAULT_ENTRY)),
+        m_instant_miniturbo_entry(new MenuEntry("Instant Mini-Turbo", DEFAULT_ENTRY, entries::kart::instant_miniturbo_menu)),
 
-        m_drive_during_countdown_entry(new MenuEntry("Drive During Countdown", [](MenuEntry *) {})),
+        m_drive_during_countdown_entry(new MenuEntry("Drive During Countdown", DEFAULT_ENTRY)),
 
-        m_no_disconnect_entry(new MenuEntry("No Disconnect", [](MenuEntry *) {})),
-        m_high_data_rate_entry(new MenuEntry("High Data Rate", [](MenuEntry *) {})),
-        m_protections_entry(new MenuEntry("Protections", [](MenuEntry *) {}, entries::network::protections_menu))
+        m_no_disconnect_entry(new MenuEntry("No Disconnect", DEFAULT_ENTRY)),
+        m_high_data_rate_entry(new MenuEntry("High Data Rate", DEFAULT_ENTRY)),
+        m_protections_entry(new MenuEntry("Protections", DEFAULT_ENTRY, entries::network::protections_menu))
     {
         m_plugin_menu->SynchronizeWithFrame(true);
         m_plugin_menu->ShowWelcomeMessage(false);
@@ -101,7 +103,7 @@ namespace base
         (
             "Debug", 
             {
-                new MenuEntry(g_hooking->is_enabled() ? "Disable hooks" : "Enable hooks", nullptr, entries::debug::toggle_hooks)
+                new MenuEntry(g_hooking->is_enabled() ? "Disable hooks" : "Enable hooks", nullptr, entries::debug::toggle_hooks_menu)
             }
         );
 #endif
