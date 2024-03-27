@@ -4,6 +4,8 @@
 #include <base/hooking.hpp>
 #include <base/settings.hpp>
 
+#define DEFAULT_ENTRY [](MenuEntry *) {}
+
 namespace base
 {
     using namespace CTRPluginFramework;
@@ -41,7 +43,7 @@ namespace base
         (
             "Debug", 
             {
-                new MenuEntry(g_hooking->is_enabled() ? "Disable hooks" : "Enable hooks", nullptr, entries::debug::toggle_hooks)
+                new MenuEntry(g_hooking->is_enabled() ? "Disable hooks" : "Enable hooks", nullptr, entries::debug::toggle_hooks_menu)
             }
         );
 #endif
@@ -49,5 +51,6 @@ namespace base
 
     void menu::finalize()
     {
+        
     }
 }
