@@ -35,6 +35,7 @@ namespace base
 		void *m_Net_NetworkEngine_sendUnreliableCore;
 		void *m_Net_NetworkSystemInfo_onReceivedCore;
 		void *m_RaceSys_LapRankChecker_calcLapPosition;
+		void *m_System_KDPadInputer_calcInput;
 
 		float *m_miniturbo_blue_threshold;
 		float *m_miniturbo_red_threshold;

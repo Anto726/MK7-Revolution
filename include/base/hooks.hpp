@@ -11,10 +11,11 @@ namespace base
 {
     struct hooks
     {
-        // VMT hooks
         static constexpr size_t Director_count = 34;
         static constexpr size_t Director_initBeforeStructure_index = 20;
         static constexpr size_t Director_calcBeforeStructure_index = 22;
+        
+        // VMT hooks
         static void Item_ItemDirector_calcBeforeStructure(Item::ItemDirector *);
         static void Item_KartItem_calcBeforeStructure(Item::KartItem *);
         static void Item_KartItem_initBeforeStructure(Item::KartItem *);
@@ -32,5 +33,6 @@ namespace base
         static void Net_NetworkEngine_sendUnreliableCore(Net::NetworkEngine *, u32, Net::NetworkBuffer *);
         static bool Net_NetworkSystemInfo_onReceivedCore(Net::NetworkSystemInfo *, Net::NetworkReceivedInfo *);
         static void RaceSys_LapRankChecker_calcLapPosition(RaceSys::LapRankChecker *, RaceSys::LapRankChecker::KartInfo *);
+        static void System_KDPadInputer_calcState(System::KDPadInputer *);
     };
 }

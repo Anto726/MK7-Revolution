@@ -40,6 +40,7 @@ SOURCES 	:= 	src \
 				src/base/hooks/Net/NetworkEngine \
 				src/base/hooks/Net/NetworkSystemInfo \
 				src/base/hooks/RaceSys/LapRankChecker \
+				src/base/hooks/System/KDPadInputer \
 				src/base/memory \
 				vendor/mk7-memory/vendor/sead/modules/src/math \
 				vendor/mk7-memory/vendor/sead/modules/src/random

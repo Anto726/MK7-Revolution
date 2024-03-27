@@ -37,6 +37,7 @@ namespace base
         hook_types::detour_hook m_Net_NetworkEngine_sendUnreliableCore_hook;
         hook_types::detour_hook m_Net_NetworkSystemInfo_onReceivedCore_hook;
         hook_types::detour_hook m_RaceSys_LapRankChecker_calcLapPosition_hook;
+        hook_types::detour_hook m_System_KDPadInputer_calcInput_hook;
     };
 
     inline hooking *g_hooking{};
