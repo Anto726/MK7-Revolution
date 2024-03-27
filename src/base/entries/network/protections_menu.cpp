@@ -7,7 +7,7 @@
 
 namespace base
 {
-    void entries::network::protections(CTRPluginFramework::MenuEntry *entry)
+    void entries::network::protections_menu(CTRPluginFramework::MenuEntry *entry)
     {
         auto keyboard = CTRPluginFramework::Keyboard(entry->Name());
 		keyboard.DisplayTopScreen = true;

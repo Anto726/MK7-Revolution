@@ -18,7 +18,6 @@ namespace base
 
 		struct kart
 		{
-			static void blinking_invincibility(Kart::Unit *);
 			static bool intangibility(Kart::VehicleReact *);
 			static bool invincibility(Kart::VehicleReact *);
 			static void instant_respawn(Kart::Unit *);

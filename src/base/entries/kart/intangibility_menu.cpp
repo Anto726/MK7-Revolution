@@ -3,22 +3,24 @@
 #include <base/menu.hpp>
 #include <base/settings.hpp>
 
+#include <format>
+
 namespace base
 {
-	void entries::kart::intangibility_entry(CTRPluginFramework::MenuEntry *entry)
+	void entries::kart::intangibility_menu(CTRPluginFramework::MenuEntry *entry)
 	{
-		CTRPluginFramework::Keyboard keyboard;
+		auto keyboard = CTRPluginFramework::Keyboard(entry->Name());
 		keyboard.DisplayTopScreen = true;
-		keyboard.GetMessage() = entry->Name();
+
+		auto invert = g_settings.m_options["kart"]["intangibility"]["invert"].get<bool *>();
 
 		int choice;
-		auto invert = g_settings.m_options["kart"]["intangibility"]["invert"].get<bool *>();
 
 		do
 		{
 			keyboard.Populate(std::vector<std::string>
 			{
-				"Invert: " + menu::s_toggles[*invert]
+				std::format("Invert: {}", menu::s_toggles[*invert])
 			});
 
 			choice = keyboard.Open();
@@ -26,7 +28,6 @@ namespace base
 			switch (choice)
 			{
 				case 0: *invert ^= true; break;
-				default: break;
 			}
 		}
 		while (choice >= 0);

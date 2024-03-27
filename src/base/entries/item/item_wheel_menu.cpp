@@ -12,7 +12,7 @@
 
 namespace base
 {
-    void entries::item::item_wheel(CTRPluginFramework::MenuEntry *entry)
+    void entries::item::item_wheel_menu(CTRPluginFramework::MenuEntry *entry)
     {
         auto keyboard = CTRPluginFramework::Keyboard(entry->Name());
 		keyboard.DisplayTopScreen = true;

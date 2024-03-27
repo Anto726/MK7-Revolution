@@ -18,23 +18,22 @@ namespace base
     :
         m_plugin_menu(new PluginMenu(NAME, MAJOR_VERSION, MINOR_VERSION, REVISION_VERSION, ABOUT)),
 
-        m_item_wheel_entry(new MenuEntry("Item Wheel", [](MenuEntry *) {}, entries::item::item_wheel)),
+        m_item_wheel_entry(new MenuEntry("Item Wheel", [](MenuEntry *) {}, entries::item::item_wheel_menu)),
         m_drop_items_entry(new MenuEntry("Drop Items", [](MenuEntry *) {})),
-        m_item_rain_entry(new MenuEntry("Item Rain", [](MenuEntry *) {}, entries::item::item_rain)),
+        m_item_rain_entry(new MenuEntry("Item Rain", [](MenuEntry *) {}, entries::item::item_rain_menu)),
         m_blue_shell_battle_crash_fix_entry(new MenuEntry("Blue Shell Battle Crash Fix", [](MenuEntry *) {})),
 
         m_invincibility_entry(new MenuEntry("Invincibility", [](MenuEntry *) {})),
-        m_blinking_invincibility_entry(new MenuEntry("Blinking Invincibility", [](MenuEntry *) {})),
-        m_intangibility_entry(new MenuEntry("Intangibility", [](MenuEntry *) {}, entries::kart::intangibility_entry)),
-        m_kart_statuses_entry(new MenuEntry("Kart Statuses", [](MenuEntry *) {}, entries::kart::kart_statuses_entry)),
+        m_intangibility_entry(new MenuEntry("Intangibility", [](MenuEntry *) {}, entries::kart::intangibility_menu)),
+        m_kart_statuses_entry(new MenuEntry("Kart Statuses", [](MenuEntry *) {}, entries::kart::kart_statuses_menu)),
         m_instant_respawn_entry(new MenuEntry("Instant Respawn", [](MenuEntry *) {})),
-        m_instant_miniturbo_entry(new MenuEntry("Instant Mini-Turbo", [](MenuEntry *) {}, entries::kart::instant_miniturbo)),
+        m_instant_miniturbo_entry(new MenuEntry("Instant Mini-Turbo", [](MenuEntry *) {}, entries::kart::instant_miniturbo_menu)),
 
         m_drive_during_countdown_entry(new MenuEntry("Drive During Countdown", [](MenuEntry *) {})),
 
         m_no_disconnect_entry(new MenuEntry("No Disconnect", [](MenuEntry *) {})),
         m_high_data_rate_entry(new MenuEntry("High Data Rate", [](MenuEntry *) {})),
-        m_protections_entry(new MenuEntry("Protections", [](MenuEntry *) {}, entries::network::protections))
+        m_protections_entry(new MenuEntry("Protections", [](MenuEntry *) {}, entries::network::protections_menu))
     {
         m_plugin_menu->SynchronizeWithFrame(true);
         m_plugin_menu->ShowWelcomeMessage(false);
@@ -73,7 +72,6 @@ namespace base
         if (auto kart = new MenuFolder("Kart"))
         {
             *kart += m_invincibility_entry;
-            *kart += m_blinking_invincibility_entry;
             *kart += m_intangibility_entry;
             *kart += m_kart_statuses_entry;
             *kart += m_instant_respawn_entry;

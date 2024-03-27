@@ -14,6 +14,9 @@ namespace base
 		if (g_menu->m_kart_statuses_entry->IsActivated() && _this->m_vehicle->m_is_master && !_this->m_vehicle->m_is_net_recv)
 		{
 			auto const &settings = g_settings.m_options["kart"]["kart_statuses"];
+
+			if (settings["blink"] && _this->m_vehicle->m_invincibility_frames <= 1)
+				_this->m_vehicle->m_invincibility_frames = *g_pointers->m_invincibility_frames_invisible_amount + *g_pointers->m_invincibility_frames_visible_amount;
 			
 			if (settings["ink"] && _this->m_vehicle->m_ink_frames <= c_status_threshold)
 				_this->m_vehicle->m_ink_frames = c_status_threshold + 1;

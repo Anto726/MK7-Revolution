@@ -1,5 +1,5 @@
 ## Features
-The following document shows a [Tree](https://tree.nathanfriend.io/?s=(%27opt8s!(%27fancy!true~fullPath3~trail7gSlash3~rootDot3)~9(%279%27Revolut8.6JWheel*Drop%206sJRa7*Blu5Shell%20Battl5Crash%20Fix.Kart*2Bl7k7g%202GtangA0Star0Gk0Thunder0Press4Respawn4M7i-Turbo.Mode*Driv5Dur7g%20Countdown.Network*NoLisconnect*HighLata%20Rate*Protect8s%27)~vers8!%271%27)*.E.%5CnE0*Gf7it52Gv7cA*3!false4*Gstant%205e%206Item7in8ion9source!AibilityE%20%20GInJ*6%20L%20D%01LJGEA987654320.*) view of the current features.
+The following document shows a [Tree](https://tree.nathanfriend.io/?s=(%27opt6s!(%27fancy!true~fullPath0~trailingSlash0~rootDot0)~7(%277%27Revolut6.39Wheel*Drop%203s9Rain*BluAShell%20BattlACrash%20Fix.Kart*Invinc4Intang4KarEStatuses2Respawn2Mini-Turbo.Mode*Drive5uring%20Countdown.Network*No5isconnect*High5ata%20Rate*Protect6s%27)~vers6!%271%27)*.8.%5Cn80!false2*InstanE3Item4ibility*5%20D6ion7source!8%20%209*3%20Ae%20Et%20%01EA987654320.*) view of the current features.
 ```
 Revolution
 ├── Item
@@ -9,12 +9,8 @@ Revolution
 │   └── Blue Shell Battle Crash Fix
 ├── Kart
 │   ├── Invincibility
-│   ├── Blinking Invincibility
 │   ├── Intangibility
-│   ├── Infinite Star
-│   ├── Infinite Ink
-│   ├── Infinite Thunder
-│   ├── Infinite Press
+│   ├── Kart Statuses
 │   ├── Instant Respawn
 │   └── Instant Mini-Turbo
 ├── Mode

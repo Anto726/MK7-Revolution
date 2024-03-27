@@ -44,10 +44,11 @@ namespace base
 			{
 				"intangibility":
 				{
-					"invert": false
+					"invert": true
 				},
 				"kart_statuses":
 				{
+					"blink": true,
 					"ink": true,
 					"press": false,
 					"star": false,
@@ -55,7 +56,7 @@ namespace base
 				},
 				"instant_miniturbo":
 				{
-					"type": 0
+					"type": 1
 				}
 			},
 			"network":

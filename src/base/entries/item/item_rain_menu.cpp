@@ -12,17 +12,18 @@
 
 namespace base
 {
-	void entries::item::item_rain(CTRPluginFramework::MenuEntry *entry)
+	void entries::item::item_rain_menu(CTRPluginFramework::MenuEntry *entry)
 	{
 		auto keyboard = CTRPluginFramework::Keyboard(entry->Name());
 		keyboard.DisplayTopScreen = true;
 		keyboard.IsHexadecimal(false);
 
 		auto &settings = g_settings.m_options["item"]["item_rain"];
+		auto &speed = settings["speed"];
 		auto items = settings["items"].get<std::set<Item::eItemType>>(); // FIXME: doesn't allow getting a pointer to std::set
 		auto multi = settings["multi"].get<bool *>();
-		auto speed_status = settings["speed"]["status"].get<bool *>();
-		auto speed_value = settings["speed"]["value"].get<double *>();
+		auto speed_status = speed["status"].get<bool *>();
+		auto speed_value = speed["value"].get<double *>();
         auto delay = settings["delay"].get<u64 *>();
         auto height = settings["height"].get<double *>();
 		auto width = settings["width"].get<double *>();
