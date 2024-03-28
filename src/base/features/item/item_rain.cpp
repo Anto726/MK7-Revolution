@@ -35,11 +35,14 @@ namespace base
                 auto const units = reinterpret_cast<Object::CharacterEngine *>(g_pointers->m_root_system->m_scene_manager->m_root_scene->get_engine(Object::EEngineType::Character))->m_collection->m_kart_director->m_units;
 
                 // Lambda to spawn a randomized item
-                auto const spawn_item = [data, settings](auto const unit)
+                auto const spawn_item = [_this, data, settings](auto const unit)
                 {
                     // Choose one of the items
                     if (auto const &items = settings["items"].get<std::vector<Item::eItemType>>(); !items.empty())
                     {
+                        auto const player_id = settings["owned"] ? _this->m_info_proxy->m_vehicle->m_player_id : unit->m_vehicle->m_player_id;
+
+                        // Choose a random item
                         auto const item = items[(*g_pointers->m_random)->getU32(items.size())];
 
                         // Generate a random position
@@ -51,7 +54,7 @@ namespace base
                         // Set velocity to (0, -1, 0) so that items won't pop up before falling down
                         auto const velocity = -sead::Vector3f::ey;
 
-                        utils::emit_item(unit, item, position, velocity);
+                        utils::emit_item(player_id, item, position, velocity);
                     }
                 };
 

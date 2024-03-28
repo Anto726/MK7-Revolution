@@ -21,6 +21,7 @@ namespace base
 		auto &settings = g_settings.m_options["item"]["item_rain"];
 		auto &speed = settings["speed"];
 		auto items = settings["items"].get<std::set<Item::eItemType>>(); // FIXME: doesn't allow getting a pointer to std::set
+		auto owned = settings["owned"].get<bool *>();
 		auto multi = settings["multi"].get<bool *>();
 		auto speed_status = speed["status"].get<bool *>();
 		auto speed_value = speed["value"].get<double *>();
@@ -35,6 +36,7 @@ namespace base
 			keyboard.Populate(std::vector<std::string>
 			{
 				std::format("Items ({})", items.size()),
+				std::format("Owned ({})", menu::s_toggles[*owned]),
 				std::format("Multi ({})", menu::s_toggles[*multi]),
 				std::format("Speed ({}, {})", menu::s_toggles[*speed_status], *speed_value),
                 std::format("Delay ({})", *delay),
@@ -77,8 +79,9 @@ namespace base
 					choice = 0;
 					break;
 				}
-				case 1: *multi ^= true; break;
-				case 2:
+				case 1: *owned ^= true; break;
+				case 2: *multi ^= true; break;
+				case 3:
 				{
 					while (true)
 					{
@@ -103,9 +106,9 @@ namespace base
 					choice = 0;
 					break;
 				}
-                case 3: keyboard.Open(*delay, *delay); break;
-			    case 4: keyboard.Open(*height, *height); break;
-				case 5: keyboard.Open(*width, *width); break;
+                case 4: keyboard.Open(*delay, *delay); break;
+			    case 5: keyboard.Open(*height, *height); break;
+				case 6: keyboard.Open(*width, *width); break;
 			}
 		}
 		while (choice >= 0);

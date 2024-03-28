@@ -29,8 +29,9 @@ namespace base
 				"item_rain":
 				{
 					"items": [0, 1, 2, 3, 4],
+					"owned": true,
 					"multi": false,
-					"speed": { "status": true, "value": 32.0 },
+					"speed": { "status": true, "value": 64.0 },
 					"delay": 15,
 					"height": 128.0,
 					"width": 256.0
