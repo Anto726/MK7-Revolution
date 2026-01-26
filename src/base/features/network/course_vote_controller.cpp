@@ -44,6 +44,17 @@ namespace base
 
                     break;
                 }
+                case decltype(course_vote_controller.mode)::Self:
+                {
+                    for (auto i = s32{}; i < votes.size(); ++i)
+                        if (votes.at(i)->station_id == engine->m_local_station_id)
+                        {
+                            vote = i;
+                            break;
+                        }
+
+                    break;
+                }
                 case decltype(course_vote_controller.mode)::Direct:
                 {
                     switch (course_vote_controller.direct_mode)

@@ -331,7 +331,7 @@ namespace base
 			{
 				struct course_vote_controller
 				{
-					enum class mode : u8 { Choose, Direct, Filter, } mode{ mode::Direct };
+					enum class mode : u8 { Choose, Self, Direct, Filter, } mode{ mode::Self };
 					enum class direct_mode : u8 { First, Last, } direct_mode{ direct_mode::First };
 					enum class filter_mode : u8 { Whitelist, Blacklist, } filter_mode{ filter_mode::Whitelist };
 					std::set<RaceSys::ECourseID> whitelist_set
