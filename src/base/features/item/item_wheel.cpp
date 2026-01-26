@@ -53,7 +53,7 @@ namespace base
                 else
                 {
                     // Don't switch items when changing Stalking target on the same frame
-                    auto const &unit = static_cast<game::kart::unit *>(_this->m_info_proxy->m_vehicle->m_director->m_units.at(_this->m_player_id));
+                    auto const &unit = static_cast<game::kart::unit *>(_this->m_info_proxy->m_vehicle->m_director->m_units[_this->m_player_id]);
 
                     if (!unit->m_stalking.changed)
                     {

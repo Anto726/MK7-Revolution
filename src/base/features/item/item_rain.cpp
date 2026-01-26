@@ -59,12 +59,12 @@ namespace base
                 auto const &director = static_cast<game::kart::director *>(_this->m_info_proxy->m_vehicle->m_director);
                 auto const &units = item_rain.self ? director->m_units : director->m_opponent_units;
 
-                if (!units.isEmpty())
+                if (units.size() != 0)
                 {
                     if (item_rain.multi)
-                        std::for_each(units.dataBegin(), units.dataEnd(), spawn_item);
+                        std::for_each(units.begin(), units.end(), spawn_item);
                     else
-                        spawn_item(units.at(utils::random_u32(units.size())));
+                        spawn_item(units[utils::random_u32(units.size())]);
                 }
             }
         }

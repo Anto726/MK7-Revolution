@@ -17,7 +17,7 @@ namespace base
         {
             auto const &units = static_cast<game::kart::director *>(_this->m_vehicle->m_director)->m_opponent_units;
 
-            if (!units.isEmpty())
+            if (units.size() != 0)
             {
                 _this->m_stalking.changed = false;
 
@@ -42,7 +42,7 @@ namespace base
 
                 if (_this->m_stalking.index != -1)
                 {
-                    auto const &unit = units.at(_this->m_stalking.index);
+                    auto const &unit = units[_this->m_stalking.index];
 
                     *_this->m_vehicle->m_angle = *unit->m_vehicle->m_angle;
                     *_this->m_vehicle->m_position = *unit->m_vehicle->m_position;
