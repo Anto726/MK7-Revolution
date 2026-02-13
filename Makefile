@@ -23,6 +23,7 @@ INCLUDES	:= 	include \
 				vendor/glaze/include \
 				vendor/magic_enum/include \
 				vendor/mk7-memory/include \
+				vendor/mk7-memory/vendor/lms/Include \
 				vendor/mk7-memory/vendor/nnheaders/include \
 				vendor/mk7-memory/vendor/nw4c/include \
 				vendor/mk7-memory/vendor/sead/include
