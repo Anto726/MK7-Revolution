@@ -3,7 +3,7 @@
 #include <forward.hpp>
 
 #include <Item/eItemSlot.hpp>
-#include <Kart/VehicleMove.hpp> // Kart::VehicleMove::StatusFlags
+#include <Kart/Vehicle/VehicleMove.hpp> // Kart::VehicleMove::StatusFlags
 #include <Net/NetworkEventModule.hpp> // Net::NetworkEventModule::Slot
 #include <Net/NetworkItemEventDataMgr.hpp> // Net::NetworkItemEventDataMgr::SlotData
 #include <RaceSys/ERaceRuleMode.hpp>

@@ -3,7 +3,7 @@
 #include <base/menu.hpp>
 #include <base/settings.hpp>
 
-#include <Kart/VehicleReact.hpp>
+#include <Kart/Vehicle/VehicleReact.hpp>
 
 namespace base
 {

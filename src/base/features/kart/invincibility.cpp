@@ -2,7 +2,7 @@
 
 #include <base/menu.hpp>
 
-#include <Kart/VehicleReact.hpp>
+#include <Kart/Vehicle/VehicleReact.hpp>
 
 namespace base
 {

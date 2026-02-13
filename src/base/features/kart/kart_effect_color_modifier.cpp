@@ -6,7 +6,7 @@
 #include <base/services/rainbow_service.hpp>
 
 #include <Kart/Unit.hpp>
-#include <Kart/Vehicle.hpp>
+#include <Kart/Vehicle/Vehicle.hpp>
 
 namespace base
 {

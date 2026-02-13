@@ -6,7 +6,7 @@
 
 #include <Item/ItemObj/ItemObjKiller.hpp>
 #include <Kart/InfoProxy.hpp>
-#include <Kart/VehicleMove.hpp>
+#include <Kart/Vehicle/VehicleMove.hpp>
 
 namespace base
 {

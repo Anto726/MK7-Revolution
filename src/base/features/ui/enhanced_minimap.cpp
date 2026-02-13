@@ -3,7 +3,7 @@
 #include <base/menu.hpp>
 #include <base/settings.hpp>
 
-#include <Kart/Vehicle.hpp>
+#include <Kart/Vehicle/Vehicle.hpp>
 #include <UI/BgRaceMapCharaControl.hpp>
 
 namespace base
