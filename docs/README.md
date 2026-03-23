@@ -30,7 +30,7 @@ git clone <repo url> --depth=1 --recurse-submodules --shallow-submodules
 - [BigBaseV2](https://github.com/Pocakking/BigBaseV2)
 - [glaze](https://github.com/stephenberry/glaze) (forked to [glaze](https://github.com/Anto726/glaze))
 - [magic_enum](https://github.com/Neargye/magic_enum)
-- [MK7-Memory](https://github.com/Anto726/MK7-Memory)
+- [MK7-Memory](https://github.com/mk7re/MK7-Memory)
 
 ## License
 See [LICENSE](LICENSE).

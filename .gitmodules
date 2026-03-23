@@ -6,4 +6,4 @@
 	url = https://github.com/Neargye/magic_enum
 [submodule "vendor/mk7-memory"]
 	path = vendor/mk7-memory
-	url = https://github.com/Anto726/MK7-Memory
+	url = https://github.com/mk7re/MK7-Memory
