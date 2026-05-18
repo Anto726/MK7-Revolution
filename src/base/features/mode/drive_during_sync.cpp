@@ -16,7 +16,7 @@ namespace base
             if (mode_manager == nullptr)
                 mode_manager = System::g_root_system->get_race_director()->m_mode_manager;
 
-            mode_manager->m_race_state = original;
+            mode_manager->m_state_observer.m_state_current = original;
         }
     }
 
@@ -29,8 +29,8 @@ namespace base
             if (mode_manager == nullptr)
                 mode_manager = System::g_root_system->get_race_director()->m_mode_manager;
 
-            original = mode_manager->m_race_state;
-            mode_manager->m_race_state = RaceSys::ModeManagerBase::RaceState_Race;
+            original = static_cast<RaceSys::ModeManagerBase::RaceState>(mode_manager->m_state_observer.m_state_current);
+            mode_manager->m_state_observer.m_state_current = std::to_underlying(RaceSys::ModeManagerBase::RaceState_Race);
         }
 
         return original;

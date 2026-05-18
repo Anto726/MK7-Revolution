@@ -4,8 +4,15 @@
 
 #include <base/memory/all.hpp>
 
-#include <callback.hpp>
 #include <System/RootSystem.hpp>
+
+// TODO: should use StateCallInfo
+struct callback
+{
+	void *function;
+	void *gap;
+};
+static_assert(sizeof(callback) == 8);
 
 namespace base
 {
