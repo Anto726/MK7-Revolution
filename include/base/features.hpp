@@ -7,7 +7,7 @@
 #include <Net/NetworkEventModule.hpp> // Net::NetworkEventModule::Slot
 #include <Net/NetworkItemEventDataMgr.hpp> // Net::NetworkItemEventDataMgr::SlotData
 #include <RaceSys/ERaceRuleMode.hpp>
-#include <RaceSys/ModeManagerBase.hpp> // RaceSys::ModeManagerBase::ERaceState
+#include <RaceSys/ModeManager/ModeManagerBase.hpp> // RaceSys::ModeManagerBase::ERaceState
 #include <UI/RaceItemBoxControl.hpp> // UI::RaceItemBoxControl::Animation
 
 #include <controller/seadController.h> // sead::Controller

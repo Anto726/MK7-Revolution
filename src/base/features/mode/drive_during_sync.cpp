@@ -2,7 +2,7 @@
 
 #include <base/menu.hpp>
 
-#include <RaceSys/ModeManagerBase.hpp>
+#include <RaceSys/ModeManager/ModeManagerBase.hpp>
 #include <RaceSys/RaceDirector.hpp>
 #include <System/RootSystem.hpp>
 #include <System/KDPadInputer.hpp>
