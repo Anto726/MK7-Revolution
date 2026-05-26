@@ -23,7 +23,7 @@ namespace base::game::system
         if (is_default_unlocked(id))
             return true;
 
-        return g_pointers->m_system_save_data->m_player_flag_save_data.m_flag_data.profile_data.get_gp() & BIT(g_pointers->m_grand_prix_flags[std::to_underlying(id)]);
+        return g_pointers->m_system_save_data->m_data.m_player_flag_save_data.m_flag_data.profile_data.get_gp() & BIT(g_pointers->m_grand_prix_flags[std::to_underlying(id)]);
     }
 
     void flag::set(RaceSys::EGrandPrixID id, bool status)
@@ -31,7 +31,7 @@ namespace base::game::system
         if (id == RaceSys::EGrandPrixID::INVALID || g_pointers->m_system_save_data == nullptr || is_default_unlocked(id))
             return;
 
-        auto &gp_vr = g_pointers->m_system_save_data->m_player_flag_save_data.m_flag_data.profile_data;
+        auto &gp_vr = g_pointers->m_system_save_data->m_data.m_player_flag_save_data.m_flag_data.profile_data;
         auto gp = gp_vr.get_gp();
 
         auto const bit = BIT(g_pointers->m_grand_prix_flags[std::to_underlying(id)]);

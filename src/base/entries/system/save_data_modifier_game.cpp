@@ -42,7 +42,7 @@ namespace base
         keyboard.DisplayTopScreen = true;
         keyboard.IsHexadecimal(false);
 
-        auto &player_flag_save_data = g_pointers->m_system_save_data->m_player_flag_save_data;
+        auto &player_flag_save_data = g_pointers->m_system_save_data->m_data.m_player_flag_save_data;
         auto const game_setting = System::g_root_system->get_game_setting();
 
         while (true)
@@ -57,7 +57,7 @@ namespace base
                 std::format("{} ({})", g_message_service->get(LMS_MessageID::CoinsCollected), player_flag_save_data.m_flag_data.coins),
                 std::format("{} ({})", g_message_service->get(LMS_MessageID::StreetPassTags), player_flag_save_data.m_flag_data.streetpass_tags),
                 std::format("Title ({})", utils::title_name(player_flag_save_data.m_flag_data.profile_data.get_title())),
-                std::format("{}", g_message_service->get(LMS_MessageID::GrandPrix)),
+                std::format("{}", g_message_service->get(LMS_MessageID::GrandPrix_2)),
                 std::format("{} ({}, {})", g_message_service->get(LMS_MessageID::Region), game_setting->m_country_id, game_setting->m_region_id),
                 std::format("Globe ({}, {})", game_setting->m_globe_position.x, game_setting->m_globe_position.y),
             });
@@ -121,7 +121,7 @@ namespace base
                 }
                 case 6:
                 {
-                    keyboard.GetMessage() += g_message_service->get(LMS_MessageID::GrandPrix);
+                    keyboard.GetMessage() += g_message_service->get(LMS_MessageID::GrandPrix_2);
 
                     while (true)
                     {
