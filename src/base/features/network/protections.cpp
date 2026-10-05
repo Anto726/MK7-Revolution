@@ -19,7 +19,7 @@ namespace base
         {
             auto const &protections = g_settings.m_options.network.protections;
 
-            auto const &kart_item = _this->m_kart_items.at(data->player_id);
+            auto const &kart_item = _this->m_kart_items.at(reinterpret_cast<Net::NetworkItemEventDataMgr::SSelfMove *>(data->data)->player_id);
             auto const &status_flags = kart_item->m_info_proxy->m_vehicle->m_status_flags;
 
             auto const killer_protection = [&]() { return protections.item.killer_items && status_flags.killer; };

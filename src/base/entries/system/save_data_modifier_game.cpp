@@ -58,8 +58,8 @@ namespace base
                 std::format("{} ({})", g_message_service->get(LMS_MessageID::StreetPassTags), player_flag_save_data.m_flag_data.streetpass_tags),
                 std::format("Title ({})", utils::title_name(player_flag_save_data.m_flag_data.profile_data.get_title())),
                 std::format("{}", g_message_service->get(LMS_MessageID::GrandPrix_2)),
-                std::format("{} ({}, {})", g_message_service->get(LMS_MessageID::Region), game_setting->m_country_id, game_setting->m_region_id),
-                std::format("Globe ({}, {})", game_setting->m_globe_position.x, game_setting->m_globe_position.y),
+                std::format("{} ({}, {})", g_message_service->get(LMS_MessageID::Region), game_setting->m_country_id, (game_setting->m_simple_address.id & 0xFF0000) >> 16),
+                std::format("Globe ({}, {})", game_setting->m_simple_address.latitude, game_setting->m_simple_address.longitude),
             });
 
             auto const choice = keyboard.Open();
@@ -174,7 +174,7 @@ namespace base
                             auto const &other = std::next(country->second.begin(), choice);
 
                             game_setting->m_country_id = country->first.id;
-                            game_setting->m_region_id = other->id;
+                            game_setting->m_simple_address.id = (game_setting->m_simple_address.id & 0xFF00FFFF) | ((other->id << 16) & 0xFF0000);
                             goto _main;
                         }
                     }
@@ -189,8 +189,8 @@ namespace base
                     {
                         keyboard.Populate(std::vector<std::string>
                         {
-                            std::format("X ({})", game_setting->m_globe_position.x),
-                            std::format("Y ({})", game_setting->m_globe_position.y),
+                            std::format("X ({})", game_setting->m_simple_address.latitude),
+                            std::format("Y ({})", game_setting->m_simple_address.longitude),
                         });
 
                         auto const choice = keyboard.Open();
@@ -199,8 +199,8 @@ namespace base
 
                         switch (choice)
                         {
-                            case 0: keyboard.Open(game_setting->m_globe_position.x, game_setting->m_globe_position.x); break;
-                            case 1: keyboard.Open(game_setting->m_globe_position.y, game_setting->m_globe_position.y); break;
+                            case 0: keyboard.Open(game_setting->m_simple_address.latitude, game_setting->m_simple_address.latitude); break;
+                            case 1: keyboard.Open(game_setting->m_simple_address.longitude, game_setting->m_simple_address.longitude); break;
                         }
                     }
                     
