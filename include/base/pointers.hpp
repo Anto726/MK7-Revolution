@@ -121,7 +121,7 @@ namespace base
 		void *m_Sequence_MenuMultiCourseVote_onPagePreStep_0x344;
 		void *m_Sequence_RacePage_genRaceGP_0x7C;
 		void *m_Sequence_RacePage_resEnter_0xD0;
-		void *m_System_KDPadInputer_calcInput;
+		void *m_System_KDPadInputer_calcState;
 		void *m_System_SystemSaveData_initCecComment;
 		void *m_System_SystemSaveData_set;
 		void *m_UI_BgRaceMapCharaControl_onCalc_0x14;

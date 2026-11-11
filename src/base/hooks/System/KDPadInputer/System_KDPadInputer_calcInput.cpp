@@ -8,6 +8,6 @@ namespace base
         if (features::mode::drive_during_sync::input(_this))
             return;
 
-        g_hooking->m_System_KDPadInputer_calcInput_hook.call_original<void>(_this);        
+        g_hooking->m_System_KDPadInputer_calcState_hook.call_original<void>(_this);        
     }
 }
