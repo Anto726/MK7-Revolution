@@ -70,7 +70,6 @@ namespace base
                         {
                             std::format("Enabled ({})", menu::toggle_name(shell->second.enabled)),
                             std::format("Mode ({})", magic_enum::enum_name(shell->second.mode)),
-
                         };
                         if (shell->second.mode == decltype(shell->second.mode)::Custom)
                             options.push_back(Color(shell->second.color.as_u32()) << "Color");
