@@ -422,9 +422,9 @@ namespace base
 			m_Sequence_RacePage_resEnter_0xD0 = handle.add(0xD0).as<decltype(m_Sequence_RacePage_resEnter_0xD0)>();
 		});
 
-		batch.add("System::KDPadInputer::calcInput", "04 10 90 E5 01 00 51 E3 02 00 00 1A 00 10 90 E5", [this](memory::handle handle)
+		batch.add("System::KDPadInputer::calcState", "04 10 90 E5 01 00 51 E3 02 00 00 1A 00 10 90 E5", [this](memory::handle handle)
 		{
-			m_System_KDPadInputer_calcInput = handle.as<decltype(m_System_KDPadInputer_calcInput)>();
+			m_System_KDPadInputer_calcState = handle.as<decltype(m_System_KDPadInputer_calcState)>();
 		});
 
 		batch.add("System::SystemSaveData::initCecComment", "F0 47 2D E9 00 40 A0 E1 18 D0 4D E2 22 10 A0 E3", [this](memory::handle handle)
