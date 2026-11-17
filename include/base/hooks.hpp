@@ -27,6 +27,7 @@ namespace base
         static constexpr size_t ItemObjKouraB_stateInitBurst_index = 6;
 
         // VMT indexes
+        static constexpr size_t Actor_calc_index = 6;
         static constexpr size_t Director_count = 34;
         static constexpr size_t Director_createBeforeStructure_index = 18;
         static constexpr size_t Director_calcBeforeStructure_index = 22;
@@ -35,6 +36,7 @@ namespace base
         static constexpr size_t ItemObjBase_initEntryInnerBefore_index = 31;
         static constexpr size_t ItemObjBase_stateInitSelfMoveImpl_index = 41;
         static constexpr size_t ItemObjBase_stateEquipHang_index = 55;
+        static constexpr size_t ItemObjBase_stateEquipMulti_index = 57;
         static constexpr size_t ItemObjBase_stateInitUse_index = 64;
         static constexpr size_t ItemObjBase_stateUse_index = 65;
         static constexpr size_t ItemObjBase_stateInitAttacked_index = 66;
@@ -64,6 +66,7 @@ namespace base
         static void Item_ItemDirector_clearItem(Item::ItemDirector *, s32);
         static void Item_ItemDirector_entryItem(Item::ItemDirector *, Item::eItemSlot, game::item::kart_item *);
         static bool Item_ItemDirector_itemEventRecvHandler(Item::ItemDirector *, Net::NetworkItemEventDataMgr::SlotData *);
+        static void Item_ItemObjBase_calc(Item::ItemObjBase *);
         static void Item_ItemObjBase_setStateSelfMove(Item::ItemObjBase *, sead::Vector2f *);
         static void Item_ItemObjFlower_stateEquipHang(Item::ItemObjFlower *);
         static void Item_ItemObjKouraB_stateEquipHang(Item::ItemObjKouraB *);
@@ -103,6 +106,7 @@ namespace base
         static NAKED void Item_ItemDirector_calcKeyInputEachPlayer_0x78();
         static NAKED void Item_ItemDirector_calcKeyInputEachPlayer_0xE8();
         static NAKED void Item_ItemDirector_createBeforeStructure_0x548();
+        static NAKED void Item_ItemObjBase_stateEquipMulti_0x4F8();
         static NAKED void Item_ItemObjGesso_stateUse_0x28();
         static NAKED void Kart_Director_createBeforeStructure_0x284();
         static NAKED void Kart_Unit_startStarColor_updateStarColor_0x4();

@@ -36,6 +36,7 @@ namespace base
         m_disable_item_clear_entry(new MenuEntry("Disable Item Clear", DEFAULT_ENTRY, entries::item::disable_item_clear_menu)),
         m_shell_gravity_modifier_entry(new MenuEntry("Shell Gravity Modifier", DEFAULT_ENTRY, entries::item::shell_gravity_modifier_menu)),
         m_shell_stripe_color_modifier_entry(new MenuEntry("Shell Stripe Color Modifier", entries::item::shell_stripe_color_modifier::game, entries::item::shell_stripe_color_modifier::menu)),
+        m_item_billboard_entry(new MenuEntry("Item Billboard", DEFAULT_ENTRY)),
         m_item_fixes_entry(new MenuEntry("Item Fixes", DEFAULT_ENTRY, entries::item::item_fixes_menu)),
 
         m_invincibility_entry(new MenuEntry("Invincibility", DEFAULT_ENTRY)),
@@ -162,6 +163,7 @@ namespace base
             *item += m_disable_item_clear_entry;
             *item += m_shell_gravity_modifier_entry;
             *item += m_shell_stripe_color_modifier_entry;
+            *item += m_item_billboard_entry;
             *item += m_item_fixes_entry;
 
             *m_plugin_menu += item;

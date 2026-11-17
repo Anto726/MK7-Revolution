@@ -120,6 +120,10 @@ namespace base
 			auto Item_ItemObjStar_vtbl = *memory::handle(m_Item_ItemObjStar).as<void ***>();
 			auto Item_ItemObjStar_createInner_hnd = memory::handle(Item_ItemObjStar_vtbl[hooks::ItemObjBase_createInner_index]);
 
+			auto Item_ItemObjBase_stateEquipMulti_hnd = memory::handle(Item_ItemObjStar_vtbl[hooks::ItemObjBase_stateEquipMulti_index]);
+
+			m_Item_ItemObjBase_calc = Item_ItemObjStar_vtbl[hooks::Actor_calc_index];
+			m_Item_ItemObjBase_stateEquipMulti_0x4F8 = Item_ItemObjBase_stateEquipMulti_hnd.add(0x4F8).as<decltype(m_Item_ItemObjBase_stateEquipMulti_0x4F8)>();
 			m_sead_BufferedSafeString_format = Item_ItemObjStar_createInner_hnd.add(0x3C).jmp().as<decltype(m_sead_BufferedSafeString_format)>();
 		});
 
@@ -285,6 +289,11 @@ namespace base
 		batch.add("UI::MessageIDConverter::get_MessageData", "02 00 20 10 0C 00 90 E5 38 00 80 E2 ? ? ? EA", [this](memory::handle handle)
 		{
 			m_UI_MessageIDConverter_getMessageData = handle.sub(0x20).as<decltype(m_UI_MessageIDConverter_getMessageData)>();
+		});
+
+		batch.add("Util::Math::CopyRotate", "03 1A D0 ED 07 3A D0 ED 0B 5A D0 ED 03 0A B1 EC", [this](memory::handle handle)
+		{
+			m_Util_Math_CopyRotate = handle.as<decltype(m_Util_Math_CopyRotate)>();
 		});
 
 		batch.add("Effect::GPUPtclStripe::GPUPtclStripe", "F0 4F 2D E9 BC D0 4D E2 02 40 A0 E3 00 50 A0 E3", [this](memory::handle handle)

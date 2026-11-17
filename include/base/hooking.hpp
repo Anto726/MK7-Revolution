@@ -37,6 +37,7 @@ namespace base
         hook_types::detour_hook m_Item_ItemDirector_clearItem_hook;
         hook_types::detour_hook m_Item_ItemDirector_entryItem_hook;
         hook_types::detour_hook m_Item_ItemDirector_itemEventRecvHandler_hook;
+        hook_types::detour_hook m_Item_ItemObjBase_calc_hook;
         hook_types::detour_hook m_Item_ItemObjBase_setStateSelfMove_hook;
         hook_types::detour_hook m_Item_ItemObjFlower_stateEquipHang_hook;
         hook_types::detour_hook m_Item_ItemObjKouraB_stateEquipHang_hook;
@@ -74,6 +75,7 @@ namespace base
         hook_types::naked_hook m_Item_ItemDirector_calcKeyInputEachPlayer_0x78_hook;
         hook_types::naked_hook m_Item_ItemDirector_calcKeyInputEachPlayer_0xE8_hook;
         hook_types::naked_hook m_Item_ItemDirector_createBeforeStructure_0x548_hook;
+        hook_types::naked_hook m_Item_ItemObjBase_stateEquipMulti_0x4F8_hook;
         hook_types::naked_hook m_Item_ItemObjGesso_stateUse_0x28_hook;
         hook_types::naked_hook m_Kart_Director_createBeforeStructure_0x284_hook;
         hook_types::naked_hook m_Kart_Unit_startStarColor_0x4_hook;

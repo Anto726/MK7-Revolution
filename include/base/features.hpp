@@ -30,6 +30,12 @@ namespace base
 				static bool thunder(Item::ItemDirector *, s32);
 			};
 
+			struct item_billboard
+			{
+				static void calc(Item::ItemObjBase *);
+				static f32 multi(f32);
+			};
+
 			struct item_fixes
 			{
 				static bool blue_shell_battle_respawn(Item::ItemObjKouraR *);

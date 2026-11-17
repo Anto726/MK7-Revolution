@@ -46,6 +46,7 @@ namespace base
 		game::methods::Sequence_BaseRacePage_initTime_t m_Sequence_BaseRacePage_initTime;
 		game::methods::UI_MessageData_getMessage_t m_UI_MessageData_getMessage;
 		game::methods::UI_MessageIDConverter_getMessageData_t m_UI_MessageIDConverter_getMessageData;
+		game::methods::Util_Math_CopyRotate m_Util_Math_CopyRotate;
 
 		void *m_Effect_GPUPtclStripe_GPUPtclStripe_0x2D0;
 		void *m_Effect_KartEffect_calcTireEffectWheelSpin;
@@ -61,7 +62,9 @@ namespace base
 		void *m_Item_ItemDirector_createBeforeStructure_0x548;
 		void *m_Item_ItemDirector_entryItem;
 		void *m_Item_ItemDirector_itemEventRecvHandler;
+		void *m_Item_ItemObjBase_calc;
 		void *m_Item_ItemObjBase_setStateSelfMove;
+		void *m_Item_ItemObjBase_stateEquipMulti_0x4F8;
 		void *m_Item_ItemObjFlower_stateEquipHang;
 		void *m_Item_ItemObjGesso_stateUse_0x28;
 		void *m_Item_ItemObjKouraB_stateEquipHang;

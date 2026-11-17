@@ -6,6 +6,7 @@
 #include <Item/eItemSlot.hpp>
 #include <Kart/EJugemRecoverType.hpp>
 
+#include <math/seadMatrix.h>
 #include <math/seadVectorFwd.h>
 
 #include <base/sead/safe_string.hpp>
@@ -23,4 +24,5 @@ namespace base::game::methods
 	using Sequence_BaseRacePage_initTime_t = void (*)(Sequence::BaseRacePage *_this);
 	using UI_MessageData_getMessage_t = void (*)(char16_t **out, UI::MessageData *message_data, LMS_MessageID message_id);
 	using UI_MessageIDConverter_getMessageData_t = UI::MessageData *(*)(UI::MessageIDConverter *_this, _sead::safe_string const *);
+	using Util_Math_CopyRotate = void (*)(sead::Matrix34f *_this, sead::Matrix33f *src);
 }

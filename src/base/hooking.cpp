@@ -21,6 +21,7 @@ namespace base
 		m_Item_ItemDirector_clearItem_hook("Item::ItemDirector::clearItem", g_pointers->m_Item_ItemDirector_clearItem, reinterpret_cast<void *>(&hooks::Item_ItemDirector_clearItem)),
 		m_Item_ItemDirector_entryItem_hook("Item::ItemDirector::_entryItem", g_pointers->m_Item_ItemDirector_entryItem, reinterpret_cast<void *>(&hooks::Item_ItemDirector_entryItem)),
 		m_Item_ItemDirector_itemEventRecvHandler_hook("Item::ItemDirector::_itemEventRecvHandler", g_pointers->m_Item_ItemDirector_itemEventRecvHandler, reinterpret_cast<void *>(&hooks::Item_ItemDirector_itemEventRecvHandler)),
+		m_Item_ItemObjBase_calc_hook("Item::ItemObjBase::calc", g_pointers->m_Item_ItemObjBase_calc, reinterpret_cast<void *>(&hooks::Item_ItemObjBase_calc)),
 		m_Item_ItemObjBase_setStateSelfMove_hook("Item::ItemObjBase::setState_SelfMove", g_pointers->m_Item_ItemObjBase_setStateSelfMove, reinterpret_cast<void *>(&hooks::Item_ItemObjBase_setStateSelfMove)),
 		m_Item_ItemObjFlower_stateEquipHang_hook("Item::ItemObjFlower::stateEquip_Hang", g_pointers->m_Item_ItemObjFlower_stateEquipHang, reinterpret_cast<void *>(&hooks::Item_ItemObjFlower_stateEquipHang)),
 		m_Item_ItemObjKouraB_stateEquipHang_hook("Item::ItemObjKouraB::stateEquip_Hang", g_pointers->m_Item_ItemObjKouraB_stateEquipHang, reinterpret_cast<void *>(&hooks::Item_ItemObjKouraB_stateEquipHang)),
@@ -58,6 +59,7 @@ namespace base
 		m_Item_ItemDirector_calcKeyInputEachPlayer_0x78_hook("Item::ItemDirector::_calcKeyInput_EachPlayer+0x78", g_pointers->m_Item_ItemDirector_calcKeyInputEachPlayer_0x78, reinterpret_cast<void *>(&hooks::Item_ItemDirector_calcKeyInputEachPlayer_0x78)),
 		m_Item_ItemDirector_calcKeyInputEachPlayer_0xE8_hook("Item::ItemDirector::_calcKeyInput_EachPlayer+0xE8", g_pointers->m_Item_ItemDirector_calcKeyInputEachPlayer_0xE8, reinterpret_cast<void *>(&hooks::Item_ItemDirector_calcKeyInputEachPlayer_0xE8)),
 		m_Item_ItemDirector_createBeforeStructure_0x548_hook("Item::ItemDirector::createBeforeStructure+0x548", g_pointers->m_Item_ItemDirector_createBeforeStructure_0x548, reinterpret_cast<void *>(&hooks::Item_ItemDirector_createBeforeStructure_0x548)),
+		m_Item_ItemObjBase_stateEquipMulti_0x4F8_hook("Item::ItemObjBase::stateEquip_Multi+0x4F8", g_pointers->m_Item_ItemObjBase_stateEquipMulti_0x4F8, reinterpret_cast<void *>(&hooks::Item_ItemObjBase_stateEquipMulti_0x4F8), CTRPluginFramework::USE_LR_TO_RETURN | CTRPluginFramework::EXECUTE_OI_BEFORE_CB),
 		m_Item_ItemObjGesso_stateUse_0x28_hook("Item::ItemObjGesso::stateUse+0x28", g_pointers->m_Item_ItemObjGesso_stateUse_0x28, reinterpret_cast<void *>(&hooks::Item_ItemObjGesso_stateUse_0x28), CTRPluginFramework::USE_LR_TO_RETURN | CTRPluginFramework::EXECUTE_OI_AFTER_CB),
 		m_Kart_Director_createBeforeStructure_0x284_hook("Kart::Director::createBeforeStructure+0x284", g_pointers->m_Kart_Director_createBeforeStructure_0x284, reinterpret_cast<void *>(&hooks::Kart_Director_createBeforeStructure_0x284)),
 		m_Kart_Unit_startStarColor_0x4_hook("Kart::Unit::startStarColor+0x4", g_pointers->m_Kart_Unit_startStarColor_0x4, reinterpret_cast<void *>(&hooks::Kart_Unit_startStarColor_updateStarColor_0x4), CTRPluginFramework::USE_LR_TO_RETURN | CTRPluginFramework::EXECUTE_OI_AFTER_CB),
@@ -136,6 +138,7 @@ namespace base
 		m_Item_ItemDirector_clearItem_hook.enable();
 		m_Item_ItemDirector_entryItem_hook.enable();
 		m_Item_ItemDirector_itemEventRecvHandler_hook.enable();
+		m_Item_ItemObjBase_calc_hook.enable();
 		m_Item_ItemObjBase_setStateSelfMove_hook.enable();
 		m_Item_ItemObjFlower_stateEquipHang_hook.enable();
 		m_Item_ItemObjKouraB_stateEquipHang_hook.enable();
@@ -173,6 +176,7 @@ namespace base
 		m_Item_ItemDirector_calcKeyInputEachPlayer_0x78_hook.enable();
 		m_Item_ItemDirector_calcKeyInputEachPlayer_0xE8_hook.enable();
 		m_Item_ItemDirector_createBeforeStructure_0x548_hook.enable();
+		m_Item_ItemObjBase_stateEquipMulti_0x4F8_hook.enable();
 		m_Item_ItemObjGesso_stateUse_0x28_hook.enable();
 		m_Kart_Director_createBeforeStructure_0x284_hook.enable();
 		m_Kart_Unit_startStarColor_0x4_hook.enable();
@@ -233,6 +237,7 @@ namespace base
 		m_Kart_Unit_startStarColor_0x4_hook.disable();
 		m_Kart_Director_createBeforeStructure_0x284_hook.disable();
 		m_Item_ItemObjGesso_stateUse_0x28_hook.disable();
+		m_Item_ItemObjBase_stateEquipMulti_0x4F8_hook.disable();
 		m_Item_ItemDirector_createBeforeStructure_0x548_hook.disable();
 		m_Item_ItemDirector_calcKeyInputEachPlayer_0xE8_hook.disable();
 		m_Item_ItemDirector_calcKeyInputEachPlayer_0x78_hook.disable();
@@ -270,6 +275,7 @@ namespace base
 		m_Item_ItemObjKouraB_stateEquipHang_hook.disable();
 		m_Item_ItemObjFlower_stateEquipHang_hook.disable();
 		m_Item_ItemObjBase_setStateSelfMove_hook.disable();
+		m_Item_ItemObjBase_calc_hook.disable();
 		m_Item_ItemDirector_itemEventRecvHandler_hook.disable();
 		m_Item_ItemDirector_entryItem_hook.disable();
 		m_Item_ItemDirector_clearItem_hook.disable();
