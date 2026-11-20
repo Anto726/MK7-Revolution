@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     
     container:
-      image: pablomk7/libctrpf:0.8.0
+      image: anto726/libctrpf:0.8.0
       options: --user 1001
 
     steps:
